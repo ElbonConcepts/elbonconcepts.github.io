@@ -16,11 +16,11 @@ let header = $(`
 <div class="collapse navbar-collapse " id="navbarSupportedContent">
   <ul class="navbar-nav ml-auto" id = "navbar-content">
    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-   <li class="nav-item"><a class="nav-link" href="experience.html">Experience</a></li>
+   <!--      <li class="nav-item"><a class="nav-link" href="experience.html">Experience</a></li>  -->
    <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
-   <li class="nav-item"><a class="nav-link" href="research.html">Research</a></li>
-   <li class="nav-item"><a class="nav-link" href="education.html">Education</a></li>
-   <li class="nav-item"><a class="nav-link" href="./assets/docs/john_doe.pdf" target="_blank">Resume</a></li>
+   <!-- <li class="nav-item"><a class="nav-link" href="research.html">Research</a></li> -->
+   <!--   <li class="nav-item"><a class="nav-link" href="education.html">Education</a></li>    -->
+   <li class="nav-item"><a class="nav-link" href="https://drive.google.com/file/d/1QfDr9Cww3JP3XdN4yxa7oQsSoSz0Fl7r" target="_blank">Resume</a></li>
    <li class="nav-item">
    <button class="light-mode-button" aria-label="Toggle Light Mode" onclick="toggle_light_mode()">
       <span></span>
@@ -133,11 +133,11 @@ let footer = $(`
              <div class="form-header">
                 <h6 class="display">Get in Touch</h6>
               </div>
-                <form>
-                  <form action="https://formcarry.com/s/S2thQbCqEvW" method="POST" accept-charset="UTF-8" >
-                  <input type="text" name="field1" placeholder="Your Name" required/>
-                  <input type="email" name="field2" placeholder="Email Address"  required/>
-                  <textarea name="field3" placeholder="Type your Message" required></textarea>
+
+              <form id="contactForm" method="GET" accept-charset="UTF-8" >
+                  <input type="text" name="name" placeholder="Your Name" required/>
+                  <input type="email" name="email" placeholder="Email Address"  required/>
+                  <textarea name="message" placeholder="Type your Message" required></textarea>
                   <input type="submit" value="Send" />
                 </form>
              </div>
@@ -149,7 +149,7 @@ let footer = $(`
 
 
     <div class="rounded-social-buttons tag">
-    <a class="social-button twitter" href="#" target="_blank">
+    <a class="social-button twitter" href="https://x.com/ElbonConcepts" target="_blank">
     <!-- SVG code for twitter icon -->
     <svg class="twitter-icon-footer" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 500 500" enable-background="new 0 0 500 500"
@@ -207,7 +207,7 @@ let footer = $(`
     </svg>
     </a>
 
-    <a class="social-button linkedin" href="" target="_blank" >
+    <a class="social-button linkedin" href="https://linkedin.com/company/ElbonConcepts" target="_blank" >
     <!-- svg code for linkedin icon -->
       <svg class="linkedin-icon-footer" xmlns="http://www.w3.org/2000/svg" width="35" viewBox="0 0 24 24" fill="#0e76a8"
         stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin">
@@ -219,7 +219,7 @@ let footer = $(`
 
 
 
-    <a class="social-button instagram" href="" target="_blank" >
+    <a class="social-button instagram" href="https://instagram.com/Elbon.Concepts" target="_blank" >
     <!-- svg code for instagram icon -->
       <svg class="instagram-icon-footer" x="0px" y="0px" viewBox="0 0 202.5 202.5"
         style="enable-background:new 0 0 202.5 202.5;">
@@ -230,7 +230,7 @@ let footer = $(`
       </svg>
     </a>
 
-    <a class="social-button github" href="#" target="_blank">
+    <a class="social-button github" href="https://github.com/Elbon.Concepts" target="_blank">
     <!-- SVG code for Github icon -->
     <svg class="github-icon-footer" width="45px" height="45px" viewBox="0 0 300 300">
         <!-- body -->
@@ -259,64 +259,64 @@ let upArrow = $(`
 `)
 
 //function for the "Scroll To Top" button to detect the footer
-$(document).ready(function() {
-    $(window).scroll(function() {
-        console.log($(window).scrollTop());
-        //The button will be hidden until we scroll more than the window's height
-        if ($(window).scrollTop() < $(window).height()) {
-            $("#btnScrollToTop").css("visibility", "hidden");
-        } else {
-            $("#btnScrollToTop").css("visibility", "visible");
-            //The button will change it's color when it hits the footer
-            if ($(window).scrollTop() + $(window).height() > $(document).height() - 838) {
-                // 838 should be changed if footer's height is changed so that the button changes it's color exactly when it hits the footer (preferably 14 less than the computer height of the footer)
-                $("#btnScrollToTop").css("background-color", "#43D1Af");
-            } else {
-                $("#btnScrollToTop").css("background-color", "#6C63FF");
-            }
-        }
-    })
+$(document).ready(function () {
+  $(window).scroll(function () {
+    console.log($(window).scrollTop());
+    //The button will be hidden until we scroll more than the window's height
+    if ($(window).scrollTop() < $(window).height()) {
+      $("#btnScrollToTop").css("visibility", "hidden");
+    } else {
+      $("#btnScrollToTop").css("visibility", "visible");
+      //The button will change it's color when it hits the footer
+      if ($(window).scrollTop() + $(window).height() > $(document).height() - 838) {
+        // 838 should be changed if footer's height is changed so that the button changes it's color exactly when it hits the footer (preferably 14 less than the computer height of the footer)
+        $("#btnScrollToTop").css("background-color", "#43D1Af");
+      } else {
+        $("#btnScrollToTop").css("background-color", "#6C63FF");
+      }
+    }
+  })
 });
 
 //function to scroll to top
 const scrollToTop = () => {
-    window.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: "smooth"
-    });
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: "smooth"
+  });
 }
 
 // Window Loads
-$(function() {
-    let bodyElement = $(`body`);
-    bodyElement.prepend(header);
-    bodyElement.append(footer);
-    bodyElement.append(upArrow);
-    $("#btnScrollToTop").css("visibility", "hidden");
+$(function () {
+  let bodyElement = $(`body`);
+  bodyElement.prepend(header);
+  bodyElement.append(footer);
+  bodyElement.append(upArrow);
+  $("#btnScrollToTop").css("visibility", "hidden");
 
-    //toggler hamburger functions
-    const menuBtn = document.querySelector('.navbar-toggler');
-    let menuOpen = false;
-    menuBtn.addEventListener('click', () => {
-        if (!menuOpen) {
-            menuBtn.classList.add('open')
-            menuOpen = true;
-        } else {
-            menuBtn.classList.remove('open');
-            menuOpen = false;
-        }
-    });
+  //toggler hamburger functions
+  const menuBtn = document.querySelector('.navbar-toggler');
+  let menuOpen = false;
+  menuBtn.addEventListener('click', () => {
+    if (!menuOpen) {
+      menuBtn.classList.add('open')
+      menuOpen = true;
+    } else {
+      menuBtn.classList.remove('open');
+      menuOpen = false;
+    }
+  });
 
 });
 
 // function for toggling hamburger is-active class
 
-$(function() {
+$(function () {
 
-    $("#js-hamburger").on("click", function() {
-        $(this).toggleClass('is-active');
-    });
+  $("#js-hamburger").on("click", function () {
+    $(this).toggleClass('is-active');
+  });
 
 });
 
@@ -327,50 +327,93 @@ let loader = document.querySelector('.loader-container');
 window.addEventListener("load", vanish);
 
 function vanish() {
-    loader.classList.add("disappear")
+  loader.classList.add("disappear")
 }
-$(function() {
-    $('a.nav-link').each(function() {
-        if ($(this).prop('href') == window.location.href) {
-            $(this).addClass('current-link');
-        }
-    });
+$(function () {
+  $('a.nav-link').each(function () {
+    if ($(this).prop('href') == window.location.href) {
+      $(this).addClass('current-link');
+    }
+  });
 });
 
 //function to remove underline on hover
 
-$(document).ready(function() {
+$(document).ready(function () {
 
-    $("a.nav-link").hover(
-        function() {
-            $(this).removeClass("current-link");
-        },
-        function() {
-            if ($(this).prop('href') == window.location.href) {
-                $(this).addClass('current-link');
-            }
+  $("a.nav-link").hover(
+    function () {
+      $(this).removeClass("current-link");
+    },
+    function () {
+      if ($(this).prop('href') == window.location.href) {
+        $(this).addClass('current-link');
+      }
+    }
+  );
+
+  $('#contactForm').submit(function (event) {
+    // Prevent the default form submission behavior
+    event.preventDefault();
+
+    // Get form data
+    var formData = $(this).serialize();
+
+    $.ajax({
+      type: 'GET',
+      // url: 'http://localhost:3000/api/contact-us/',
+      url: 'https://worded-nextjs.vercel.app/api/contact-us/',
+      data: formData,
+      success: function (response) {
+        // Check the status and display an alert based on the response
+        if (response.status) {
+          alert(response.message);
+          console.log(response.message);
+          $('#contactForm').trigger('reset');
+        } else {
+          alert(response.message);
+          console.log(response.message);
         }
-    );
+      },
+      error: function (xhr, status, error) {
+        // alert('Error occurred while sending email: ' + error);
+        console.log('Error occurred while sending email: ' + error);
+      }
+    });
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+
 });
 
 function toggle_light_mode() {
-    var app = document.getElementsByTagName("HTML")[0];
-    var nav = document.getElementById("navbar");
-    if (localStorage.lightMode == "dark") {
-        localStorage.lightMode = "light";
-        app.setAttribute("light-mode", "light");
-        nav.classList.remove("dark-theme");
-    } else {
-        nav.classList.add("dark-theme");
-        localStorage.lightMode = "dark";
-        app.setAttribute("light-mode", "dark");
-    }
+  var app = document.getElementsByTagName("HTML")[0];
+  var nav = document.getElementById("navbar");
+  if (localStorage.lightMode == "dark") {
+    localStorage.lightMode = "light";
+    app.setAttribute("light-mode", "light");
+    nav.classList.remove("dark-theme");
+  } else {
+    nav.classList.add("dark-theme");
+    localStorage.lightMode = "dark";
+    app.setAttribute("light-mode", "dark");
+  }
 }
 
-window.addEventListener("storage", function() {
-    if (localStorage.lightMode == "dark") {
-        app.setAttribute("light-mode", "dark");
-    } else {
-        app.setAttribute("light-mode", "light");
-    }
+window.addEventListener("storage", function () {
+  if (localStorage.lightMode == "dark") {
+    app.setAttribute("light-mode", "dark");
+  } else {
+    app.setAttribute("light-mode", "light");
+  }
 }, false);
