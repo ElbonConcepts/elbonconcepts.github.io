@@ -2,11 +2,7 @@
 
 let header = $(`
 <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="navbar">
-<<<<<<< HEAD
 <a class="navbar-brand" href="index.html">Elbon Concepts </a>
-=======
-<a class="navbar-brand" href="index.html">John Doe </a>
->>>>>>> 097cc4d07f75b295ec2d613be83d8ac24f0184fd
 <div class="hamburger_wrapper navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 
   <div id="js-hamburger" class="hamburger">
@@ -24,11 +20,7 @@ let header = $(`
    <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
    <li class="nav-item"><a class="nav-link" href="research.html">Research</a></li>
    <li class="nav-item"><a class="nav-link" href="education.html">Education</a></li>
-<<<<<<< HEAD
-   <li class="nav-item"><a class="nav-link" href="https://drive.google.com/file/d/1QfDr9Cww3JP3XdN4yxa7oQsSoSz0Fl7r"_blank">Resume</a></li>
-=======
    <li class="nav-item"><a class="nav-link" href="./assets/docs/john_doe.pdf" target="_blank">Resume</a></li>
->>>>>>> 097cc4d07f75b295ec2d613be83d8ac24f0184fd
    <li class="nav-item">
    <button class="light-mode-button" aria-label="Toggle Light Mode" onclick="toggle_light_mode()">
       <span></span>
@@ -124,11 +116,7 @@ let footer = $(`
       <p class="tag" >Develop a passion for learning. If you do, you will never cease to grow.</p>
     </div>
 
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> 097cc4d07f75b295ec2d613be83d8ac24f0184fd
     <div class="container">
       <div class="row">
         <div class="col-lg-6 col-md-12 mb-4 mb-md-0 justify-content-center">
@@ -158,17 +146,10 @@ let footer = $(`
     </div>
 
 
-<<<<<<< HEAD
 
-
-    <div class="rounded-social-buttons tag">
-    <a class="social-button twitter" href="https://twitter.com/NobleOsinachi" target="_blank">
-=======
-    
 
     <div class="rounded-social-buttons tag">
     <a class="social-button twitter" href="#" target="_blank">
->>>>>>> 097cc4d07f75b295ec2d613be83d8ac24f0184fd
     <!-- SVG code for twitter icon -->
     <svg class="twitter-icon-footer" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 500 500" enable-background="new 0 0 500 500"
@@ -226,11 +207,7 @@ let footer = $(`
     </svg>
     </a>
 
-<<<<<<< HEAD
-    <a class="social-button linkedin" href="https://linkedin.com/in/NobleOsinachi" target="_blank" >
-=======
     <a class="social-button linkedin" href="" target="_blank" >
->>>>>>> 097cc4d07f75b295ec2d613be83d8ac24f0184fd
     <!-- svg code for linkedin icon -->
       <svg class="linkedin-icon-footer" xmlns="http://www.w3.org/2000/svg" width="35" viewBox="0 0 24 24" fill="#0e76a8"
         stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin">
@@ -242,11 +219,7 @@ let footer = $(`
 
 
 
-<<<<<<< HEAD
-    <a class="social-button instagram" href="https://instagram.com/NobleOsinachi" target="_blank" >
-=======
     <a class="social-button instagram" href="" target="_blank" >
->>>>>>> 097cc4d07f75b295ec2d613be83d8ac24f0184fd
     <!-- svg code for instagram icon -->
       <svg class="instagram-icon-footer" x="0px" y="0px" viewBox="0 0 202.5 202.5"
         style="enable-background:new 0 0 202.5 202.5;">
@@ -257,11 +230,7 @@ let footer = $(`
       </svg>
     </a>
 
-<<<<<<< HEAD
-    <a class="social-button github" href="https://github.com/NobleOsinachi" target="_blank">
-=======
     <a class="social-button github" href="#" target="_blank">
->>>>>>> 097cc4d07f75b295ec2d613be83d8ac24f0184fd
     <!-- SVG code for Github icon -->
     <svg class="github-icon-footer" width="45px" height="45px" viewBox="0 0 300 300">
         <!-- body -->
@@ -276,11 +245,7 @@ let footer = $(`
     </a>
 
 
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> 097cc4d07f75b295ec2d613be83d8ac24f0184fd
     </div>
     </div>
 </footer>
@@ -294,25 +259,6 @@ let upArrow = $(`
 `)
 
 //function for the "Scroll To Top" button to detect the footer
-<<<<<<< HEAD
-$(document).ready(function () {
-  $(window).scroll(function () {
-    console.log($(window).scrollTop());
-    //The button will be hidden until we scroll more than the window's height
-    if ($(window).scrollTop() < $(window).height()) {
-      $("#btnScrollToTop").css("visibility", "hidden");
-    } else {
-      $("#btnScrollToTop").css("visibility", "visible");
-      //The button will change it's color when it hits the footer
-      if ($(window).scrollTop() + $(window).height() > $(document).height() - 838) {
-        // 838 should be changed if footer's height is changed so that the button changes it's color exactly when it hits the footer (preferably 14 less than the computer height of the footer)
-        $("#btnScrollToTop").css("background-color", "#43D1Af");
-      } else {
-        $("#btnScrollToTop").css("background-color", "#6C63FF");
-      }
-    }
-  })
-=======
 $(document).ready(function() {
     $(window).scroll(function() {
         console.log($(window).scrollTop());
@@ -330,40 +276,10 @@ $(document).ready(function() {
             }
         }
     })
->>>>>>> 097cc4d07f75b295ec2d613be83d8ac24f0184fd
 });
 
 //function to scroll to top
 const scrollToTop = () => {
-<<<<<<< HEAD
-  window.scrollTo({
-    top: 0,
-    left: 0,
-    behavior: "smooth"
-  });
-}
-
-// Window Loads
-$(function () {
-  let bodyElement = $(`body`);
-  bodyElement.prepend(header);
-  bodyElement.append(footer);
-  bodyElement.append(upArrow);
-  $("#btnScrollToTop").css("visibility", "hidden");
-
-  //toggler hamburger functions
-  const menuBtn = document.querySelector('.navbar-toggler');
-  let menuOpen = false;
-  menuBtn.addEventListener('click', () => {
-    if (!menuOpen) {
-      menuBtn.classList.add('open')
-      menuOpen = true;
-    } else {
-      menuBtn.classList.remove('open');
-      menuOpen = false;
-    }
-  });
-=======
     window.scrollTo({
         top: 0,
         left: 0,
@@ -391,25 +307,16 @@ $(function() {
             menuOpen = false;
         }
     });
->>>>>>> 097cc4d07f75b295ec2d613be83d8ac24f0184fd
 
 });
 
 // function for toggling hamburger is-active class
 
-<<<<<<< HEAD
-$(function () {
-
-  $("#js-hamburger").on("click", function () {
-    $(this).toggleClass('is-active');
-  });
-=======
 $(function() {
 
     $("#js-hamburger").on("click", function() {
         $(this).toggleClass('is-active');
     });
->>>>>>> 097cc4d07f75b295ec2d613be83d8ac24f0184fd
 
 });
 
@@ -420,16 +327,6 @@ let loader = document.querySelector('.loader-container');
 window.addEventListener("load", vanish);
 
 function vanish() {
-<<<<<<< HEAD
-  loader.classList.add("disappear")
-}
-$(function () {
-  $('a.nav-link').each(function () {
-    if ($(this).prop('href') == window.location.href) {
-      $(this).addClass('current-link');
-    }
-  });
-=======
     loader.classList.add("disappear")
 }
 $(function() {
@@ -438,48 +335,10 @@ $(function() {
             $(this).addClass('current-link');
         }
     });
->>>>>>> 097cc4d07f75b295ec2d613be83d8ac24f0184fd
 });
 
 //function to remove underline on hover
 
-<<<<<<< HEAD
-$(document).ready(function () {
-
-  $("a.nav-link").hover(
-    function () {
-      $(this).removeClass("current-link");
-    },
-    function () {
-      if ($(this).prop('href') == window.location.href) {
-        $(this).addClass('current-link');
-      }
-    }
-  );
-});
-
-function toggle_light_mode() {
-  var app = document.getElementsByTagName("HTML")[0];
-  var nav = document.getElementById("navbar");
-  if (localStorage.lightMode == "dark") {
-    localStorage.lightMode = "light";
-    app.setAttribute("light-mode", "light");
-    nav.classList.remove("dark-theme");
-  } else {
-    nav.classList.add("dark-theme");
-    localStorage.lightMode = "dark";
-    app.setAttribute("light-mode", "dark");
-  }
-}
-
-window.addEventListener("storage", function () {
-  if (localStorage.lightMode == "dark") {
-    app.setAttribute("light-mode", "dark");
-  } else {
-    app.setAttribute("light-mode", "light");
-  }
-}, false);
-=======
 $(document).ready(function() {
 
     $("a.nav-link").hover(
@@ -515,4 +374,3 @@ window.addEventListener("storage", function() {
         app.setAttribute("light-mode", "light");
     }
 }, false);
->>>>>>> 097cc4d07f75b295ec2d613be83d8ac24f0184fd
