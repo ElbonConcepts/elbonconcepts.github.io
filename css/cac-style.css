@@ -43,3 +43,27 @@ span.timestampContent {
   color: red;
   text-decoration: line-through;
 }
+
+
+
+.google-colors {
+  display: inline-block;
+  font-size: 32px;
+  font-family: "Product Sans", sans-serif;
+  font-weight: bold;
+}
+.google-colors span:first-child {
+  color: #4285f4; /* Blue */
+}
+.google-colors span:nth-child(2) {
+  color: #db4437; /* Red */
+}
+.google-colors span:nth-child(3) {
+  color: #f4b400; /* Yellow */
+}
+.google-colors span:nth-child(4) {
+  color: #0f9d58; /* Green */
+}
+.google-colors span:nth-child(5) {
+  color: #ab47bc; /* Purple */
+}
