@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Countdown to July 7, 2024</title>
+</head>
+<body>
+<div>
+<p>Days until July 7, 2024: <span id="days-left"></span></p>
+</div>
+<script>
+    const countdownDate = new Date('07 July 2024 00:00');
+    const now = new Date().getTime();
+
+    const timeDifference = countdownDate.getTime() - now;
+    const daysLeft = Math.floor(timeDifference / (1000 * 3600 * 24));
+
+    document.getElementById("days-left").innerHTML = daysLeft;
+  </script>
+</body>
+</html>
