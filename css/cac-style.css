@@ -1,35 +1,45 @@
+.highlight-card {
+  border: 2px solid #007bff;
+  position: relative;
+}
 
-        .highlight-card {
-            border: 2px solid #007bff;
-            position: relative;
-        }
-        .recommended-badge {
-            position: absolute;
-            top: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #007bff;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 50px;
-            font-size: 0.8em;
-            font-weight: bold;
-        }
+.not-highlight-card {
+  border: 2px solid red;
+  position: relative;
+}
+
+.recommended-badge {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #007bff;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 50px;
+  font-size: 0.8em;
+  font-weight: bold;
+}
+
+.not-recommended-badge {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: red;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 50px;
+  font-size: 0.8em;
+  font-weight: bold;
+}
+
+span.timestampContent {
+  display: none;
+}
 
 
-        .not-recommended-badge {
-            position: absolute;
-            top: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #007bff;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 50px;
-            font-size: 0.8em;
-            font-weight: bold;
-        }
-
-        span.timestampContent {
-            display: none;
-          }
+.red-strikethrough {
+  color: red;
+  text-decoration: line-through;
+}
