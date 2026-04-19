@@ -1,5 +1,10 @@
 User-agent: Googlebot
+Allow: /
+
 User-agent: AdsBot-Google
-Disallow: /
+Allow: /
+
 User-agent: *
-Disallow: /
+Allow: /
+
+Sitemap: https://elbonconcepts.github.io/sitemap.xml
