@@ -1,80 +1,89 @@
-![Awesome Portfolio Website](./readme_assets/banner_apw.png)
-<div align="center">
+# Elbon Concepts — Official Website
 
-<a href="https://github.com/smaranjitghose/awesome-portfolio-websites"><img src="https://badges.frapsoft.com/os/v1/open-source.svg?v=103"></a>
-<a href="https://github.com/smaranjitghose/awesome-portfolio-websites"><img src="https://img.shields.io/badge/Built%20by-developers%20%3C%2F%3E-0059b3"></a>
-<a href="https://github.com/smaranjitghose/awesome-portfolio-websites"><img src="https://img.shields.io/static/v1.svg?label=Contributions&message=Welcome&color=yellow"></a>
-<a href="https://github.com/smaranjitghose/"><img src="https://img.shields.io/badge/Maintained%3F-yes-brightgreen.svg?v=103"></a>
-<a href="https://github.com/smaranjitghose/awesome-portfolio-websites/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg?v=103"></a>
+> **Built to Convert.** Web design, video ad editing, and copywriting for brands that want to grow — not just exist online.
 
-<a href="https://github.com/smaranjitghose/awesome-portfolio-websites/graphs/contributors"><img src="https://img.shields.io/github/contributors/smaranjitghose/awesome-portfolio-websites?color=brightgreen"></a>
-<a href="https://github.com/smaranjitghose/awesome-portfolio-websites/stargazers"><img src="https://img.shields.io/github/stars/smaranjitghose/awesome-portfolio-websites?color=0059b3"></a>
-<a href="https://github.com/smaranjitghose/awesome-portfolio-websites/network/members"><img src="https://img.shields.io/github/forks/smaranjitghose/awesome-portfolio-websites?color=yellow"></a>
-<a href="https://github.com/smaranjitghose/awesome-portfolio-websites/issues"><img src="https://img.shields.io/github/issues/smaranjitghose/awesome-portfolio-websites?color=0059b3"></a>
-<a href="https://github.com/smaranjitghose/awesome-portfolio-websites/issues?q=is%3Aissue+is%3Aclosed"><img src="https://img.shields.io/github/issues-closed-raw/smaranjitghose/awesome-portfolio-websites?color=yellow"></a>
-<a href="https://github.com/smaranjitghose/awesome-portfolio-websites/pulls"><img src="https://img.shields.io/github/issues-pr/smaranjitghose/awesome-portfolio-websites?color=brightgreen"></a>
-<a href="https://github.com/smaranjitghose/awesome-portfolio-websites/pulls?q=is%3Apr+is%3Aclosed"><img src="https://img.shields.io/github/issues-pr-closed-raw/smaranjitghose/awesome-portfolio-websites?color=0059b3"></a> 
-</div>
+🌐 **Live Site:** [elbonconcepts.github.io](https://elbonconcepts.github.io/)
 
-A community maintained open source project aimed at making personal portfolio for researchers, developers and analysts simple, fast and less cumbersome. We make sure you have a full fledged website to showcase your work while you can spend time on your learning and innovative endeavours.
+---
 
-## A sneek peek into what we have here🙈 :
+## About
 
-### Home Page:
+Elbon Concepts is a results-driven digital services agency. Every deliverable — from websites to video ad edits to email copy — is built around one objective: move the numbers that matter.
 
-<p align="center"><img src="./readme_assets/Home_Page.gif"></p>
+This repo contains the source code for the official Elbon Concepts website.
 
-### Experience Page:
+---
 
-<p align="center"><img src="./readme_assets/Experience_Page.gif"></p>
+## Pages
 
-### Project Page:
+| File | Description |
+|------|-------------|
+| `index.html` | Main landing page — hero, services, problem/solution, why us, case studies, process, CTA |
+| `portfolio.html` | Full portfolio — 18 case studies across 3 services, 9 client testimonials, filterable by service |
 
-<p align="center"><img src="./readme_assets/Project_Page.gif"></p>
+---
 
-### Research Page:
+## Services
 
-<p align="center"><img src="./readme_assets/Research_Page.gif"></p>
+- **Web Design** — Responsive, conversion-optimised websites built to turn visitors into buyers
+- **Video Ad Editing** — Direct response Facebook and TikTok ad creatives with hook-first structure
+- **Copywriting** — Email sequences, landing pages, and sales copy built around what makes people buy
 
-### Education Page:
+---
 
-<p align="center"><img src="./readme_assets/Education_Page.gif"></p>
+## Tech Stack
 
-## How to use this?🛠
+- Pure HTML5
+- [Tailwind CSS](https://tailwindcss.com/) via CDN
+- Vanilla JavaScript (theme toggle, scroll animations, portfolio filter)
+- [Google Fonts](https://fonts.google.com/) — Bebas Neue, Syne, DM Sans
+- No frameworks. No dependencies. No build step.
 
-[Check out our awesome Documentation](https://smaranjitghose.github.io/awesome-portfolio-websites/)
+---
 
-## Contribution Guidelines🏗
+## Features
 
-Are we missing any of your favorite features, which you think you can add to it❓ We invite you to contribute to this project and improve it further.
+- ☀️ Dark / Light mode toggle (persists via `localStorage`)
+- 📱 Fully responsive — mobile, tablet, desktop
+- 🎛️ Portfolio filter tabs (All / Web Design / Video Ads / Copywriting)
+- ✨ Scroll-triggered fade-up animations
+- ⚡ Single-file pages — no build process required
 
-Click on the image below to set up and contribute to the project:
+---
 
-<a href = "https://github.com/smaranjitghose/awesome-portfolio-websites/blob/master/CONTRIBUTING.md">
-<img src = "./readme_assets/Contribution.png"></a>
+## Getting Started
 
-## Project Maintainers👨🏫::
+No installation needed. Just open the files in a browser or deploy to any static host.
 
-| <img src = "https://avatars2.githubusercontent.com/u/46641503?v=4" width = 500 height = 250> | <img src = "https://avatars2.githubusercontent.com/u/40017559?v=4" width = 500 height = 250> | <img src = "./readme_assets/srv.jpg" width = 500 height = 250> |
-| :------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------: | :------------------------------------------------------------: |
-|                    [Smaranjit Ghose](https://github.com/smaranjitghose)\*                    |                        [Anush Bhatia](https://github.com/anushbhatia)                        |     [Srividhya Inampudi](https://github.com/sriinampudi)\*     |
+```bash
+# Clone the repo
+git clone https://github.com/elbonconcepts/elbonconcepts.github.io.git
 
-\*\* Open Source Day 2021
+# Open in browser
+open index.html
+```
 
-## Our valuable Contributors👩‍💻👨‍💻 :
+---
 
-<a href="https://github.com/smaranjitghose/awesome-portfolio-websites/graphs/contributors">
-  <img src="https://contributors-img.web.app/image?repo=smaranjitghose/awesome-portfolio-websites" />
-</a>
+## Deployment
 
-## Open Source Programs we have been a part of:
+This site is deployed via **GitHub Pages** from the `main` branch root.
 
-<p align="center">
-<a href="https://scodein.tech/"><img src="./readme_assets/open_source_programs/sci.png" width= "25%"/></a>
-<a href="https://hakincodes.tech/"><img src="./readme_assets/open_source_programs/ch.png" width= "25%"/></a>
-<a href="https://njackwinterofcode.github.io/"><img src="./readme_assets/open_source_programs/nwoc.png" width= "25%" /></a>
-<a href="https://devscript.tech/woc/"><img src="./readme_assets/open_source_programs/dwoc.png" width="25%"></a>
-<a href="https://mexili.github.io/winter_of_code/#/"><img src="./readme_assets/open_source_programs/mwoc.png" width="25%"></a>
-<a href="https://crosswoc.ieeedtu.in/"><img src="./readme_assets/open_source_programs/crosswoc.png" width="25%"></a>
-<a href="https://letsgrowmore.in/soc/"><img src="./readme_assets/open_source_programs/lgmsoc.png" width="25%"></a>
-</p>
+To deploy your own fork:
+1. Fork this repo
+2. Go to **Settings → Pages**
+3. Set source to `main` branch, `/ (root)`
+4. Your site will be live at `https://yourusername.github.io/`
+
+---
+
+## Contact
+
+Got a project in mind? Let's talk.
+
+- 📧 **Email:** hello@elbonconcepts.com
+- 🌐 **Website:** [elbonconcepts.github.io](https://elbonconcepts.github.io/)
+
+---
+
+© 2025 Elbon Concepts. All rights reserved.
