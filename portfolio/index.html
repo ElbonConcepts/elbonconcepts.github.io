@@ -1,1097 +1,1466 @@
 <!DOCTYPE html>
 <html lang="en" class="dark">
+
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Portfolio — Elbon Concepts</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet"/>
-<script>
-  tailwind.config = {
-    darkMode: 'class',
-    theme: {
-      extend: {
-        fontFamily: {
-          display: ['Bebas Neue', 'sans-serif'],
-          heading: ['Syne', 'sans-serif'],
-          body: ['DM Sans', 'sans-serif'],
-        },
-        colors: { acid: '#CAFF00', ink: '#0A0A0A', paper: '#F5F5F0' }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio — Elbon Concepts</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap"
+    rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Bebas Neue', 'sans-serif'],
+            heading: ['Syne', 'sans-serif'],
+            body: ['DM Sans', 'sans-serif'],
+          },
+          colors: { acid: '#CAFF00', ink: '#0A0A0A', paper: '#F5F5F0' }
+        }
       }
     }
-  }
-</script>
-<style>
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body { font-family: 'DM Sans', sans-serif; }
+  </script>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-  :root {
-    --bg: #0A0A0A; --bg2: #111111; --fg: #F5F5F0;
-    --muted: #888; --border: rgba(255,255,255,0.08);
-    --accent: #CAFF00; --card: #161616;
-  }
-  html.light {
-    --bg: #F5F5F0; --bg2: #EBEBEB; --fg: #0A0A0A;
-    --muted: #666; --border: rgba(0,0,0,0.10);
-    --accent: #7DB800; --card: #FFFFFF;
-  }
+    html {
+      scroll-behavior: smooth;
+    }
 
-  body { background: var(--bg); color: var(--fg); transition: background .3s, color .3s; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+    }
 
-  /* NAV */
-  nav { background: var(--bg); border-bottom: 1px solid var(--border); }
-  .nav-link { color: var(--muted); font-size: .85rem; letter-spacing: .05em; text-transform: uppercase; transition: color .2s; font-family: 'Syne', sans-serif; font-weight: 600; }
-  .nav-link:hover, .nav-link.active { color: var(--accent); }
-  .logo-text { font-family: 'Syne', sans-serif; font-weight: 800; color: var(--fg); }
-  .logo-dot { color: var(--accent); }
+    :root {
+      --bg: #0A0A0A;
+      --bg2: #111111;
+      --fg: #F5F5F0;
+      --muted: #888;
+      --border: rgba(255, 255, 255, 0.08);
+      --accent: #CAFF00;
+      --card: #161616;
+    }
 
-  #themeToggle {
-    background: var(--card); border: 1px solid var(--border);
-    color: var(--fg); border-radius: 9999px;
-    padding: .35rem .85rem; font-size: .8rem;
-    font-family: 'Syne', sans-serif; font-weight: 600;
-    cursor: pointer; transition: background .2s, color .2s;
-    display: flex; align-items: center; gap: .4rem;
-  }
-  #themeToggle:hover { background: var(--accent); color: #000; }
+    html.light {
+      --bg: #F5F5F0;
+      --bg2: #EBEBEB;
+      --fg: #0A0A0A;
+      --muted: #666;
+      --border: rgba(0, 0, 0, 0.10);
+      --accent: #7DB800;
+      --card: #FFFFFF;
+    }
 
-  .btn-primary {
-    background: var(--accent); color: #000;
-    font-family: 'Syne', sans-serif; font-weight: 700;
-    font-size: .9rem; letter-spacing: .04em;
-    padding: .9rem 2rem; border-radius: 4px;
-    display: inline-block; transition: transform .2s, box-shadow .2s;
-  }
-  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(202,255,0,.25); }
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      transition: background .3s, color .3s;
+    }
 
-  .section-label { color: var(--accent); font-family: 'Syne', sans-serif; font-weight: 700; font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; }
-  .section-title { font-family: 'Syne', sans-serif; font-weight: 800; line-height: 1.1; color: var(--fg); }
-  .section-body { color: var(--muted); font-size: .975rem; line-height: 1.75; }
+    /* NAV */
+    nav {
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+    }
 
-  /* HERO */
-  .hero-badge { background: var(--card); border: 1px solid var(--border); color: var(--accent); font-family: 'Syne', sans-serif; font-weight: 600; font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; display: inline-flex; align-items: center; gap: .5rem; padding: .4rem .9rem; border-radius: 9999px; }
-  .hero-badge span { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); display: block; animation: pulse-dot 2s ease infinite; }
-  @keyframes pulse-dot { 0%,100%{ opacity:1; transform:scale(1); } 50%{ opacity:.5; transform:scale(1.4); } }
+    .nav-link {
+      color: var(--muted);
+      font-size: .85rem;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      transition: color .2s;
+      font-family: 'Syne', sans-serif;
+      font-weight: 600;
+    }
 
-  /* FILTER TABS */
-  .filter-bar { display: flex; gap: .5rem; flex-wrap: wrap; }
-  .filter-btn {
-    font-family: 'Syne', sans-serif; font-weight: 600;
-    font-size: .8rem; letter-spacing: .08em; text-transform: uppercase;
-    padding: .5rem 1.2rem; border-radius: 4px;
-    border: 1px solid var(--border); color: var(--muted);
-    background: transparent; cursor: pointer;
-    transition: all .2s;
-  }
-  .filter-btn:hover { border-color: var(--accent); color: var(--accent); }
-  .filter-btn.active { background: var(--accent); color: #000; border-color: var(--accent); }
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--accent);
+    }
 
-  /* CASE STUDY CARDS */
-  .cs-card {
-    background: var(--card); border: 1px solid var(--border);
-    border-radius: 8px; overflow: hidden;
-    transition: border-color .25s, transform .25s;
-    display: flex; flex-direction: column;
-  }
-  .cs-card:hover { border-color: var(--accent); transform: translateY(-4px); }
+    .logo-text {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      color: var(--fg);
+    }
 
-  .cs-header { padding: 1.5rem 1.75rem 1.25rem; border-bottom: 1px solid var(--border); }
-  .cs-body { padding: 1.5rem 1.75rem; flex: 1; display: flex; flex-direction: column; }
+    .logo-dot {
+      color: var(--accent);
+    }
 
-  .service-tag {
-    font-family: 'Syne', sans-serif; font-weight: 700;
-    font-size: .68rem; letter-spacing: .12em; text-transform: uppercase;
-    padding: .25rem .65rem; border-radius: 4px;
-    display: inline-block;
-  }
-  .tag-web { background: rgba(59,130,246,.15); color: #60a5fa; border: 1px solid rgba(59,130,246,.2); }
-  .tag-video { background: rgba(239,68,68,.12); color: #f87171; border: 1px solid rgba(239,68,68,.18); }
-  .tag-copy { background: rgba(202,255,0,.1); color: var(--accent); border: 1px solid rgba(202,255,0,.2); }
+    #themeToggle {
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: var(--fg);
+      border-radius: 9999px;
+      padding: .35rem .85rem;
+      font-size: .8rem;
+      font-family: 'Syne', sans-serif;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background .2s, color .2s;
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+    }
 
-  .cs-metric { font-family: 'Bebas Neue', sans-serif; font-size: 3rem; line-height: 1; color: var(--accent); }
-  .cs-metric-label { font-family: 'Syne', sans-serif; font-size: .72rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+    #themeToggle:hover {
+      background: var(--accent);
+      color: #000;
+    }
 
-  .cs-client { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.1rem; color: var(--fg); }
-  .cs-industry { font-size: .78rem; color: var(--muted); font-family: 'DM Sans', sans-serif; }
+    .btn-primary {
+      background: var(--accent);
+      color: #000;
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: .9rem;
+      letter-spacing: .04em;
+      padding: .9rem 2rem;
+      border-radius: 4px;
+      display: inline-block;
+      transition: transform .2s, box-shadow .2s;
+    }
 
-  .cs-section-head { font-family: 'Syne', sans-serif; font-weight: 700; font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-bottom: .3rem; }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(202, 255, 0, .25);
+    }
 
-  /* TESTIMONIALS */
-  .testi-card {
-    background: var(--card); border: 1px solid var(--border);
-    border-radius: 8px; padding: 1.75rem;
-    transition: border-color .2s;
-  }
-  .testi-card:hover { border-color: rgba(202,255,0,.25); }
-  .stars { color: var(--accent); font-size: .9rem; letter-spacing: .1em; }
-  .testi-quote { font-size: .95rem; color: var(--fg); line-height: 1.75; font-style: italic; }
-  .testi-name { font-family: 'Syne', sans-serif; font-weight: 700; font-size: .9rem; color: var(--fg); }
-  .testi-role { font-size: .78rem; color: var(--muted); }
-  .testi-avatar {
-    width: 40px; height: 40px; border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-family: 'Syne', sans-serif; font-weight: 800; font-size: .9rem;
-    flex-shrink: 0;
-    background: var(--bg2); border: 1px solid var(--border);
-    color: var(--accent);
-  }
+    .section-label {
+      color: var(--accent);
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: .72rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
 
-  /* CTA */
-  section.cta-section { background: var(--accent); }
+    .section-title {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      line-height: 1.1;
+      color: var(--fg);
+    }
 
-  /* FOOTER */
-  footer { background: #0A0A0A; border-top: 1px solid rgba(255,255,255,.06); }
+    .section-body {
+      color: var(--muted);
+      font-size: .975rem;
+      line-height: 1.75;
+    }
 
-  /* ANIMATIONS */
-  .fade-up { opacity: 0; transform: translateY(24px); transition: opacity .65s ease, transform .65s ease; }
-  .fade-up.visible { opacity: 1; transform: translateY(0); }
+    /* HERO */
+    .hero-badge {
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: var(--accent);
+      font-family: 'Syne', sans-serif;
+      font-weight: 600;
+      font-size: .75rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .4rem .9rem;
+      border-radius: 9999px;
+    }
 
-  /* MOBILE NAV */
-  #mobileMenu { display: none; background: var(--bg); border-top: 1px solid var(--border); }
-  #mobileMenu.open { display: block; }
+    .hero-badge span {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: block;
+      animation: pulse-dot 2s ease infinite;
+    }
 
-  /* HIDDEN CARDS */
-  .cs-card.hidden-card { display: none; }
+    @keyframes pulse-dot {
 
-  /* STATS STRIP */
-  .stats-strip { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-  .stat-item { text-align: center; padding: 1.75rem 1rem; border-right: 1px solid var(--border); }
-  .stat-item:last-child { border-right: none; }
-  .stat-big { font-family: 'Bebas Neue', sans-serif; font-size: 3rem; color: var(--accent); line-height: 1; }
-</style>
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: .5;
+        transform: scale(1.4);
+      }
+    }
+
+    /* FILTER TABS */
+    .filter-bar {
+      display: flex;
+      gap: .5rem;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      font-family: 'Syne', sans-serif;
+      font-weight: 600;
+      font-size: .8rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: .5rem 1.2rem;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      background: transparent;
+      cursor: pointer;
+      transition: all .2s;
+    }
+
+    .filter-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .filter-btn.active {
+      background: var(--accent);
+      color: #000;
+      border-color: var(--accent);
+    }
+
+    /* CASE STUDY CARDS */
+    .cs-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: border-color .25s, transform .25s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cs-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-4px);
+    }
+
+    .cs-header {
+      padding: 1.5rem 1.75rem 1.25rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .cs-body {
+      padding: 1.5rem 1.75rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .service-tag {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: .68rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: .25rem .65rem;
+      border-radius: 4px;
+      display: inline-block;
+    }
+
+    .tag-web {
+      background: rgba(59, 130, 246, .15);
+      color: #60a5fa;
+      border: 1px solid rgba(59, 130, 246, .2);
+    }
+
+    .tag-video {
+      background: rgba(239, 68, 68, .12);
+      color: #f87171;
+      border: 1px solid rgba(239, 68, 68, .18);
+    }
+
+    .tag-copy {
+      background: rgba(202, 255, 0, .1);
+      color: var(--accent);
+      border: 1px solid rgba(202, 255, 0, .2);
+    }
+
+    .cs-metric {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3rem;
+      line-height: 1;
+      color: var(--accent);
+    }
+
+    .cs-metric-label {
+      font-family: 'Syne', sans-serif;
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .cs-client {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: var(--fg);
+    }
+
+    .cs-industry {
+      font-size: .78rem;
+      color: var(--muted);
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    .cs-section-head {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: .7rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: .3rem;
+    }
+
+    /* TESTIMONIALS */
+    .testi-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.75rem;
+      transition: border-color .2s;
+    }
+
+    .testi-card:hover {
+      border-color: rgba(202, 255, 0, .25);
+    }
+
+    .stars {
+      color: var(--accent);
+      font-size: .9rem;
+      letter-spacing: .1em;
+    }
+
+    .testi-quote {
+      font-size: .95rem;
+      color: var(--fg);
+      line-height: 1.75;
+      font-style: italic;
+    }
+
+    .testi-name {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: .9rem;
+      color: var(--fg);
+    }
+
+    .testi-role {
+      font-size: .78rem;
+      color: var(--muted);
+    }
+
+    .testi-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: .9rem;
+      flex-shrink: 0;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      color: var(--accent);
+    }
+
+    /* CTA */
+    section.cta-section {
+      background: var(--accent);
+    }
+
+    /* FOOTER */
+    footer {
+      background: #0A0A0A;
+      border-top: 1px solid rgba(255, 255, 255, .06);
+    }
+
+    /* ANIMATIONS */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .65s ease, transform .65s ease;
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* MOBILE NAV */
+    #mobileMenu {
+      display: none;
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+    }
+
+    #mobileMenu.open {
+      display: block;
+    }
+
+    /* HIDDEN CARDS */
+    .cs-card.hidden-card {
+      display: none;
+    }
+
+    /* STATS STRIP */
+    .stats-strip {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .stat-item {
+      text-align: center;
+      padding: 1.75rem 1rem;
+      border-right: 1px solid var(--border);
+    }
+
+    .stat-item:last-child {
+      border-right: none;
+    }
+
+    .stat-big {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3rem;
+      color: var(--accent);
+      line-height: 1;
+    }
+  </style>
 </head>
+
 <body>
 
-<!-- ══ NAV ══ -->
-<nav class="fixed top-0 left-0 right-0 z-50">
-  <div class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
-    <a href="index.html" class="logo-text text-lg">Elbon<span class="logo-dot"> Concepts</span></a>
-    <div class="hidden md:flex items-center gap-8">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="index.html#services" class="nav-link">Services</a>
-      <a href="portfolio.html" class="nav-link active">Portfolio</a>
-      <a href="index.html#process" class="nav-link">Process</a>
+  <!-- ══ NAV ══ -->
+  <nav class="fixed top-0 left-0 right-0 z-50">
+    <div class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
+      <a href="index.html" class="logo-text text-lg">Elbon<span class="logo-dot"> Concepts</span></a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="index.html#services" class="nav-link">Services</a>
+        <a href="portfolio.html" class="nav-link active">Portfolio</a>
+        <a href="index.html#process" class="nav-link">Process</a>
+      </div>
+      <div class="flex items-center gap-3">
+        <button id="themeToggle" aria-label="Toggle theme">
+          <span id="themeIcon">☀️</span>
+          <span id="themeLabel">Light</span>
+        </button>
+        <a href="index.html#cta" class="btn-primary hidden md:inline-block"
+          style="padding:.6rem 1.3rem; font-size:.82rem;">Book a Call</a>
+        <button id="hamburger" class="md:hidden" style="color:var(--fg);" aria-label="Menu">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="7" x2="19" y2="7" />
+            <line x1="3" y1="12" x2="19" y2="12" />
+            <line x1="3" y1="17" x2="19" y2="17" />
+          </svg>
+        </button>
+      </div>
     </div>
-    <div class="flex items-center gap-3">
-      <button id="themeToggle" aria-label="Toggle theme">
-        <span id="themeIcon">☀️</span>
-        <span id="themeLabel">Light</span>
-      </button>
-      <a href="index.html#cta" class="btn-primary hidden md:inline-block" style="padding:.6rem 1.3rem; font-size:.82rem;">Book a Call</a>
-      <button id="hamburger" class="md:hidden" style="color:var(--fg);" aria-label="Menu">
-        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="7" x2="19" y2="7"/><line x1="3" y1="12" x2="19" y2="12"/><line x1="3" y1="17" x2="19" y2="17"/></svg>
-      </button>
+    <div id="mobileMenu">
+      <div class="max-w-6xl mx-auto px-5 py-4 flex flex-col gap-4">
+        <a href="index.html" class="nav-link" onclick="closeMobile()">Home</a>
+        <a href="index.html#services" class="nav-link" onclick="closeMobile()">Services</a>
+        <a href="portfolio.html" class="nav-link" onclick="closeMobile()">Portfolio</a>
+        <a href="index.html#process" class="nav-link" onclick="closeMobile()">Process</a>
+        <a href="index.html#cta" class="btn-primary text-center" onclick="closeMobile()">Book a Call</a>
+      </div>
     </div>
-  </div>
-  <div id="mobileMenu">
-    <div class="max-w-6xl mx-auto px-5 py-4 flex flex-col gap-4">
-      <a href="index.html" class="nav-link" onclick="closeMobile()">Home</a>
-      <a href="index.html#services" class="nav-link" onclick="closeMobile()">Services</a>
-      <a href="portfolio.html" class="nav-link" onclick="closeMobile()">Portfolio</a>
-      <a href="index.html#process" class="nav-link" onclick="closeMobile()">Process</a>
-      <a href="index.html#cta" class="btn-primary text-center" onclick="closeMobile()">Book a Call</a>
+  </nav>
+
+  <!-- ══ HERO ══ -->
+  <section style="padding-top:7rem; padding-bottom:4rem; background:var(--bg);">
+    <div class="max-w-6xl mx-auto px-5">
+      <div class="mb-5 fade-up"><span class="hero-badge"><span></span>Work Portfolio</span></div>
+      <h1
+        style="font-family:'Bebas Neue',sans-serif; font-size:clamp(3.5rem,10vw,8rem); line-height:.95; color:var(--fg);"
+        class="fade-up">
+        REAL WORK.<br /><span style="color:var(--accent);">REAL RESULTS.</span>
+      </h1>
+      <p class="section-body max-w-2xl mt-5 mb-8 fade-up" style="font-size:1.05rem; transition-delay:.1s;">
+        Across web design, video ad editing, and copywriting — every project below was built with one objective: move
+        the numbers that matter. Browse by service or scroll through everything.
+      </p>
+      <!-- Filter bar -->
+      <div class="filter-bar fade-up" style="transition-delay:.2s;">
+        <button class="filter-btn active" data-filter="all">All Work</button>
+        <button class="filter-btn" data-filter="web">Web Design</button>
+        <button class="filter-btn" data-filter="video">Video Ads</button>
+        <button class="filter-btn" data-filter="copy">Copywriting</button>
+      </div>
     </div>
-  </div>
-</nav>
+  </section>
 
-<!-- ══ HERO ══ -->
-<section style="padding-top:7rem; padding-bottom:4rem; background:var(--bg);">
-  <div class="max-w-6xl mx-auto px-5">
-    <div class="mb-5 fade-up"><span class="hero-badge"><span></span>Work Portfolio</span></div>
-    <h1 style="font-family:'Bebas Neue',sans-serif; font-size:clamp(3.5rem,10vw,8rem); line-height:.95; color:var(--fg);" class="fade-up">
-      REAL WORK.<br/><span style="color:var(--accent);">REAL RESULTS.</span>
-    </h1>
-    <p class="section-body max-w-2xl mt-5 mb-8 fade-up" style="font-size:1.05rem; transition-delay:.1s;">
-      Across web design, video ad editing, and copywriting — every project below was built with one objective: move the numbers that matter. Browse by service or scroll through everything.
-    </p>
-    <!-- Filter bar -->
-    <div class="filter-bar fade-up" style="transition-delay:.2s;">
-      <button class="filter-btn active" data-filter="all">All Work</button>
-      <button class="filter-btn" data-filter="web">Web Design</button>
-      <button class="filter-btn" data-filter="video">Video Ads</button>
-      <button class="filter-btn" data-filter="copy">Copywriting</button>
-    </div>
-  </div>
-</section>
-
-<!-- ══ STATS STRIP ══ -->
-<div class="stats-strip">
-  <div class="max-w-6xl mx-auto px-5 grid grid-cols-2 md:grid-cols-4">
-    <div class="stat-item">
-      <div class="stat-big">18+</div>
-      <p class="section-body text-sm mt-1">Projects Completed</p>
-    </div>
-    <div class="stat-item">
-      <div class="stat-big">3</div>
-      <p class="section-body text-sm mt-1">Service Disciplines</p>
-    </div>
-    <div class="stat-item">
-      <div class="stat-big">100%</div>
-      <p class="section-body text-sm mt-1">Client Satisfaction</p>
-    </div>
-    <div class="stat-item">
-      <div class="stat-big">∞</div>
-      <p class="section-body text-sm mt-1">Revenue Focus</p>
-    </div>
-  </div>
-</div>
-
-<!-- ══ CASE STUDIES GRID ══ -->
-<section style="padding: 5rem 0; border-top: 1px solid var(--border);">
-  <div class="max-w-6xl mx-auto px-5">
-    <div id="cs-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-      <!-- 01 · WEB -->
-      <div class="cs-card fade-up" data-category="web">
-        <div class="cs-header">
-          <div class="flex items-center justify-between mb-3">
-            <span class="service-tag tag-web">Web Design</span>
-            <span class="cs-industry">E-Commerce · Nigeria</span>
-          </div>
-          <div class="cs-client">Hephzibah Stores</div>
-        </div>
-        <div class="cs-body">
-          <div class="flex items-end gap-3 mb-4">
-            <div>
-              <div class="cs-metric">+64%</div>
-              <div class="cs-metric-label">Conversion Rate</div>
-            </div>
-            <div style="border-left:1px solid var(--border); padding-left:1rem;">
-              <div class="cs-metric" style="font-size:2rem;">-38%</div>
-              <div class="cs-metric-label">Bounce Rate</div>
-            </div>
-          </div>
-          <div class="mb-3">
-            <p class="cs-section-head">The Problem</p>
-            <p class="section-body text-sm">Product pages had no visual hierarchy, slow mobile load, and a checkout flow that lost buyers at step 2.</p>
-          </div>
-          <div class="mb-3">
-            <p class="cs-section-head">What We Did</p>
-            <p class="section-body text-sm">Rebuilt the product and category pages from scratch. Simplified the CTA structure, added urgency elements, and cut page weight by 60%.</p>
-          </div>
-          <div class="mt-auto pt-4" style="border-top:1px solid var(--border);">
-            <p class="text-xs" style="color:var(--muted);">Timeline: 3 weeks · Fashion & Apparel</p>
-          </div>
-        </div>
+  <!-- ══ STATS STRIP ══ -->
+  <div class="stats-strip">
+    <div class="max-w-6xl mx-auto px-5 grid grid-cols-2 md:grid-cols-4">
+      <div class="stat-item">
+        <div class="stat-big">18+</div>
+        <p class="section-body text-sm mt-1">Projects Completed</p>
       </div>
-
-      <!-- 02 · VIDEO -->
-      <div class="cs-card fade-up" data-category="video" style="transition-delay:.05s">
-        <div class="cs-header">
-          <div class="flex items-center justify-between mb-3">
-            <span class="service-tag tag-video">Video Ads</span>
-            <span class="cs-industry">DTC · UK</span>
-          </div>
-          <div class="cs-client">Volta Health</div>
-        </div>
-        <div class="cs-body">
-          <div class="flex items-end gap-3 mb-4">
-            <div>
-              <div class="cs-metric">3.8x</div>
-              <div class="cs-metric-label">CTR Increase</div>
-            </div>
-            <div style="border-left:1px solid var(--border); padding-left:1rem;">
-              <div class="cs-metric" style="font-size:2rem;">-42%</div>
-              <div class="cs-metric-label">Cost Per Click</div>
-            </div>
-          </div>
-          <div class="mb-3">
-            <p class="cs-section-head">The Problem</p>
-            <p class="section-body text-sm">Their existing Facebook ads opened with a logo and brand music — scroll-killers. CTR was below 0.5% after 2 weeks running.</p>
-          </div>
-          <div class="mb-3">
-            <p class="cs-section-head">What We Did</p>
-            <p class="section-body text-sm">Restructured the edit: pattern-interrupt first frame, problem-led hook in the first 3 seconds, benefit-stacked body, hard CTA close. One cut. New creative.</p>
-          </div>
-          <div class="mt-auto pt-4" style="border-top:1px solid var(--border);">
-            <p class="text-xs" style="color:var(--muted);">Timeline: 5 days · Health Supplements</p>
-          </div>
-        </div>
+      <div class="stat-item">
+        <div class="stat-big">3</div>
+        <p class="section-body text-sm mt-1">Service Disciplines</p>
       </div>
-
-      <!-- 03 · COPY -->
-      <div class="cs-card fade-up" data-category="copy" style="transition-delay:.1s">
-        <div class="cs-header">
-          <div class="flex items-center justify-between mb-3">
-            <span class="service-tag tag-copy">Copywriting</span>
-            <span class="cs-industry">B2B SaaS · US</span>
-          </div>
-          <div class="cs-client">ListKit</div>
-        </div>
-        <div class="cs-body">
-          <div class="flex items-end gap-3 mb-4">
-            <div>
-              <div class="cs-metric">+41%</div>
-              <div class="cs-metric-label">Email CTR</div>
-            </div>
-            <div style="border-left:1px solid var(--border); padding-left:1rem;">
-              <div class="cs-metric" style="font-size:2rem;">+28%</div>
-              <div class="cs-metric-label">Demo Bookings</div>
-            </div>
-          </div>
-          <div class="mb-3">
-            <p class="cs-section-head">The Problem</p>
-            <p class="section-body text-sm">Cold email platform with a strong product — but their email nurture sequence read like a feature list. Opens weren't converting to demos.</p>
-          </div>
-          <div class="mb-3">
-            <p class="cs-section-head">What We Did</p>
-            <p class="section-body text-sm">Rewrote a 6-email sequence using problem-agitate-solve structure. Personalised subject lines, short paragraphs, single-CTA per email. Conversational, not corporate.</p>
-          </div>
-          <div class="mt-auto pt-4" style="border-top:1px solid var(--border);">
-            <p class="text-xs" style="color:var(--muted);">Timeline: 1 week · Cold Email Platform</p>
-          </div>
-        </div>
+      <div class="stat-item">
+        <div class="stat-big">100%</div>
+        <p class="section-body text-sm mt-1">Client Satisfaction</p>
       </div>
-
-      <!-- 04 · WEB -->
-      <div class="cs-card fade-up" data-category="web" style="transition-delay:.05s">
-        <div class="cs-header">
-          <div class="flex items-center justify-between mb-3">
-            <span class="service-tag tag-web">Web Design</span>
-            <span class="cs-industry">Legal · Canada</span>
-          </div>
-          <div class="cs-client">Meridian Legal Partners</div>
-        </div>
-        <div class="cs-body">
-          <div class="flex items-end gap-3 mb-4">
-            <div>
-              <div class="cs-metric">+89%</div>
-              <div class="cs-metric-label">Lead Form Submits</div>
-            </div>
-            <div style="border-left:1px solid var(--border); padding-left:1rem;">
-              <div class="cs-metric" style="font-size:2rem;">2.1x</div>
-              <div class="cs-metric-label">Time on Page</div>
-            </div>
-          </div>
-          <div class="mb-3">
-            <p class="cs-section-head">The Problem</p>
-            <p class="section-body text-sm">Outdated website with no clear value prop. Potential clients couldn't tell what kind of law firm this was within 5 seconds — so they left.</p>
-          </div>
-          <div class="mb-3">
-            <p class="cs-section-head">What We Did</p>
-            <p class="section-body text-sm">Built a clean, trust-first landing page with practice area clarity, credibility markers, and a simplified contact form above the fold. Professional without being cold.</p>
-          </div>
-          <div class="mt-auto pt-4" style="border-top:1px solid var(--border);">
-            <p class="text-xs" style="color:var(--muted);">Timeline: 2 weeks · Corporate Law</p>
-          </div>
-        </div>
+      <div class="stat-item">
+        <div class="stat-big">∞</div>
+        <p class="section-body text-sm mt-1">Revenue Focus</p>
       </div>
-
-      <!-- 05 · VIDEO -->
-      <div class="cs-card fade-up" data-category="video" style="transition-delay:.1s">
-        <div class="cs-header">
-          <div class="flex items-center justify-between mb-3">
-            <span class="service-tag tag-video">Video Ads</span>
-            <span class="cs-industry">DTC · Nigeria</span>
-          </div>
-          <div class="cs-client">CycleFit Pro</div>
-        </div>
-        <div class="cs-body">
-          <div class="flex items-end gap-3 mb-4">
-            <div>
-              <div class="cs-metric">+220%</div>
-              <div class="cs-metric-label">Purchases (30d)</div>
-            </div>
-            <div style="border-left:1px solid var(--border); padding-left:1rem;">
-              <div class="cs-metric" style="font-size:2rem;">4.4x</div>
-              <div class="cs-metric-label">ROAS</div>
-            </div>
-          </div>
-          <div class="mb-3">
-            <p class="cs-section-head">The Problem</p>
-            <p class="section-body text-sm">Fitness equipment brand with a strong product but zero ad performance. Previous creatives were product-demo style — no emotion, no urgency.</p>
-          </div>
-          <div class="mb-3">
-            <p class="cs-section-head">What We Did</p>
-            <p class="section-body text-sm">Built a UGC-style ad sequence: social proof hook, transformation narrative, scarcity CTA. Three 30-second cuts for A/B testing. Delivered in 7 days.</p>
-          </div>
-          <div class="mt-auto pt-4" style="border-top:1px solid var(--border);">
-            <p class="text-xs" style="color:var(--muted);">Timeline: 7 days · Fitness Equipment</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- 06 · COPY -->
-      <div class="cs-card fade-up" data-category="copy" style="transition-delay:.15s">
-        <div class="cs-header">
-          <div class="flex items-center justify-between mb-3">
-            <span class="service-tag tag-copy">Copywriting</span>
-            <span class="cs-industry">Fintech · UK</span>
-          </div>
-          <div class="cs-client">Reeva Finance</div>
-        </div>
-        <div class="cs-body">
-          <div class="flex items-end gap-3 mb-4">
-            <div>
-              <div class="cs-metric">+57%</div>
-              <div class="cs-metric-label">Landing Page CVR</div>
-            </div>
-            <div style="border-left:1px solid var(--border); padding-left:1rem;">
-              <div class="cs-metric" style="font-size:2rem;">-31%</div>
-              <div class="cs-metric-label">Drop-off Rate</div>
-            </div>
-          </div>
-          <div class="mb-3">
-            <p class="cs-section-head">The Problem</p>
-            <p class="section-body text-sm">Fintech startup with a solid product but a landing page that leaned too technical. The copy explained the features but never made the reader care.</p>
-          </div>
-          <div class="mb-3">
-            <p class="cs-section-head">What We Did</p>
-            <p class="section-body text-sm">Rewrote the full page — headline, sub-copy, feature descriptions, and CTA — with a benefit-first, plain-English approach. Added a concise FAQ and a risk-reversal guarantee section.</p>
-          </div>
-          <div class="mt-auto pt-4" style="border-top:1px solid var(--border);">
-            <p class="text-xs" style="color:var(--muted);">Timeline: 4 days · Personal Finance App</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- 07 · WEB -->
-      <div class="cs-card fade-up" data-category="web">
-        <div class="cs-header">
-          <div class="flex items-center justify-between mb-3">
-            <span class="service-tag tag-web">Web Design</span>
-            <span class="cs-industry">SaaS · US</span>
-          </div>
-          <div class="cs-client">Stackwise</div>
-        </div>
-        <div class="cs-body">
-          <div class="flex items-end gap-3 mb-4">
-            <div>
-              <div class="cs-metric">+73%</div>
-              <div class="cs-metric-label">Trial Signups</div>
-            </div>
-            <div style="border-left:1px solid var(--border); padding-left:1rem;">
-              <div class="cs-metric" style="font-size:2rem;">+45%</div>
-              <div class="cs-metric-label">Scroll Depth</div>
-            </div>
-          </div>
-          <div class="mb-3">
-            <p class="cs-section-head">The Problem</p>
-            <p class="section-body text-sm">B2B project management tool with a landing page that read like internal documentation. Visitors couldn't grasp the value in the first scroll.</p>
-          </div>
-          <div class="mb-3">
-            <p class="cs-section-head">What We Did</p>
-            <p class="section-body text-sm">Redesigned the hero, added a visual product preview, restructured the feature section around use-cases (not features), and introduced a social proof strip above the fold.</p>
-          </div>
-          <div class="mt-auto pt-4" style="border-top:1px solid var(--border);">
-            <p class="text-xs" style="color:var(--muted);">Timeline: 3 weeks · Project Management SaaS</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- 08 · VIDEO -->
-      <div class="cs-card fade-up" data-category="video" style="transition-delay:.05s">
-        <div class="cs-header">
-          <div class="flex items-center justify-between mb-3">
-            <span class="service-tag tag-video">Video Ads</span>
-            <span class="cs-industry">DTC · US</span>
-          </div>
-          <div class="cs-client">Glow & Co Skincare</div>
-        </div>
-        <div class="cs-body">
-          <div class="flex items-end gap-3 mb-4">
-            <div>
-              <div class="cs-metric">5.1x</div>
-              <div class="cs-metric-label">ROAS</div>
-            </div>
-            <div style="border-left:1px solid var(--border); padding-left:1rem;">
-              <div class="cs-metric" style="font-size:2rem;">+190%</div>
-              <div class="cs-metric-label">TikTok Sales</div>
-            </div>
-          </div>
-          <div class="mb-3">
-            <p class="cs-section-head">The Problem</p>
-            <p class="section-body text-sm">TikTok ads looked polished but were brand-style rather than scroll-stopping. ROAS sat at 1.2x. Spend was going up, returns weren't.</p>
-          </div>
-          <div class="mb-3">
-            <p class="cs-section-head">What We Did</p>
-            <p class="section-body text-sm">Switched to a raw UGC-style edit with a "real person" opening hook, before/after structure, comment-style overlays, and a creator CTA close. Platform-native, not branded.</p>
-          </div>
-          <div class="mt-auto pt-4" style="border-top:1px solid var(--border);">
-            <p class="text-xs" style="color:var(--muted);">Timeline: 6 days · Skincare / Beauty</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- 09 · COPY -->
-      <div class="cs-card fade-up" data-category="copy" style="transition-delay:.1s">
-        <div class="cs-header">
-          <div class="flex items-center justify-between mb-3">
-            <span class="service-tag tag-copy">Copywriting</span>
-            <span class="cs-industry">Consulting · US</span>
-          </div>
-          <div class="cs-client">Flint & Co Advisory</div>
-        </div>
-        <div class="cs-body">
-          <div class="flex items-end gap-3 mb-4">
-            <div>
-              <div class="cs-metric">+66%</div>
-              <div class="cs-metric-label">Discovery Call Rate</div>
-            </div>
-            <div style="border-left:1px solid var(--border); padding-left:1rem;">
-              <div class="cs-metric" style="font-size:2rem;">4.2x</div>
-              <div class="cs-metric-label">Pipeline ROI</div>
-            </div>
-          </div>
-          <div class="mb-3">
-            <p class="cs-section-head">The Problem</p>
-            <p class="section-body text-sm">B2B consulting firm sending cold outreach that got ignored. Generic value prop, no personalisation angle, no clear reason to respond.</p>
-          </div>
-          <div class="mb-3">
-            <p class="cs-section-head">What We Did</p>
-            <p class="section-body text-sm">Wrote a 3-email cold outreach sequence with industry-specific pain points, a short proof statement, and a low-friction CTA (15-minute intro call, not a full pitch).</p>
-          </div>
-          <div class="mt-auto pt-4" style="border-top:1px solid var(--border);">
-            <p class="text-xs" style="color:var(--muted);">Timeline: 3 days · B2B Consulting</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- 10 · WEB -->
-      <div class="cs-card fade-up" data-category="web" style="transition-delay:.05s">
-        <div class="cs-header">
-          <div class="flex items-center justify-between mb-3">
-            <span class="service-tag tag-web">Web Design</span>
-            <span class="cs-industry">Real Estate · Nigeria</span>
-          </div>
-          <div class="cs-client">NovaBuild Co.</div>
-        </div>
-        <div class="cs-body">
-          <div class="flex items-end gap-3 mb-4">
-            <div>
-              <div class="cs-metric">+112%</div>
-              <div class="cs-metric-label">Enquiry Volume</div>
-            </div>
-            <div style="border-left:1px solid var(--border); padding-left:1rem;">
-              <div class="cs-metric" style="font-size:2rem;">3.7x</div>
-              <div class="cs-metric-label">Pages / Session</div>
-            </div>
-          </div>
-          <div class="mb-3">
-            <p class="cs-section-head">The Problem</p>
-            <p class="section-body text-sm">Construction and real estate company with a broken, unresponsive website from 2017. No mobile support, no clear project portfolio, no way to get in touch easily.</p>
-          </div>
-          <div class="mb-3">
-            <p class="cs-section-head">What We Did</p>
-            <p class="section-body text-sm">Full website rebuild: home, services, projects gallery, about, and contact page. Mobile-first, fast, with a strong CTA structure on every page and an embedded enquiry form.</p>
-          </div>
-          <div class="mt-auto pt-4" style="border-top:1px solid var(--border);">
-            <p class="text-xs" style="color:var(--muted);">Timeline: 4 weeks · Construction & Real Estate</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- 11 · VIDEO -->
-      <div class="cs-card fade-up" data-category="video" style="transition-delay:.1s">
-        <div class="cs-header">
-          <div class="flex items-center justify-between mb-3">
-            <span class="service-tag tag-video">Video Ads</span>
-            <span class="cs-industry">DTC · Australia</span>
-          </div>
-          <div class="cs-client">TerraRoast Coffee</div>
-        </div>
-        <div class="cs-body">
-          <div class="flex items-end gap-3 mb-4">
-            <div>
-              <div class="cs-metric">+148%</div>
-              <div class="cs-metric-label">Subscription Sales</div>
-            </div>
-            <div style="border-left:1px solid var(--border); padding-left:1rem;">
-              <div class="cs-metric" style="font-size:2rem;">2.9x</div>
-              <div class="cs-metric-label">CTR vs. Prev.</div>
-            </div>
-          </div>
-          <div class="mb-3">
-            <p class="cs-section-head">The Problem</p>
-            <p class="section-body text-sm">Specialty coffee brand with a strong product but Instagram ads that felt like coffee shop aesthetic content — beautiful, but no selling structure.</p>
-          </div>
-          <div class="mb-3">
-            <p class="cs-section-head">What We Did</p>
-            <p class="section-body text-sm">Created a 4-cut Instagram Reels ad series: lifestyle hook, origin story, taste proof, and a subscription offer close. Kept the aesthetic but injected a direct response spine.</p>
-          </div>
-          <div class="mt-auto pt-4" style="border-top:1px solid var(--border);">
-            <p class="text-xs" style="color:var(--muted);">Timeline: 8 days · Specialty Coffee DTC</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- 12 · COPY -->
-      <div class="cs-card fade-up" data-category="copy" style="transition-delay:.15s">
-        <div class="cs-header">
-          <div class="flex items-center justify-between mb-3">
-            <span class="service-tag tag-copy">Copywriting</span>
-            <span class="cs-industry">EdTech · Global</span>
-          </div>
-          <div class="cs-client">Brightmoor Academy</div>
-        </div>
-        <div class="cs-body">
-          <div class="flex items-end gap-3 mb-4">
-            <div>
-              <div class="cs-metric">+83%</div>
-              <div class="cs-metric-label">Course Enrolments</div>
-            </div>
-            <div style="border-left:1px solid var(--border); padding-left:1rem;">
-              <div class="cs-metric" style="font-size:2rem;">+37%</div>
-              <div class="cs-metric-label">Avg. Order Value</div>
-            </div>
-          </div>
-          <div class="mb-3">
-            <p class="cs-section-head">The Problem</p>
-            <p class="section-body text-sm">Online learning platform with a quality course library but a sales page that led with the curriculum — not the transformation. Enrolment rate was low despite strong traffic.</p>
-          </div>
-          <div class="mb-3">
-            <p class="cs-section-head">What We Did</p>
-            <p class="section-body text-sm">Rewrote the sales page using a desire-led headline, student outcome proof, objection-handling mid-page, and a limited-time enrolment close. Added a bundle upsell section.</p>
-          </div>
-          <div class="mt-auto pt-4" style="border-top:1px solid var(--border);">
-            <p class="text-xs" style="color:var(--muted);">Timeline: 5 days · Online Education</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- 13 · WEB -->
-      <div class="cs-card fade-up" data-category="web">
-        <div class="cs-header">
-          <div class="flex items-center justify-between mb-3">
-            <span class="service-tag tag-web">Web Design</span>
-            <span class="cs-industry">Clean Energy · UK</span>
-          </div>
-          <div class="cs-client">SolarNest</div>
-        </div>
-        <div class="cs-body">
-          <div class="flex items-end gap-3 mb-4">
-            <div>
-              <div class="cs-metric">+91%</div>
-              <div class="cs-metric-label">Quote Requests</div>
-            </div>
-            <div style="border-left:1px solid var(--border); padding-left:1rem;">
-              <div class="cs-metric" style="font-size:2rem;">-55%</div>
-              <div class="cs-metric-label">Bounce Rate</div>
-            </div>
-          </div>
-          <div class="mb-3">
-            <p class="cs-section-head">The Problem</p>
-            <p class="section-body text-sm">Solar installation startup with a one-page website that gave no credibility signals. High-ticket customers wouldn't fill out a quote form without trust anchors.</p>
-          </div>
-          <div class="mb-3">
-            <p class="cs-section-head">What We Did</p>
-            <p class="section-body text-sm">Designed a full 5-section landing page with certifications display, process explainer, savings calculator teaser, testimonials, and a streamlined quote form with a 24-hour response promise.</p>
-          </div>
-          <div class="mt-auto pt-4" style="border-top:1px solid var(--border);">
-            <p class="text-xs" style="color:var(--muted);">Timeline: 2.5 weeks · Clean Energy</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- 14 · VIDEO -->
-      <div class="cs-card fade-up" data-category="video" style="transition-delay:.05s">
-        <div class="cs-header">
-          <div class="flex items-center justify-between mb-3">
-            <span class="service-tag tag-video">Video Ads</span>
-            <span class="cs-industry">Activewear · US</span>
-          </div>
-          <div class="cs-client">PulseWear</div>
-        </div>
-        <div class="cs-body">
-          <div class="flex items-end gap-3 mb-4">
-            <div>
-              <div class="cs-metric">+310%</div>
-              <div class="cs-metric-label">Facebook Revenue</div>
-            </div>
-            <div style="border-left:1px solid var(--border); padding-left:1rem;">
-              <div class="cs-metric" style="font-size:2rem;">6.2x</div>
-              <div class="cs-metric-label">ROAS</div>
-            </div>
-          </div>
-          <div class="mb-3">
-            <p class="cs-section-head">The Problem</p>
-            <p class="section-body text-sm">Activewear brand spending $8k/month on Facebook with ROAS stuck at 1.4x. Good product, weak creative. Their ads showed clothes being worn — not why you'd buy them.</p>
-          </div>
-          <div class="mb-3">
-            <p class="cs-section-head">What We Did</p>
-            <p class="section-body text-sm">Produced a 5-ad creative suite: identity-based hooks, performance claims with visual proof, and community CTA. Delivered as 9:16, 1:1, and 16:9 cuts for full placement coverage.</p>
-          </div>
-          <div class="mt-auto pt-4" style="border-top:1px solid var(--border);">
-            <p class="text-xs" style="color:var(--muted);">Timeline: 10 days · Activewear DTC</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- 15 · COPY -->
-      <div class="cs-card fade-up" data-category="copy" style="transition-delay:.1s">
-        <div class="cs-header">
-          <div class="flex items-center justify-between mb-3">
-            <span class="service-tag tag-copy">Copywriting</span>
-            <span class="cs-industry">SaaS · US / EU</span>
-          </div>
-          <div class="cs-client">NomadDesk</div>
-        </div>
-        <div class="cs-body">
-          <div class="flex items-end gap-3 mb-4">
-            <div>
-              <div class="cs-metric">+52%</div>
-              <div class="cs-metric-label">Free-to-Paid CVR</div>
-            </div>
-            <div style="border-left:1px solid var(--border); padding-left:1rem;">
-              <div class="cs-metric" style="font-size:2rem;">+34%</div>
-              <div class="cs-metric-label">Retention (30d)</div>
-            </div>
-          </div>
-          <div class="mb-3">
-            <p class="cs-section-head">The Problem</p>
-            <p class="section-body text-sm">Remote work SaaS with solid free-tier sign-ups but weak upgrade rates. Onboarding emails were auto-generated, generic, and had nothing to do with user behaviour.</p>
-          </div>
-          <div class="mb-3">
-            <p class="cs-section-head">What We Did</p>
-            <p class="section-body text-sm">Wrote a 7-email onboarding sequence triggered by user actions (sign-up, first project created, 7-day inactive). Each email had one job. Upgrade email used a ROI-framing approach.</p>
-          </div>
-          <div class="mt-auto pt-4" style="border-top:1px solid var(--border);">
-            <p class="text-xs" style="color:var(--muted);">Timeline: 6 days · Remote Work SaaS</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- 16 · WEB -->
-      <div class="cs-card fade-up" data-category="web" style="transition-delay:.05s">
-        <div class="cs-header">
-          <div class="flex items-center justify-between mb-3">
-            <span class="service-tag tag-web">Web Design</span>
-            <span class="cs-industry">Personal Brand · Nigeria</span>
-          </div>
-          <div class="cs-client">Dr. Temi Adeyemi</div>
-        </div>
-        <div class="cs-body">
-          <div class="flex items-end gap-3 mb-4">
-            <div>
-              <div class="cs-metric">+200%</div>
-              <div class="cs-metric-label">Booking Inquiries</div>
-            </div>
-            <div style="border-left:1px solid var(--border); padding-left:1rem;">
-              <div class="cs-metric" style="font-size:2rem;">4x</div>
-              <div class="cs-metric-label">Speaking Leads</div>
-            </div>
-          </div>
-          <div class="mb-3">
-            <p class="cs-section-head">The Problem</p>
-            <p class="section-body text-sm">Public health expert with no personal website, losing speaking and consultancy opportunities to peers with stronger online presence.</p>
-          </div>
-          <div class="mb-3">
-            <p class="cs-section-head">What We Did</p>
-            <p class="section-body text-sm">Designed and built a personal brand site: bio, credentials, media appearances, speaking topics, and a simple booking page. Mobile-first, clean, authoritative.</p>
-          </div>
-          <div class="mt-auto pt-4" style="border-top:1px solid var(--border);">
-            <p class="text-xs" style="color:var(--muted);">Timeline: 2 weeks · Personal Brand / Health</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- 17 · VIDEO -->
-      <div class="cs-card fade-up" data-category="video" style="transition-delay:.1s">
-        <div class="cs-header">
-          <div class="flex items-center justify-between mb-3">
-            <span class="service-tag tag-video">Video Ads</span>
-            <span class="cs-industry">Home Fitness · Nigeria</span>
-          </div>
-          <div class="cs-client">IronHome Equipment</div>
-        </div>
-        <div class="cs-body">
-          <div class="flex items-end gap-3 mb-4">
-            <div>
-              <div class="cs-metric">+175%</div>
-              <div class="cs-metric-label">Instagram Sales</div>
-            </div>
-            <div style="border-left:1px solid var(--border); padding-left:1rem;">
-              <div class="cs-metric" style="font-size:2rem;">3.3x</div>
-              <div class="cs-metric-label">ROAS</div>
-            </div>
-          </div>
-          <div class="mb-3">
-            <p class="cs-section-head">The Problem</p>
-            <p class="section-body text-sm">Home treadmill brand posting organic content but seeing no paid ad returns. Creatives looked like gym motivation pages — no product focus, no CTA.</p>
-          </div>
-          <div class="mb-3">
-            <p class="cs-section-head">What We Did</p>
-            <p class="section-body text-sm">Edited two UGC-style treadmill ads with status-driven hooks, Nigerian home interior context, product demo mid-section, and a pay-on-delivery CTA close. Built for IG and FB feeds.</p>
-          </div>
-          <div class="mt-auto pt-4" style="border-top:1px solid var(--border);">
-            <p class="text-xs" style="color:var(--muted);">Timeline: 5 days · Home Fitness</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- 18 · COPY -->
-      <div class="cs-card fade-up" data-category="copy" style="transition-delay:.15s">
-        <div class="cs-header">
-          <div class="flex items-center justify-between mb-3">
-            <span class="service-tag tag-copy">Copywriting</span>
-            <span class="cs-industry">Personal Brand · US</span>
-          </div>
-          <div class="cs-client">Marcus Okafor</div>
-        </div>
-        <div class="cs-body">
-          <div class="flex items-end gap-3 mb-4">
-            <div>
-              <div class="cs-metric">+490%</div>
-              <div class="cs-metric-label">LinkedIn Impressions</div>
-            </div>
-            <div style="border-left:1px solid var(--border); padding-left:1rem;">
-              <div class="cs-metric" style="font-size:2rem;">+60%</div>
-              <div class="cs-metric-label">Profile Visits</div>
-            </div>
-          </div>
-          <div class="mb-3">
-            <p class="cs-section-head">The Problem</p>
-            <p class="section-body text-sm">Freelance growth strategist posting on LinkedIn with almost no engagement. Posts were long, unformatted walls of text with no hook and no reason to keep reading.</p>
-          </div>
-          <div class="mb-3">
-            <p class="cs-section-head">What We Did</p>
-            <p class="section-body text-sm">Wrote a 12-post LinkedIn content series using short-form storytelling, results-led hooks, and white space formatting. Built his authority in the growth niche over 6 weeks.</p>
-          </div>
-          <div class="mt-auto pt-4" style="border-top:1px solid var(--border);">
-            <p class="text-xs" style="color:var(--muted);">Timeline: 6 weeks · Freelance Strategist</p>
-          </div>
-        </div>
-      </div>
-
-    </div><!-- /cs-grid -->
-  </div>
-</section>
-
-<!-- ══ TESTIMONIALS ══ -->
-<section style="padding: 5rem 0; background: var(--bg2); border-top: 1px solid var(--border);">
-  <div class="max-w-6xl mx-auto px-5">
-    <div class="mb-4 fade-up"><span class="section-label">Client Testimonials</span></div>
-    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
-      <h2 class="section-title text-4xl md:text-5xl max-w-xl fade-up">What people say<br/>after working with us.</h2>
-      <p class="section-body max-w-xs fade-up">From e-commerce founders to individual creators — these are real client experiences.</p>
-    </div>
-
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-
-      <!-- T1 -->
-      <div class="testi-card fade-up">
-        <div class="stars mb-3">★★★★★</div>
-        <p class="testi-quote mb-5">"Honestly didn't expect results this fast. Our landing page conversion rate went from 1.8% to over 3% in less than a month. The redesign was clean, fast, and actually made sense for our customers. Elbon Concepts knew exactly what needed to change without me having to explain it twice."</p>
-        <div class="flex items-center gap-3">
-          <div class="testi-avatar">AO</div>
-          <div>
-            <div class="testi-name">Adaeze Okonkwo</div>
-            <div class="testi-role">Founder, Hephzibah Stores · Lagos, Nigeria</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- T2 -->
-      <div class="testi-card fade-up" style="transition-delay:.07s">
-        <div class="stars mb-3">★★★★★</div>
-        <p class="testi-quote mb-5">"We'd been running the same Facebook ads for 3 months with declining returns. One new creative from Elbon Concepts — completely different structure, different hook — and our CTR nearly quadrupled in the first week. Best money we spent that quarter."</p>
-        <div class="flex items-center gap-3">
-          <div class="testi-avatar">JR</div>
-          <div>
-            <div class="testi-name">James Rutherford</div>
-            <div class="testi-role">Head of Performance, Volta Health · London, UK</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- T3 -->
-      <div class="testi-card fade-up" style="transition-delay:.14s">
-        <div class="stars mb-3">★★★★★</div>
-        <p class="testi-quote mb-5">"The email sequence they wrote for us reads like it was made by someone who actually uses our product. Every email had a clear purpose, and our demo bookings picked up noticeably within 2 weeks of switching to the new sequence. No fluff, straight to the point."</p>
-        <div class="flex items-center gap-3">
-          <div class="testi-avatar">SK</div>
-          <div>
-            <div class="testi-name">Sarah Kim</div>
-            <div class="testi-role">Marketing Lead, ListKit · San Francisco, US</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- T4 -->
-      <div class="testi-card fade-up">
-        <div class="stars mb-3">★★★★★</div>
-        <p class="testi-quote mb-5">"I'm a freelancer with a tight budget and I was skeptical. But my LinkedIn went from practically invisible to getting consistent profile views and DMs after the content series they wrote for me. Worth every naira. If you're trying to build a personal brand, these guys get it."</p>
-        <div class="flex items-center gap-3">
-          <div class="testi-avatar">MO</div>
-          <div>
-            <div class="testi-name">Marcus Okafor</div>
-            <div class="testi-role">Freelance Growth Strategist · Atlanta, US</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- T5 -->
-      <div class="testi-card fade-up" style="transition-delay:.07s">
-        <div class="stars mb-3">★★★★★</div>
-        <p class="testi-quote mb-5">"Our TikTok ads looked good before. After Elbon Concepts reworked the edit — different structure, more native-feeling — our ROAS went from 1.2x to over 5x. They understand how people actually scroll. Not many editors do. Will use again for every new product launch."</p>
-        <div class="flex items-center gap-3">
-          <div class="testi-avatar">LP</div>
-          <div>
-            <div class="testi-name">Lauren Park</div>
-            <div class="testi-role">Founder, Glow & Co Skincare · New York, US</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- T6 -->
-      <div class="testi-card fade-up" style="transition-delay:.14s">
-        <div class="stars mb-3">★★★★★</div>
-        <p class="testi-quote mb-5">"As a doctor with no time to figure out websites, I needed someone who'd just handle it. They took one call, asked the right questions, and delivered a site that looked exactly like what I'd have asked for if I knew how to ask. My inquiry volume literally doubled within the first month."</p>
-        <div class="flex items-center gap-3">
-          <div class="testi-avatar">TA</div>
-          <div>
-            <div class="testi-name">Dr. Temi Adeyemi</div>
-            <div class="testi-role">Public Health Consultant · Abuja, Nigeria</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- T7 -->
-      <div class="testi-card fade-up">
-        <div class="stars mb-3">★★★★★</div>
-        <p class="testi-quote mb-5">"We tried two other copywriters before Elbon Concepts. Neither of them understood what we actually sell. These guys wrote our sales page like they'd been in the fintech space for years. Conversion rate improvement was significant and it happened fast."</p>
-        <div class="flex items-center gap-3">
-          <div class="testi-avatar">DC</div>
-          <div>
-            <div class="testi-name">Daniel Chen</div>
-            <div class="testi-role">CEO, Reeva Finance · London, UK</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- T8 -->
-      <div class="testi-card fade-up" style="transition-delay:.07s">
-        <div class="stars mb-3">★★★★★</div>
-        <p class="testi-quote mb-5">"I run a small coffee brand out of Melbourne and I had a very specific vision for the ads. They listened, kept the aesthetic I wanted, but completely changed the selling structure. You can have both — beautiful AND converting. That's what they delivered."</p>
-        <div class="flex items-center gap-3">
-          <div class="testi-avatar">NW</div>
-          <div>
-            <div class="testi-name">Nadia Walsh</div>
-            <div class="testi-role">Founder, TerraRoast Coffee · Melbourne, AU</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- T9 -->
-      <div class="testi-card fade-up" style="transition-delay:.14s">
-        <div class="stars mb-3">★★★★★</div>
-        <p class="testi-quote mb-5">"The whole process was smooth — discovery call, first draft, revisions, delivery. No chasing, no guessing. For a fast-growing startup that needs things done properly and on time, that reliability is honestly half the value. Results were solid too — our enquiry rate from the new site nearly doubled."</p>
-        <div class="flex items-center gap-3">
-          <div class="testi-avatar">BM</div>
-          <div>
-            <div class="testi-name">Ben Marchetti</div>
-            <div class="testi-role">Co-Founder, SolarNest · Manchester, UK</div>
-          </div>
-        </div>
-      </div>
-
     </div>
   </div>
-</section>
 
-<!-- ══ CTA ══ -->
-<section class="cta-section" style="padding: 5rem 0;">
-  <div class="max-w-6xl mx-auto px-5 text-center">
-    <p style="font-family:'Syne',sans-serif;font-weight:700;font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(0,0,0,.5);margin-bottom:1.25rem;">You've Seen the Work</p>
-    <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,9vw,7rem);line-height:.95;color:#000;" class="fade-up">
-      NOW LET'S BUILD<br/>YOURS.
-    </h2>
-    <p style="max-width:36rem;margin:.5rem auto 2.5rem;color:rgba(0,0,0,.65);font-family:'DM Sans',sans-serif;font-size:1.05rem;line-height:1.7;" class="fade-up">
-      Book a free strategy call. 30 minutes. We'll identify exactly what's holding your conversions back and what we'd do about it.
-    </p>
-    <div class="fade-up">
-      <a href="mailto:hello@elbonconcepts.com" style="background:#000;color:var(--accent);font-family:'Syne',sans-serif;font-weight:700;font-size:.95rem;letter-spacing:.04em;padding:1rem 2.5rem;border-radius:4px;display:inline-block;transition:opacity .2s;" onmouseenter="this.style.opacity='.8'" onmouseleave="this.style.opacity='1'">Book a Free Strategy Call →</a>
+  <!-- ══ CASE STUDIES GRID ══ -->
+  <section style="padding: 5rem 0; border-top: 1px solid var(--border);">
+    <div class="max-w-6xl mx-auto px-5">
+      <div id="cs-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- 01 · WEB -->
+        <div class="cs-card fade-up" data-category="web">
+          <div class="cs-header">
+            <div class="flex items-center justify-between mb-3">
+              <span class="service-tag tag-web">Web Design</span>
+              <span class="cs-industry">E-Commerce · Nigeria</span>
+            </div>
+            <div class="cs-client">Hephzibah Stores</div>
+          </div>
+          <div class="cs-body">
+            <div class="flex items-end gap-3 mb-4">
+              <div>
+                <div class="cs-metric">+64%</div>
+                <div class="cs-metric-label">Conversion Rate</div>
+              </div>
+              <div style="border-left:1px solid var(--border); padding-left:1rem;">
+                <div class="cs-metric" style="font-size:2rem;">-38%</div>
+                <div class="cs-metric-label">Bounce Rate</div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <p class="cs-section-head">The Problem</p>
+              <p class="section-body text-sm">Product pages had no visual hierarchy, slow mobile load, and a checkout
+                flow that lost buyers at step 2.</p>
+            </div>
+            <div class="mb-3">
+              <p class="cs-section-head">What We Did</p>
+              <p class="section-body text-sm">Rebuilt the product and category pages from scratch. Simplified the CTA
+                structure, added urgency elements, and cut page weight by 60%.</p>
+            </div>
+            <div class="mt-auto pt-4" style="border-top:1px solid var(--border);">
+              <p class="text-xs" style="color:var(--muted);">Timeline: 3 weeks · Fashion & Apparel</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 02 · VIDEO -->
+        <div class="cs-card fade-up" data-category="video" style="transition-delay:.05s">
+          <div class="cs-header">
+            <div class="flex items-center justify-between mb-3">
+              <span class="service-tag tag-video">Video Ads</span>
+              <span class="cs-industry">DTC · UK</span>
+            </div>
+            <div class="cs-client">Volta Health</div>
+          </div>
+          <div class="cs-body">
+            <div class="flex items-end gap-3 mb-4">
+              <div>
+                <div class="cs-metric">3.8x</div>
+                <div class="cs-metric-label">CTR Increase</div>
+              </div>
+              <div style="border-left:1px solid var(--border); padding-left:1rem;">
+                <div class="cs-metric" style="font-size:2rem;">-42%</div>
+                <div class="cs-metric-label">Cost Per Click</div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <p class="cs-section-head">The Problem</p>
+              <p class="section-body text-sm">Their existing Facebook ads opened with a logo and brand music —
+                scroll-killers. CTR was below 0.5% after 2 weeks running.</p>
+            </div>
+            <div class="mb-3">
+              <p class="cs-section-head">What We Did</p>
+              <p class="section-body text-sm">Restructured the edit: pattern-interrupt first frame, problem-led hook in
+                the first 3 seconds, benefit-stacked body, hard CTA close. One cut. New creative.</p>
+            </div>
+            <div class="mt-auto pt-4" style="border-top:1px solid var(--border);">
+              <p class="text-xs" style="color:var(--muted);">Timeline: 5 days · Health Supplements</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 03 · COPY -->
+        <div class="cs-card fade-up" data-category="copy" style="transition-delay:.1s">
+          <div class="cs-header">
+            <div class="flex items-center justify-between mb-3">
+              <span class="service-tag tag-copy">Copywriting</span>
+              <span class="cs-industry">B2B SaaS · US</span>
+            </div>
+            <div class="cs-client">ListKit</div>
+          </div>
+          <div class="cs-body">
+            <div class="flex items-end gap-3 mb-4">
+              <div>
+                <div class="cs-metric">+41%</div>
+                <div class="cs-metric-label">Email CTR</div>
+              </div>
+              <div style="border-left:1px solid var(--border); padding-left:1rem;">
+                <div class="cs-metric" style="font-size:2rem;">+28%</div>
+                <div class="cs-metric-label">Demo Bookings</div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <p class="cs-section-head">The Problem</p>
+              <p class="section-body text-sm">Cold email platform with a strong product — but their email nurture
+                sequence read like a feature list. Opens weren't converting to demos.</p>
+            </div>
+            <div class="mb-3">
+              <p class="cs-section-head">What We Did</p>
+              <p class="section-body text-sm">Rewrote a 6-email sequence using problem-agitate-solve structure.
+                Personalised subject lines, short paragraphs, single-CTA per email. Conversational, not corporate.</p>
+            </div>
+            <div class="mt-auto pt-4" style="border-top:1px solid var(--border);">
+              <p class="text-xs" style="color:var(--muted);">Timeline: 1 week · Cold Email Platform</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 04 · WEB -->
+        <div class="cs-card fade-up" data-category="web" style="transition-delay:.05s">
+          <div class="cs-header">
+            <div class="flex items-center justify-between mb-3">
+              <span class="service-tag tag-web">Web Design</span>
+              <span class="cs-industry">Legal · Canada</span>
+            </div>
+            <div class="cs-client">Meridian Legal Partners</div>
+          </div>
+          <div class="cs-body">
+            <div class="flex items-end gap-3 mb-4">
+              <div>
+                <div class="cs-metric">+89%</div>
+                <div class="cs-metric-label">Lead Form Submits</div>
+              </div>
+              <div style="border-left:1px solid var(--border); padding-left:1rem;">
+                <div class="cs-metric" style="font-size:2rem;">2.1x</div>
+                <div class="cs-metric-label">Time on Page</div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <p class="cs-section-head">The Problem</p>
+              <p class="section-body text-sm">Outdated website with no clear value prop. Potential clients couldn't tell
+                what kind of law firm this was within 5 seconds — so they left.</p>
+            </div>
+            <div class="mb-3">
+              <p class="cs-section-head">What We Did</p>
+              <p class="section-body text-sm">Built a clean, trust-first landing page with practice area clarity,
+                credibility markers, and a simplified contact form above the fold. Professional without being cold.</p>
+            </div>
+            <div class="mt-auto pt-4" style="border-top:1px solid var(--border);">
+              <p class="text-xs" style="color:var(--muted);">Timeline: 2 weeks · Corporate Law</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 05 · VIDEO -->
+        <div class="cs-card fade-up" data-category="video" style="transition-delay:.1s">
+          <div class="cs-header">
+            <div class="flex items-center justify-between mb-3">
+              <span class="service-tag tag-video">Video Ads</span>
+              <span class="cs-industry">DTC · Nigeria</span>
+            </div>
+            <div class="cs-client">CycleFit Pro</div>
+          </div>
+          <div class="cs-body">
+            <div class="flex items-end gap-3 mb-4">
+              <div>
+                <div class="cs-metric">+220%</div>
+                <div class="cs-metric-label">Purchases (30d)</div>
+              </div>
+              <div style="border-left:1px solid var(--border); padding-left:1rem;">
+                <div class="cs-metric" style="font-size:2rem;">4.4x</div>
+                <div class="cs-metric-label">ROAS</div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <p class="cs-section-head">The Problem</p>
+              <p class="section-body text-sm">Fitness equipment brand with a strong product but zero ad performance.
+                Previous creatives were product-demo style — no emotion, no urgency.</p>
+            </div>
+            <div class="mb-3">
+              <p class="cs-section-head">What We Did</p>
+              <p class="section-body text-sm">Built a UGC-style ad sequence: social proof hook, transformation
+                narrative, scarcity CTA. Three 30-second cuts for A/B testing. Delivered in 7 days.</p>
+            </div>
+            <div class="mt-auto pt-4" style="border-top:1px solid var(--border);">
+              <p class="text-xs" style="color:var(--muted);">Timeline: 7 days · Fitness Equipment</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 06 · COPY -->
+        <div class="cs-card fade-up" data-category="copy" style="transition-delay:.15s">
+          <div class="cs-header">
+            <div class="flex items-center justify-between mb-3">
+              <span class="service-tag tag-copy">Copywriting</span>
+              <span class="cs-industry">Fintech · UK</span>
+            </div>
+            <div class="cs-client">Reeva Finance</div>
+          </div>
+          <div class="cs-body">
+            <div class="flex items-end gap-3 mb-4">
+              <div>
+                <div class="cs-metric">+57%</div>
+                <div class="cs-metric-label">Landing Page CVR</div>
+              </div>
+              <div style="border-left:1px solid var(--border); padding-left:1rem;">
+                <div class="cs-metric" style="font-size:2rem;">-31%</div>
+                <div class="cs-metric-label">Drop-off Rate</div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <p class="cs-section-head">The Problem</p>
+              <p class="section-body text-sm">Fintech startup with a solid product but a landing page that leaned too
+                technical. The copy explained the features but never made the reader care.</p>
+            </div>
+            <div class="mb-3">
+              <p class="cs-section-head">What We Did</p>
+              <p class="section-body text-sm">Rewrote the full page — headline, sub-copy, feature descriptions, and CTA
+                — with a benefit-first, plain-English approach. Added a concise FAQ and a risk-reversal guarantee
+                section.</p>
+            </div>
+            <div class="mt-auto pt-4" style="border-top:1px solid var(--border);">
+              <p class="text-xs" style="color:var(--muted);">Timeline: 4 days · Personal Finance App</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 07 · WEB -->
+        <div class="cs-card fade-up" data-category="web">
+          <div class="cs-header">
+            <div class="flex items-center justify-between mb-3">
+              <span class="service-tag tag-web">Web Design</span>
+              <span class="cs-industry">SaaS · US</span>
+            </div>
+            <div class="cs-client">Stackwise</div>
+          </div>
+          <div class="cs-body">
+            <div class="flex items-end gap-3 mb-4">
+              <div>
+                <div class="cs-metric">+73%</div>
+                <div class="cs-metric-label">Trial Signups</div>
+              </div>
+              <div style="border-left:1px solid var(--border); padding-left:1rem;">
+                <div class="cs-metric" style="font-size:2rem;">+45%</div>
+                <div class="cs-metric-label">Scroll Depth</div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <p class="cs-section-head">The Problem</p>
+              <p class="section-body text-sm">B2B project management tool with a landing page that read like internal
+                documentation. Visitors couldn't grasp the value in the first scroll.</p>
+            </div>
+            <div class="mb-3">
+              <p class="cs-section-head">What We Did</p>
+              <p class="section-body text-sm">Redesigned the hero, added a visual product preview, restructured the
+                feature section around use-cases (not features), and introduced a social proof strip above the fold.</p>
+            </div>
+            <div class="mt-auto pt-4" style="border-top:1px solid var(--border);">
+              <p class="text-xs" style="color:var(--muted);">Timeline: 3 weeks · Project Management SaaS</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 08 · VIDEO -->
+        <div class="cs-card fade-up" data-category="video" style="transition-delay:.05s">
+          <div class="cs-header">
+            <div class="flex items-center justify-between mb-3">
+              <span class="service-tag tag-video">Video Ads</span>
+              <span class="cs-industry">DTC · US</span>
+            </div>
+            <div class="cs-client">Glow & Co Skincare</div>
+          </div>
+          <div class="cs-body">
+            <div class="flex items-end gap-3 mb-4">
+              <div>
+                <div class="cs-metric">5.1x</div>
+                <div class="cs-metric-label">ROAS</div>
+              </div>
+              <div style="border-left:1px solid var(--border); padding-left:1rem;">
+                <div class="cs-metric" style="font-size:2rem;">+190%</div>
+                <div class="cs-metric-label">TikTok Sales</div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <p class="cs-section-head">The Problem</p>
+              <p class="section-body text-sm">TikTok ads looked polished but were brand-style rather than
+                scroll-stopping. ROAS sat at 1.2x. Spend was going up, returns weren't.</p>
+            </div>
+            <div class="mb-3">
+              <p class="cs-section-head">What We Did</p>
+              <p class="section-body text-sm">Switched to a raw UGC-style edit with a "real person" opening hook,
+                before/after structure, comment-style overlays, and a creator CTA close. Platform-native, not branded.
+              </p>
+            </div>
+            <div class="mt-auto pt-4" style="border-top:1px solid var(--border);">
+              <p class="text-xs" style="color:var(--muted);">Timeline: 6 days · Skincare / Beauty</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 09 · COPY -->
+        <div class="cs-card fade-up" data-category="copy" style="transition-delay:.1s">
+          <div class="cs-header">
+            <div class="flex items-center justify-between mb-3">
+              <span class="service-tag tag-copy">Copywriting</span>
+              <span class="cs-industry">Consulting · US</span>
+            </div>
+            <div class="cs-client">Flint & Co Advisory</div>
+          </div>
+          <div class="cs-body">
+            <div class="flex items-end gap-3 mb-4">
+              <div>
+                <div class="cs-metric">+66%</div>
+                <div class="cs-metric-label">Discovery Call Rate</div>
+              </div>
+              <div style="border-left:1px solid var(--border); padding-left:1rem;">
+                <div class="cs-metric" style="font-size:2rem;">4.2x</div>
+                <div class="cs-metric-label">Pipeline ROI</div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <p class="cs-section-head">The Problem</p>
+              <p class="section-body text-sm">B2B consulting firm sending cold outreach that got ignored. Generic value
+                prop, no personalisation angle, no clear reason to respond.</p>
+            </div>
+            <div class="mb-3">
+              <p class="cs-section-head">What We Did</p>
+              <p class="section-body text-sm">Wrote a 3-email cold outreach sequence with industry-specific pain points,
+                a short proof statement, and a low-friction CTA (15-minute intro call, not a full pitch).</p>
+            </div>
+            <div class="mt-auto pt-4" style="border-top:1px solid var(--border);">
+              <p class="text-xs" style="color:var(--muted);">Timeline: 3 days · B2B Consulting</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 10 · WEB -->
+        <div class="cs-card fade-up" data-category="web" style="transition-delay:.05s">
+          <div class="cs-header">
+            <div class="flex items-center justify-between mb-3">
+              <span class="service-tag tag-web">Web Design</span>
+              <span class="cs-industry">Real Estate · Nigeria</span>
+            </div>
+            <div class="cs-client">NovaBuild Co.</div>
+          </div>
+          <div class="cs-body">
+            <div class="flex items-end gap-3 mb-4">
+              <div>
+                <div class="cs-metric">+112%</div>
+                <div class="cs-metric-label">Enquiry Volume</div>
+              </div>
+              <div style="border-left:1px solid var(--border); padding-left:1rem;">
+                <div class="cs-metric" style="font-size:2rem;">3.7x</div>
+                <div class="cs-metric-label">Pages / Session</div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <p class="cs-section-head">The Problem</p>
+              <p class="section-body text-sm">Construction and real estate company with a broken, unresponsive website
+                from 2017. No mobile support, no clear project portfolio, no way to get in touch easily.</p>
+            </div>
+            <div class="mb-3">
+              <p class="cs-section-head">What We Did</p>
+              <p class="section-body text-sm">Full website rebuild: home, services, projects gallery, about, and contact
+                page. Mobile-first, fast, with a strong CTA structure on every page and an embedded enquiry form.</p>
+            </div>
+            <div class="mt-auto pt-4" style="border-top:1px solid var(--border);">
+              <p class="text-xs" style="color:var(--muted);">Timeline: 4 weeks · Construction & Real Estate</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 11 · VIDEO -->
+        <div class="cs-card fade-up" data-category="video" style="transition-delay:.1s">
+          <div class="cs-header">
+            <div class="flex items-center justify-between mb-3">
+              <span class="service-tag tag-video">Video Ads</span>
+              <span class="cs-industry">DTC · Australia</span>
+            </div>
+            <div class="cs-client">TerraRoast Coffee</div>
+          </div>
+          <div class="cs-body">
+            <div class="flex items-end gap-3 mb-4">
+              <div>
+                <div class="cs-metric">+148%</div>
+                <div class="cs-metric-label">Subscription Sales</div>
+              </div>
+              <div style="border-left:1px solid var(--border); padding-left:1rem;">
+                <div class="cs-metric" style="font-size:2rem;">2.9x</div>
+                <div class="cs-metric-label">CTR vs. Prev.</div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <p class="cs-section-head">The Problem</p>
+              <p class="section-body text-sm">Specialty coffee brand with a strong product but Instagram ads that felt
+                like coffee shop aesthetic content — beautiful, but no selling structure.</p>
+            </div>
+            <div class="mb-3">
+              <p class="cs-section-head">What We Did</p>
+              <p class="section-body text-sm">Created a 4-cut Instagram Reels ad series: lifestyle hook, origin story,
+                taste proof, and a subscription offer close. Kept the aesthetic but injected a direct response spine.
+              </p>
+            </div>
+            <div class="mt-auto pt-4" style="border-top:1px solid var(--border);">
+              <p class="text-xs" style="color:var(--muted);">Timeline: 8 days · Specialty Coffee DTC</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 12 · COPY -->
+        <div class="cs-card fade-up" data-category="copy" style="transition-delay:.15s">
+          <div class="cs-header">
+            <div class="flex items-center justify-between mb-3">
+              <span class="service-tag tag-copy">Copywriting</span>
+              <span class="cs-industry">EdTech · Global</span>
+            </div>
+            <div class="cs-client">Brightmoor Academy</div>
+          </div>
+          <div class="cs-body">
+            <div class="flex items-end gap-3 mb-4">
+              <div>
+                <div class="cs-metric">+83%</div>
+                <div class="cs-metric-label">Course Enrolments</div>
+              </div>
+              <div style="border-left:1px solid var(--border); padding-left:1rem;">
+                <div class="cs-metric" style="font-size:2rem;">+37%</div>
+                <div class="cs-metric-label">Avg. Order Value</div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <p class="cs-section-head">The Problem</p>
+              <p class="section-body text-sm">Online learning platform with a quality course library but a sales page
+                that led with the curriculum — not the transformation. Enrolment rate was low despite strong traffic.
+              </p>
+            </div>
+            <div class="mb-3">
+              <p class="cs-section-head">What We Did</p>
+              <p class="section-body text-sm">Rewrote the sales page using a desire-led headline, student outcome proof,
+                objection-handling mid-page, and a limited-time enrolment close. Added a bundle upsell section.</p>
+            </div>
+            <div class="mt-auto pt-4" style="border-top:1px solid var(--border);">
+              <p class="text-xs" style="color:var(--muted);">Timeline: 5 days · Online Education</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 13 · WEB -->
+        <div class="cs-card fade-up" data-category="web">
+          <div class="cs-header">
+            <div class="flex items-center justify-between mb-3">
+              <span class="service-tag tag-web">Web Design</span>
+              <span class="cs-industry">Clean Energy · UK</span>
+            </div>
+            <div class="cs-client">SolarNest</div>
+          </div>
+          <div class="cs-body">
+            <div class="flex items-end gap-3 mb-4">
+              <div>
+                <div class="cs-metric">+91%</div>
+                <div class="cs-metric-label">Quote Requests</div>
+              </div>
+              <div style="border-left:1px solid var(--border); padding-left:1rem;">
+                <div class="cs-metric" style="font-size:2rem;">-55%</div>
+                <div class="cs-metric-label">Bounce Rate</div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <p class="cs-section-head">The Problem</p>
+              <p class="section-body text-sm">Solar installation startup with a one-page website that gave no
+                credibility signals. High-ticket customers wouldn't fill out a quote form without trust anchors.</p>
+            </div>
+            <div class="mb-3">
+              <p class="cs-section-head">What We Did</p>
+              <p class="section-body text-sm">Designed a full 5-section landing page with certifications display,
+                process explainer, savings calculator teaser, testimonials, and a streamlined quote form with a 24-hour
+                response promise.</p>
+            </div>
+            <div class="mt-auto pt-4" style="border-top:1px solid var(--border);">
+              <p class="text-xs" style="color:var(--muted);">Timeline: 2.5 weeks · Clean Energy</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 14 · VIDEO -->
+        <div class="cs-card fade-up" data-category="video" style="transition-delay:.05s">
+          <div class="cs-header">
+            <div class="flex items-center justify-between mb-3">
+              <span class="service-tag tag-video">Video Ads</span>
+              <span class="cs-industry">Activewear · US</span>
+            </div>
+            <div class="cs-client">PulseWear</div>
+          </div>
+          <div class="cs-body">
+            <div class="flex items-end gap-3 mb-4">
+              <div>
+                <div class="cs-metric">+310%</div>
+                <div class="cs-metric-label">Facebook Revenue</div>
+              </div>
+              <div style="border-left:1px solid var(--border); padding-left:1rem;">
+                <div class="cs-metric" style="font-size:2rem;">6.2x</div>
+                <div class="cs-metric-label">ROAS</div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <p class="cs-section-head">The Problem</p>
+              <p class="section-body text-sm">Activewear brand spending $8k/month on Facebook with ROAS stuck at 1.4x.
+                Good product, weak creative. Their ads showed clothes being worn — not why you'd buy them.</p>
+            </div>
+            <div class="mb-3">
+              <p class="cs-section-head">What We Did</p>
+              <p class="section-body text-sm">Produced a 5-ad creative suite: identity-based hooks, performance claims
+                with visual proof, and community CTA. Delivered as 9:16, 1:1, and 16:9 cuts for full placement coverage.
+              </p>
+            </div>
+            <div class="mt-auto pt-4" style="border-top:1px solid var(--border);">
+              <p class="text-xs" style="color:var(--muted);">Timeline: 10 days · Activewear DTC</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 15 · COPY -->
+        <div class="cs-card fade-up" data-category="copy" style="transition-delay:.1s">
+          <div class="cs-header">
+            <div class="flex items-center justify-between mb-3">
+              <span class="service-tag tag-copy">Copywriting</span>
+              <span class="cs-industry">SaaS · US / EU</span>
+            </div>
+            <div class="cs-client">NomadDesk</div>
+          </div>
+          <div class="cs-body">
+            <div class="flex items-end gap-3 mb-4">
+              <div>
+                <div class="cs-metric">+52%</div>
+                <div class="cs-metric-label">Free-to-Paid CVR</div>
+              </div>
+              <div style="border-left:1px solid var(--border); padding-left:1rem;">
+                <div class="cs-metric" style="font-size:2rem;">+34%</div>
+                <div class="cs-metric-label">Retention (30d)</div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <p class="cs-section-head">The Problem</p>
+              <p class="section-body text-sm">Remote work SaaS with solid free-tier sign-ups but weak upgrade rates.
+                Onboarding emails were auto-generated, generic, and had nothing to do with user behaviour.</p>
+            </div>
+            <div class="mb-3">
+              <p class="cs-section-head">What We Did</p>
+              <p class="section-body text-sm">Wrote a 7-email onboarding sequence triggered by user actions (sign-up,
+                first project created, 7-day inactive). Each email had one job. Upgrade email used a ROI-framing
+                approach.</p>
+            </div>
+            <div class="mt-auto pt-4" style="border-top:1px solid var(--border);">
+              <p class="text-xs" style="color:var(--muted);">Timeline: 6 days · Remote Work SaaS</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 16 · WEB -->
+        <div class="cs-card fade-up" data-category="web" style="transition-delay:.05s">
+          <div class="cs-header">
+            <div class="flex items-center justify-between mb-3">
+              <span class="service-tag tag-web">Web Design</span>
+              <span class="cs-industry">Personal Brand · Nigeria</span>
+            </div>
+            <div class="cs-client">Dr. Temi Adeyemi</div>
+          </div>
+          <div class="cs-body">
+            <div class="flex items-end gap-3 mb-4">
+              <div>
+                <div class="cs-metric">+200%</div>
+                <div class="cs-metric-label">Booking Inquiries</div>
+              </div>
+              <div style="border-left:1px solid var(--border); padding-left:1rem;">
+                <div class="cs-metric" style="font-size:2rem;">4x</div>
+                <div class="cs-metric-label">Speaking Leads</div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <p class="cs-section-head">The Problem</p>
+              <p class="section-body text-sm">Public health expert with no personal website, losing speaking and
+                consultancy opportunities to peers with stronger online presence.</p>
+            </div>
+            <div class="mb-3">
+              <p class="cs-section-head">What We Did</p>
+              <p class="section-body text-sm">Designed and built a personal brand site: bio, credentials, media
+                appearances, speaking topics, and a simple booking page. Mobile-first, clean, authoritative.</p>
+            </div>
+            <div class="mt-auto pt-4" style="border-top:1px solid var(--border);">
+              <p class="text-xs" style="color:var(--muted);">Timeline: 2 weeks · Personal Brand / Health</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 17 · VIDEO -->
+        <div class="cs-card fade-up" data-category="video" style="transition-delay:.1s">
+          <div class="cs-header">
+            <div class="flex items-center justify-between mb-3">
+              <span class="service-tag tag-video">Video Ads</span>
+              <span class="cs-industry">Home Fitness · Nigeria</span>
+            </div>
+            <div class="cs-client">IronHome Equipment</div>
+          </div>
+          <div class="cs-body">
+            <div class="flex items-end gap-3 mb-4">
+              <div>
+                <div class="cs-metric">+175%</div>
+                <div class="cs-metric-label">Instagram Sales</div>
+              </div>
+              <div style="border-left:1px solid var(--border); padding-left:1rem;">
+                <div class="cs-metric" style="font-size:2rem;">3.3x</div>
+                <div class="cs-metric-label">ROAS</div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <p class="cs-section-head">The Problem</p>
+              <p class="section-body text-sm">Home treadmill brand posting organic content but seeing no paid ad
+                returns. Creatives looked like gym motivation pages — no product focus, no CTA.</p>
+            </div>
+            <div class="mb-3">
+              <p class="cs-section-head">What We Did</p>
+              <p class="section-body text-sm">Edited two UGC-style treadmill ads with status-driven hooks, Nigerian home
+                interior context, product demo mid-section, and a pay-on-delivery CTA close. Built for IG and FB feeds.
+              </p>
+            </div>
+            <div class="mt-auto pt-4" style="border-top:1px solid var(--border);">
+              <p class="text-xs" style="color:var(--muted);">Timeline: 5 days · Home Fitness</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 18 · COPY -->
+        <div class="cs-card fade-up" data-category="copy" style="transition-delay:.15s">
+          <div class="cs-header">
+            <div class="flex items-center justify-between mb-3">
+              <span class="service-tag tag-copy">Copywriting</span>
+              <span class="cs-industry">Personal Brand · US</span>
+            </div>
+            <div class="cs-client">Marcus Okafor</div>
+          </div>
+          <div class="cs-body">
+            <div class="flex items-end gap-3 mb-4">
+              <div>
+                <div class="cs-metric">+490%</div>
+                <div class="cs-metric-label">LinkedIn Impressions</div>
+              </div>
+              <div style="border-left:1px solid var(--border); padding-left:1rem;">
+                <div class="cs-metric" style="font-size:2rem;">+60%</div>
+                <div class="cs-metric-label">Profile Visits</div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <p class="cs-section-head">The Problem</p>
+              <p class="section-body text-sm">Freelance growth strategist posting on LinkedIn with almost no engagement.
+                Posts were long, unformatted walls of text with no hook and no reason to keep reading.</p>
+            </div>
+            <div class="mb-3">
+              <p class="cs-section-head">What We Did</p>
+              <p class="section-body text-sm">Wrote a 12-post LinkedIn content series using short-form storytelling,
+                results-led hooks, and white space formatting. Built his authority in the growth niche over 6 weeks.</p>
+            </div>
+            <div class="mt-auto pt-4" style="border-top:1px solid var(--border);">
+              <p class="text-xs" style="color:var(--muted);">Timeline: 6 weeks · Freelance Strategist</p>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /cs-grid -->
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ══ FOOTER ══ -->
-<footer style="padding: 3.5rem 0;">
-  <div class="max-w-6xl mx-auto px-5">
-    <div class="grid md:grid-cols-3 gap-10 mb-10">
-      <div>
-        <p class="logo-text text-xl mb-3">Elbon<span class="logo-dot"> Concepts</span></p>
-        <p class="section-body text-sm max-w-xs">Web design, video ad editing, and copywriting for brands that want to grow — not just exist online.</p>
+  <!-- ══ TESTIMONIALS ══ -->
+  <section style="padding: 5rem 0; background: var(--bg2); border-top: 1px solid var(--border);">
+    <div class="max-w-6xl mx-auto px-5">
+      <div class="mb-4 fade-up"><span class="section-label">Client Testimonials</span></div>
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
+        <h2 class="section-title text-4xl md:text-5xl max-w-xl fade-up">What people say<br />after working with us.</h2>
+        <p class="section-body max-w-xs fade-up">From e-commerce founders to individual creators — these are real client
+          experiences.</p>
       </div>
-      <div>
-        <h5 style="font-family:'Syne',sans-serif;font-weight:700;font-size:.85rem;color:var(--fg);margin-bottom:1rem;">Quick Links</h5>
-        <ul class="space-y-2">
-          <li><a href="index.html" class="nav-link">Home</a></li>
-          <li><a href="index.html#services" class="nav-link">Services</a></li>
-          <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
-          <li><a href="index.html#cta" class="nav-link">Book a Call</a></li>
-        </ul>
-      </div>
-      <div>
-        <h5 style="font-family:'Syne',sans-serif;font-weight:700;font-size:.85rem;color:var(--fg);margin-bottom:1rem;">Contact</h5>
-        <ul class="space-y-2">
-          <li><a href="mailto:hello@elbonconcepts.com" class="nav-link">hello@elbonconcepts.com</a></li>
-          <li><a href="http://elbonconcepts.github.io/" target="_blank" class="nav-link">elbonconcepts.github.io</a></li>
-        </ul>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+
+        <!-- T1 -->
+        <div class="testi-card fade-up">
+          <div class="stars mb-3">★★★★★</div>
+          <p class="testi-quote mb-5">"Honestly didn't expect results this fast. Our landing page conversion rate went
+            from 1.8% to over 3% in less than a month. The redesign was clean, fast, and actually made sense for our
+            customers. Elbon Concepts knew exactly what needed to change without me having to explain it twice."</p>
+          <div class="flex items-center gap-3">
+            <div class="testi-avatar">AO</div>
+            <div>
+              <div class="testi-name">Adaeze Okonkwo</div>
+              <div class="testi-role">Founder, Hephzibah Stores · Lagos, Nigeria</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- T2 -->
+        <div class="testi-card fade-up" style="transition-delay:.07s">
+          <div class="stars mb-3">★★★★★</div>
+          <p class="testi-quote mb-5">"We'd been running the same Facebook ads for 3 months with declining returns. One
+            new creative from Elbon Concepts — completely different structure, different hook — and our CTR nearly
+            quadrupled in the first week. Best money we spent that quarter."</p>
+          <div class="flex items-center gap-3">
+            <div class="testi-avatar">JR</div>
+            <div>
+              <div class="testi-name">James Rutherford</div>
+              <div class="testi-role">Head of Performance, Volta Health · London, UK</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- T3 -->
+        <div class="testi-card fade-up" style="transition-delay:.14s">
+          <div class="stars mb-3">★★★★★</div>
+          <p class="testi-quote mb-5">"The email sequence they wrote for us reads like it was made by someone who
+            actually uses our product. Every email had a clear purpose, and our demo bookings picked up noticeably
+            within 2 weeks of switching to the new sequence. No fluff, straight to the point."</p>
+          <div class="flex items-center gap-3">
+            <div class="testi-avatar">SK</div>
+            <div>
+              <div class="testi-name">Sarah Kim</div>
+              <div class="testi-role">Marketing Lead, ListKit · San Francisco, US</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- T4 -->
+        <div class="testi-card fade-up">
+          <div class="stars mb-3">★★★★★</div>
+          <p class="testi-quote mb-5">"I'm a freelancer with a tight budget and I was skeptical. But my LinkedIn went
+            from practically invisible to getting consistent profile views and DMs after the content series they wrote
+            for me. Worth every naira. If you're trying to build a personal brand, these guys get it."</p>
+          <div class="flex items-center gap-3">
+            <div class="testi-avatar">MO</div>
+            <div>
+              <div class="testi-name">Marcus Okafor</div>
+              <div class="testi-role">Freelance Growth Strategist · Atlanta, US</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- T5 -->
+        <div class="testi-card fade-up" style="transition-delay:.07s">
+          <div class="stars mb-3">★★★★★</div>
+          <p class="testi-quote mb-5">"Our TikTok ads looked good before. After Elbon Concepts reworked the edit —
+            different structure, more native-feeling — our ROAS went from 1.2x to over 5x. They understand how people
+            actually scroll. Not many editors do. Will use again for every new product launch."</p>
+          <div class="flex items-center gap-3">
+            <div class="testi-avatar">LP</div>
+            <div>
+              <div class="testi-name">Lauren Park</div>
+              <div class="testi-role">Founder, Glow & Co Skincare · New York, US</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- T6 -->
+        <div class="testi-card fade-up" style="transition-delay:.14s">
+          <div class="stars mb-3">★★★★★</div>
+          <p class="testi-quote mb-5">"As a doctor with no time to figure out websites, I needed someone who'd just
+            handle it. They took one call, asked the right questions, and delivered a site that looked exactly like what
+            I'd have asked for if I knew how to ask. My inquiry volume literally doubled within the first month."</p>
+          <div class="flex items-center gap-3">
+            <div class="testi-avatar">TA</div>
+            <div>
+              <div class="testi-name">Dr. Temi Adeyemi</div>
+              <div class="testi-role">Public Health Consultant · Abuja, Nigeria</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- T7 -->
+        <div class="testi-card fade-up">
+          <div class="stars mb-3">★★★★★</div>
+          <p class="testi-quote mb-5">"We tried two other copywriters before Elbon Concepts. Neither of them understood
+            what we actually sell. These guys wrote our sales page like they'd been in the fintech space for years.
+            Conversion rate improvement was significant and it happened fast."</p>
+          <div class="flex items-center gap-3">
+            <div class="testi-avatar">DC</div>
+            <div>
+              <div class="testi-name">Daniel Chen</div>
+              <div class="testi-role">CEO, Reeva Finance · London, UK</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- T8 -->
+        <div class="testi-card fade-up" style="transition-delay:.07s">
+          <div class="stars mb-3">★★★★★</div>
+          <p class="testi-quote mb-5">"I run a small coffee brand out of Melbourne and I had a very specific vision for
+            the ads. They listened, kept the aesthetic I wanted, but completely changed the selling structure. You can
+            have both — beautiful AND converting. That's what they delivered."</p>
+          <div class="flex items-center gap-3">
+            <div class="testi-avatar">NW</div>
+            <div>
+              <div class="testi-name">Nadia Walsh</div>
+              <div class="testi-role">Founder, TerraRoast Coffee · Melbourne, AU</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- T9 -->
+        <div class="testi-card fade-up" style="transition-delay:.14s">
+          <div class="stars mb-3">★★★★★</div>
+          <p class="testi-quote mb-5">"The whole process was smooth — discovery call, first draft, revisions, delivery.
+            No chasing, no guessing. For a fast-growing startup that needs things done properly and on time, that
+            reliability is honestly half the value. Results were solid too — our enquiry rate from the new site nearly
+            doubled."</p>
+          <div class="flex items-center gap-3">
+            <div class="testi-avatar">BM</div>
+            <div>
+              <div class="testi-name">Ben Marchetti</div>
+              <div class="testi-role">Co-Founder, SolarNest · Manchester, UK</div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
-    <div class="flex flex-col md:flex-row items-center justify-between pt-6" style="border-top:1px solid var(--border);">
-      <p class="text-xs mb-3 md:mb-0" style="color:var(--muted);">© 2025 Elbon Concepts. All rights reserved.</p>
-      <p class="text-xs" style="color:var(--muted);">Built to convert.</p>
+  </section>
+
+  <!-- ══ CTA ══ -->
+  <section class="cta-section" style="padding: 5rem 0;">
+    <div class="max-w-6xl mx-auto px-5 text-center">
+      <p
+        style="font-family:'Syne',sans-serif;font-weight:700;font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(0,0,0,.5);margin-bottom:1.25rem;">
+        You've Seen the Work</p>
+      <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,9vw,7rem);line-height:.95;color:#000;"
+        class="fade-up">
+        NOW LET'S BUILD<br />YOURS.
+      </h2>
+      <p style="max-width:36rem;margin:.5rem auto 2.5rem;color:rgba(0,0,0,.65);font-family:'DM Sans',sans-serif;font-size:1.05rem;line-height:1.7;"
+        class="fade-up">
+        Book a free strategy call. 30 minutes. We'll identify exactly what's holding your conversions back and what we'd
+        do about it.
+      </p>
+      <div class="fade-up">
+        <a href="mailto:elbonconcepts@gmail.com"
+          style="background:#000;color:var(--accent);font-family:'Syne',sans-serif;font-weight:700;font-size:.95rem;letter-spacing:.04em;padding:1rem 2.5rem;border-radius:4px;display:inline-block;transition:opacity .2s;"
+          onmouseenter="this.style.opacity='.8'" onmouseleave="this.style.opacity='1'">Book a Free Strategy Call →</a>
+      </div>
     </div>
-  </div>
-</footer>
+  </section>
 
-<script>
-  // Theme
-  const html = document.documentElement;
-  const btn = document.getElementById('themeToggle');
-  const icon = document.getElementById('themeIcon');
-  const label = document.getElementById('themeLabel');
+  <!-- ══ FOOTER ══ -->
+  <footer style="padding: 3.5rem 0;">
+    <div class="max-w-6xl mx-auto px-5">
+      <div class="grid md:grid-cols-3 gap-10 mb-10">
+        <div>
+          <p class="logo-text text-xl mb-3">Elbon<span class="logo-dot"> Concepts</span></p>
+          <p class="section-body text-sm max-w-xs">Web design, video ad editing, and copywriting for brands that want to
+            grow — not just exist online.</p>
+        </div>
+        <div>
+          <h5
+            style="font-family:'Syne',sans-serif;font-weight:700;font-size:.85rem;color:var(--fg);margin-bottom:1rem;">
+            Quick Links</h5>
+          <ul class="space-y-2">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="index.html#services" class="nav-link">Services</a></li>
+            <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+            <li><a href="index.html#cta" class="nav-link">Book a Call</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5
+            style="font-family:'Syne',sans-serif;font-weight:700;font-size:.85rem;color:var(--fg);margin-bottom:1rem;">
+            Contact</h5>
+          <ul class="space-y-2">
+            <li><a href="mailto:elbonconcepts@gmail.com" class="nav-link">elbonconcepts@gmail.com</a></li>
+            <li><a href="http://elbonconcepts.github.io/" target="_blank" class="nav-link">elbonconcepts.github.io</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="flex flex-col md:flex-row items-center justify-between pt-6"
+        style="border-top:1px solid var(--border);">
+        <p class="text-xs mb-3 md:mb-0" style="color:var(--muted);">© 2025 Elbon Concepts. All rights reserved.</p>
+        <p class="text-xs" style="color:var(--muted);">Built to convert.</p>
+      </div>
+    </div>
+  </footer>
 
-  function setTheme(mode) {
-    if (mode === 'light') {
-      html.classList.remove('dark'); html.classList.add('light');
-      icon.textContent = '🌙'; label.textContent = 'Dark';
-      localStorage.setItem('theme', 'light');
-    } else {
-      html.classList.remove('light'); html.classList.add('dark');
-      icon.textContent = '☀️'; label.textContent = 'Light';
-      localStorage.setItem('theme', 'dark');
+  <script>
+    // Theme
+    const html = document.documentElement;
+    const btn = document.getElementById('themeToggle');
+    const icon = document.getElementById('themeIcon');
+    const label = document.getElementById('themeLabel');
+
+    function setTheme(mode) {
+      if (mode === 'light') {
+        html.classList.remove('dark'); html.classList.add('light');
+        icon.textContent = '🌙'; label.textContent = 'Dark';
+        localStorage.setItem('theme', 'light');
+      } else {
+        html.classList.remove('light'); html.classList.add('dark');
+        icon.textContent = '☀️'; label.textContent = 'Light';
+        localStorage.setItem('theme', 'dark');
+      }
     }
-  }
-  btn.addEventListener('click', () => setTheme(html.classList.contains('dark') ? 'light' : 'dark'));
-  const saved = localStorage.getItem('theme');
-  if (saved) setTheme(saved);
+    btn.addEventListener('click', () => setTheme(html.classList.contains('dark') ? 'light' : 'dark'));
+    const saved = localStorage.getItem('theme');
+    if (saved) setTheme(saved);
 
-  // Mobile nav
-  document.getElementById('hamburger').addEventListener('click', () => {
-    document.getElementById('mobileMenu').classList.toggle('open');
-  });
-  function closeMobile() { document.getElementById('mobileMenu').classList.remove('open'); }
+    // Mobile nav
+    document.getElementById('hamburger').addEventListener('click', () => {
+      document.getElementById('mobileMenu').classList.toggle('open');
+    });
+    function closeMobile() { document.getElementById('mobileMenu').classList.remove('open'); }
 
-  // Filter tabs
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  const cards = document.querySelectorAll('.cs-card');
+    // Filter tabs
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.cs-card');
 
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const filter = btn.dataset.filter;
-      cards.forEach(card => {
-        if (filter === 'all' || card.dataset.category === filter) {
-          card.style.display = 'flex';
-          setTimeout(() => card.classList.add('visible'), 10);
-        } else {
-          card.style.display = 'none';
-        }
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        cards.forEach(card => {
+          if (filter === 'all' || card.dataset.category === filter) {
+            card.style.display = 'flex';
+            setTimeout(() => card.classList.add('visible'), 10);
+          } else {
+            card.style.display = 'none';
+          }
+        });
       });
     });
-  });
 
-  // Scroll animations
-  const fadeEls = document.querySelectorAll('.fade-up');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.1 });
-  fadeEls.forEach(el => observer.observe(el));
-</script>
+    // Scroll animations
+    const fadeEls = document.querySelectorAll('.fade-up');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    fadeEls.forEach(el => observer.observe(el));
+  </script>
 </body>
+
 </html>
