@@ -2,14 +2,50 @@
 <html lang="en" class="dark">
 
 <head>
+
+  <!-- BASIC META -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Elbon Concepts — Built to Convert</title>
+
+  <!-- SEO -->
+  <meta name="description"
+    content="Elbon Concepts builds high-converting websites, landing pages, and digital systems for modern brands and businesses." />
+  <meta name="keywords"
+    content="web design, landing pages, conversion websites, agency, UI design, web development, Elbon Concepts" />
+  <meta name="author" content="Elbon Concepts" />
+  <link rel="canonical" href="https://elbonconcepts.github.io/" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- GOOGLE VERIFICATION -->
   <meta name="google-site-verification" content="gHs6SpiZkU6lkIxlio-UwBQrpIHn_VvgUZp0HA-9uG0" />
-  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- OPEN GRAPH (FACEBOOK / WHATSAPP / LINKEDIN) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Elbon Concepts — Built to Convert" />
+  <meta property="og:description"
+    content="We build high-converting websites, landing pages, and digital systems for modern brands." />
+  <meta property="og:url" content="https://elbonconcepts.github.io/" />
+  <meta property="og:image" content="https://elbonconcepts.github.io/images/preview.png" />
+
+  <!-- TWITTER CARD -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Elbon Concepts — Built to Convert" />
+  <meta name="twitter:description" content="High-converting websites and landing pages for modern brands." />
+  <meta name="twitter:image" content="https://elbonconcepts.github.io/images/preview.png" />
+
+  <!-- FAVICON -->
+  <link rel="icon" href="/favicon.ico" />
+
+  <!-- FONTS -->
   <link
-    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
     rel="stylesheet" />
+
+  <!-- TAILWIND -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- TAILWIND CONFIG -->
   <script>
     tailwind.config = {
       darkMode: 'class',
@@ -29,415 +65,22 @@
       }
     }
   </script>
-  <style>
-    * {
-      box-sizing: border-box;
-    }
 
-    html {
-      scroll-behavior: smooth;
-    }
+  <!-- STRUCTURED DATA (VERY IMPORTANT FOR SEO BOOST) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Elbon Concepts",
+    "url": "https://elbonconcepts.github.io/",
+    "logo": "https://elbonconcepts.github.io/images/preview.png",
+    "description": "We build high-converting websites, landing pages, and digital systems for modern brands."
+  }
+  </script>
 
-    body {
-      font-family: 'DM Sans', sans-serif;
-    }
-
-    .font-display {
-      font-family: 'Bebas Neue', sans-serif;
-    }
-
-    .font-heading {
-      font-family: 'Syne', sans-serif;
-    }
-
-    .font-body {
-      font-family: 'DM Sans', sans-serif;
-    }
-
-    /* ── THEME ── */
-    :root {
-      --bg: #0A0A0A;
-      --bg2: #111111;
-      --fg: #F5F5F0;
-      --muted: #888;
-      --border: rgba(255, 255, 255, 0.08);
-      --accent: #CAFF00;
-      --card: #161616;
-    }
-
-    html.light {
-      --bg: #F5F5F0;
-      --bg2: #EBEBEB;
-      --fg: #0A0A0A;
-      --muted: #666;
-      --border: rgba(0, 0, 0, 0.10);
-      --accent: #7DB800;
-      --card: #FFFFFF;
-    }
-
-    body {
-      background: var(--bg);
-      color: var(--fg);
-      transition: background .3s, color .3s;
-    }
-
-    /* ── NAV ── */
-    nav {
-      background: var(--bg);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .nav-link {
-      color: var(--muted);
-      font-size: .85rem;
-      letter-spacing: .05em;
-      text-transform: uppercase;
-      transition: color .2s;
-    }
-
-    .nav-link:hover {
-      color: var(--accent);
-    }
-
-    .logo-text {
-      font-family: 'Syne', sans-serif;
-      font-weight: 800;
-      color: var(--fg);
-    }
-
-    .logo-dot {
-      color: var(--accent);
-    }
-
-    /* ── TOGGLE ── */
-    #themeToggle {
-      background: var(--card);
-      border: 1px solid var(--border);
-      color: var(--fg);
-      border-radius: 9999px;
-      padding: .35rem .85rem;
-      font-size: .8rem;
-      font-family: 'Syne', sans-serif;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background .2s, color .2s;
-      display: flex;
-      align-items: center;
-      gap: .4rem;
-    }
-
-    #themeToggle:hover {
-      background: var(--accent);
-      color: #000;
-    }
-
-    /* ── HERO ── */
-    .hero {
-      background: var(--bg);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding-top: 5rem;
-    }
-
-    .hero-badge {
-      background: var(--card);
-      border: 1px solid var(--border);
-      color: var(--accent);
-      font-family: 'Syne', sans-serif;
-      font-weight: 600;
-      font-size: .75rem;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      display: inline-flex;
-      align-items: center;
-      gap: .5rem;
-      padding: .4rem .9rem;
-      border-radius: 9999px;
-    }
-
-    .hero-badge span {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--accent);
-      display: block;
-      animation: pulse-dot 2s ease infinite;
-    }
-
-    @keyframes pulse-dot {
-
-      0%,
-      100% {
-        opacity: 1;
-        transform: scale(1);
-      }
-
-      50% {
-        opacity: .5;
-        transform: scale(1.4);
-      }
-    }
-
-    .display-headline {
-      font-family: 'Bebas Neue', sans-serif;
-      line-height: .95;
-      letter-spacing: -.01em;
-      color: var(--fg);
-    }
-
-    .accent-word {
-      color: var(--accent);
-    }
-
-    .btn-primary {
-      background: var(--accent);
-      color: #000;
-      font-family: 'Syne', sans-serif;
-      font-weight: 700;
-      font-size: .9rem;
-      letter-spacing: .04em;
-      padding: .9rem 2rem;
-      border-radius: 4px;
-      display: inline-block;
-      transition: transform .2s, box-shadow .2s;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 32px rgba(202, 255, 0, .25);
-    }
-
-    .btn-outline {
-      border: 1px solid var(--border);
-      color: var(--fg);
-      font-family: 'Syne', sans-serif;
-      font-weight: 600;
-      font-size: .9rem;
-      letter-spacing: .04em;
-      padding: .9rem 2rem;
-      border-radius: 4px;
-      display: inline-block;
-      transition: border-color .2s, color .2s;
-    }
-
-    .btn-outline:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-    }
-
-    /* ── SECTIONS ── */
-    section {
-      border-top: 1px solid var(--border);
-    }
-
-    .section-label {
-      color: var(--accent);
-      font-family: 'Syne', sans-serif;
-      font-weight: 700;
-      font-size: .72rem;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-    }
-
-    .section-title {
-      font-family: 'Syne', sans-serif;
-      font-weight: 800;
-      line-height: 1.1;
-      color: var(--fg);
-    }
-
-    .section-body {
-      color: var(--muted);
-      font-size: .975rem;
-      line-height: 1.75;
-    }
-
-    /* ── CARDS ── */
-    .service-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 2rem;
-      transition: border-color .25s, transform .25s;
-    }
-
-    .service-card:hover {
-      border-color: var(--accent);
-      transform: translateY(-4px);
-    }
-
-    .service-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 8px;
-      background: var(--accent);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .service-num {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 4.5rem;
-      line-height: 1;
-      color: var(--border);
-    }
-
-    /* ── PROBLEM ── */
-    .problem-bg {
-      background: var(--bg2);
-    }
-
-    .problem-pill {
-      background: rgba(202, 255, 0, .08);
-      border: 1px solid rgba(202, 255, 0, .2);
-      color: var(--accent);
-      font-size: .78rem;
-      font-family: 'Syne', sans-serif;
-      font-weight: 600;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      padding: .3rem .75rem;
-      border-radius: 9999px;
-    }
-
-    /* ── STATS ── */
-    .stat-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 1.5rem 2rem;
-    }
-
-    .stat-num {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 3.5rem;
-      line-height: 1;
-      color: var(--accent);
-    }
-
-    /* ── PROOF ── */
-    .proof-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 1.75rem;
-      transition: border-color .2s;
-    }
-
-    .proof-card:hover {
-      border-color: rgba(202, 255, 0, .3);
-    }
-
-    .tag-placeholder {
-      font-size: .7rem;
-      background: var(--bg2);
-      color: var(--muted);
-      padding: .2rem .6rem;
-      border-radius: 4px;
-      font-family: 'Syne', sans-serif;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-    }
-
-    /* ── PROCESS ── */
-    .step-num {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 5rem;
-      line-height: 1;
-      color: var(--border);
-    }
-
-    .step-card {
-      border-left: 2px solid var(--border);
-      padding-left: 1.5rem;
-      transition: border-color .2s;
-    }
-
-    .step-card:hover {
-      border-color: var(--accent);
-    }
-
-    /* ── WHY ── */
-    .why-item {
-      border-bottom: 1px solid var(--border);
-      padding: 1.25rem 0;
-      display: flex;
-      align-items: flex-start;
-      gap: 1rem;
-    }
-
-    .why-check {
-      color: var(--accent);
-      font-size: 1.1rem;
-      margin-top: .1rem;
-      flex-shrink: 0;
-    }
-
-    /* ── FOOTER ── */
-    footer {
-      background: var(--ink);
-      border-top: 1px solid rgba(255, 255, 255, .06);
-    }
-
-    /* ── ANIMATIONS ── */
-    .fade-up {
-      opacity: 0;
-      transform: translateY(28px);
-      transition: opacity .7s ease, transform .7s ease;
-    }
-
-    .fade-up.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* ── MARQUEE ── */
-    .marquee-track {
-      display: flex;
-      gap: 3rem;
-      animation: marquee 18s linear infinite;
-      width: max-content;
-    }
-
-    @keyframes marquee {
-      0% {
-        transform: translateX(0);
-      }
-
-      100% {
-        transform: translateX(-50%);
-      }
-    }
-
-    .marquee-item {
-      font-family: 'Syne', sans-serif;
-      font-weight: 700;
-      font-size: 1.1rem;
-      color: var(--muted);
-      letter-spacing: .06em;
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
-
-    .marquee-sep {
-      color: var(--accent);
-    }
-
-    /* ── MOBILE NAV ── */
-    #mobileMenu {
-      display: none;
-      background: var(--bg);
-      border-top: 1px solid var(--border);
-    }
-
-    #mobileMenu.open {
-      display: block;
-    }
-  </style>
 </head>
+
+
 
 <body>
 
