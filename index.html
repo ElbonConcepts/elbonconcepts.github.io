@@ -1,49 +1,43 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
-
-<head>
+<!-- saved from url=(0052)file:///C:/Users/NOBLE/3D%20Objects/home%20page.html -->
+<html lang="en" class="dark"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
   <!-- BASIC META -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Elbon Concepts — Built to Convert</title>
 
   <!-- SEO -->
-  <meta name="description"
-    content="Elbon Concepts builds high-converting websites, landing pages, and digital systems for modern brands and businesses." />
-  <meta name="keywords"
-    content="web design, landing pages, conversion websites, agency, UI design, web development, Elbon Concepts" />
-  <meta name="author" content="Elbon Concepts" />
-  <link rel="canonical" href="https://elbonconcepts.github.io/" />
-  <meta name="robots" content="index, follow" />
+  <meta name="description" content="Elbon Concepts builds high-converting websites, landing pages, and digital systems for modern brands and businesses.">
+  <meta name="keywords" content="web design, landing pages, conversion websites, agency, UI design, web development, Elbon Concepts">
+  <meta name="author" content="Elbon Concepts">
+  <link rel="canonical" href="https://elbonconcepts.github.io/">
+  <meta name="robots" content="index, follow">
 
   <!-- GOOGLE VERIFICATION -->
-  <meta name="google-site-verification" content="gHs6SpiZkU6lkIxlio-UwBQrpIHn_VvgUZp0HA-9uG0" />
+  <meta name="google-site-verification" content="gHs6SpiZkU6lkIxlio-UwBQrpIHn_VvgUZp0HA-9uG0">
 
   <!-- OPEN GRAPH (FACEBOOK / WHATSAPP / LINKEDIN) -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Elbon Concepts — Built to Convert" />
-  <meta property="og:description"
-    content="We build high-converting websites, landing pages, and digital systems for modern brands." />
-  <meta property="og:url" content="https://elbonconcepts.github.io/" />
-  <meta property="og:image" content="https://elbonconcepts.github.io/images/preview.png" />
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Elbon Concepts — Built to Convert">
+  <meta property="og:description" content="We build high-converting websites, landing pages, and digital systems for modern brands.">
+  <meta property="og:url" content="https://elbonconcepts.github.io/">
+  <meta property="og:image" content="https://elbonconcepts.github.io/images/preview.png">
 
   <!-- TWITTER CARD -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Elbon Concepts — Built to Convert" />
-  <meta name="twitter:description" content="High-converting websites and landing pages for modern brands." />
-  <meta name="twitter:image" content="https://elbonconcepts.github.io/images/preview.png" />
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Elbon Concepts — Built to Convert">
+  <meta name="twitter:description" content="High-converting websites and landing pages for modern brands.">
+  <meta name="twitter:image" content="https://elbonconcepts.github.io/images/preview.png">
 
   <!-- FAVICON -->
-  <link rel="icon" href="/favicon.ico" />
+  <link rel="icon" href="file:///C:/favicon.ico">
 
   <!-- FONTS -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
-    rel="stylesheet" />
+  <link href="./index_files/css2" rel="stylesheet">
 
   <!-- TAILWIND -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="./index_files/saved_resource"></script>
 
   <!-- TAILWIND CONFIG -->
   <script>
@@ -78,7 +72,424 @@
   }
   </script>
 
-</head>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    :root {
+      --bg: #0A0A0A;
+      --bg2: #111111;
+      --fg: #F5F5F0;
+      --muted: #888;
+      --border: rgba(255, 255, 255, 0.08);
+      --accent: #CAFF00;
+      --card: #161616;
+    }
+
+    html.light {
+      --bg: #F5F5F0;
+      --bg2: #EBEBEB;
+      --fg: #0A0A0A;
+      --muted: #666;
+      --border: rgba(0, 0, 0, 0.10);
+      --accent: #7DB800;
+      --card: #FFFFFF;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      transition: background .3s, color .3s;
+    }
+
+    /* NAV */
+    nav {
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-link {
+      color: var(--muted);
+      font-size: .85rem;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      transition: color .2s;
+      font-family: 'Syne', sans-serif;
+      font-weight: 600;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--accent);
+    }
+
+    .logo-text {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      color: var(--fg);
+    }
+
+    .logo-dot {
+      color: var(--accent);
+    }
+
+    #themeToggle {
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: var(--fg);
+      border-radius: 9999px;
+      padding: .35rem .85rem;
+      font-size: .8rem;
+      font-family: 'Syne', sans-serif;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background .2s, color .2s;
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+    }
+
+    #themeToggle:hover {
+      background: var(--accent);
+      color: #000;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #000;
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: .9rem;
+      letter-spacing: .04em;
+      padding: .9rem 2rem;
+      border-radius: 4px;
+      display: inline-block;
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(202, 255, 0, .25);
+    }
+
+    .section-label {
+      color: var(--accent);
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: .72rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      line-height: 1.1;
+      color: var(--fg);
+    }
+
+    .section-body {
+      color: var(--muted);
+      font-size: .975rem;
+      line-height: 1.75;
+    }
+
+    /* HERO */
+    .hero-badge {
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: var(--accent);
+      font-family: 'Syne', sans-serif;
+      font-weight: 600;
+      font-size: .75rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .4rem .9rem;
+      border-radius: 9999px;
+    }
+
+    .hero-badge span {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: block;
+      animation: pulse-dot 2s ease infinite;
+    }
+
+    @keyframes pulse-dot {
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: .5;
+        transform: scale(1.4);
+      }
+    }
+
+    /* FILTER TABS */
+    .filter-bar {
+      display: flex;
+      gap: .5rem;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      font-family: 'Syne', sans-serif;
+      font-weight: 600;
+      font-size: .8rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: .5rem 1.2rem;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      background: transparent;
+      cursor: pointer;
+      transition: all .2s;
+    }
+
+    .filter-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .filter-btn.active {
+      background: var(--accent);
+      color: #000;
+      border-color: var(--accent);
+    }
+
+    /* CASE STUDY CARDS */
+    .cs-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: border-color .25s, transform .25s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cs-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-4px);
+    }
+
+    .cs-header {
+      padding: 1.5rem 1.75rem 1.25rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .cs-body {
+      padding: 1.5rem 1.75rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .service-tag {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: .68rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: .25rem .65rem;
+      border-radius: 4px;
+      display: inline-block;
+    }
+
+    .tag-web {
+      background: rgba(59, 130, 246, .15);
+      color: #60a5fa;
+      border: 1px solid rgba(59, 130, 246, .2);
+    }
+
+    .tag-video {
+      background: rgba(239, 68, 68, .12);
+      color: #f87171;
+      border: 1px solid rgba(239, 68, 68, .18);
+    }
+
+    .tag-copy {
+      background: rgba(202, 255, 0, .1);
+      color: var(--accent);
+      border: 1px solid rgba(202, 255, 0, .2);
+    }
+
+    .cs-metric {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3rem;
+      line-height: 1;
+      color: var(--accent);
+    }
+
+    .cs-metric-label {
+      font-family: 'Syne', sans-serif;
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .cs-client {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: var(--fg);
+    }
+
+    .cs-industry {
+      font-size: .78rem;
+      color: var(--muted);
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    .cs-section-head {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: .7rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: .3rem;
+    }
+
+    /* TESTIMONIALS */
+    .testi-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.75rem;
+      transition: border-color .2s;
+    }
+
+    .testi-card:hover {
+      border-color: rgba(202, 255, 0, .25);
+    }
+
+    .stars {
+      color: var(--accent);
+      font-size: .9rem;
+      letter-spacing: .1em;
+    }
+
+    .testi-quote {
+      font-size: .95rem;
+      color: var(--fg);
+      line-height: 1.75;
+      font-style: italic;
+    }
+
+    .testi-name {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: .9rem;
+      color: var(--fg);
+    }
+
+    .testi-role {
+      font-size: .78rem;
+      color: var(--muted);
+    }
+
+    .testi-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: .9rem;
+      flex-shrink: 0;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      color: var(--accent);
+    }
+
+    /* CTA */
+    section.cta-section {
+      background: var(--accent);
+    }
+
+    /* FOOTER */
+    footer {
+      background: #0A0A0A;
+      border-top: 1px solid rgba(255, 255, 255, .06);
+    }
+
+    /* ANIMATIONS */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .65s ease, transform .65s ease;
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* MOBILE NAV */
+    #mobileMenu {
+      display: none;
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+    }
+
+    #mobileMenu.open {
+      display: block;
+    }
+
+    /* HIDDEN CARDS */
+    .cs-card.hidden-card {
+      display: none;
+    }
+
+    /* STATS STRIP */
+    .stats-strip {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .stat-item {
+      text-align: center;
+      padding: 1.75rem 1rem;
+      border-right: 1px solid var(--border);
+    }
+
+    .stat-item:last-child {
+      border-right: none;
+    }
+
+    .stat-big {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3rem;
+      color: var(--accent);
+      line-height: 1;
+    }
+  </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.visible{visibility:visible}.fixed{position:fixed}.left-0{left:0px}.right-0{right:0px}.top-0{top:0px}.z-50{z-index:50}.col-span-2{grid-column:span 2 / span 2}.mx-auto{margin-left:auto;margin-right:auto}.mb-1{margin-bottom:0.25rem}.mb-10{margin-bottom:2.5rem}.mb-12{margin-bottom:3rem}.mb-14{margin-bottom:3.5rem}.mb-16{margin-bottom:4rem}.mb-2{margin-bottom:0.5rem}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mb-5{margin-bottom:1.25rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.mt-1{margin-top:0.25rem}.mt-16{margin-top:4rem}.mt-4{margin-top:1rem}.mt-5{margin-top:1.25rem}.mt-8{margin-top:2rem}.inline-block{display:inline-block}.flex{display:flex}.grid{display:grid}.hidden{display:none}.h-16{height:4rem}.h-full{height:100%}.max-w-2xl{max-width:42rem}.max-w-6xl{max-width:72rem}.max-w-lg{max-width:32rem}.max-w-xl{max-width:36rem}.max-w-xs{max-width:20rem}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-10{gap:2.5rem}.gap-16{gap:4rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.gap-8{gap:2rem}.space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.space-y-6 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.5rem * var(--tw-space-y-reverse))}.px-5{padding-left:1.25rem;padding-right:1.25rem}.py-14{padding-top:3.5rem;padding-bottom:3.5rem}.py-20{padding-top:5rem;padding-bottom:5rem}.py-24{padding-top:6rem;padding-bottom:6rem}.py-4{padding-top:1rem;padding-bottom:1rem}.pt-4{padding-top:1rem}.pt-8{padding-top:2rem}.text-center{text-align:center}.font-display{font-family:Bebas Neue, sans-serif}.font-heading{font-family:Syne, sans-serif}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-\[clamp\(3rem\2c 9vw\2c 7rem\)\]{font-size:clamp(3rem,9vw,7rem)}.text-\[clamp\(4rem\2c 12vw\2c 9\.5rem\)\]{font-size:clamp(4rem,12vw,9.5rem)}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-bold{font-weight:700}.leading-none{line-height:1}.text-black{--tw-text-opacity:1;color:rgb(0 0 0 / var(--tw-text-opacity, 1))}@media (min-width: 768px){.md\:col-span-1{grid-column:span 1 / span 1}.md\:mb-0{margin-bottom:0px}.md\:inline-block{display:inline-block}.md\:flex{display:flex}.md\:hidden{display:none}.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.md\:flex-row{flex-direction:row}.md\:items-end{align-items:flex-end}.md\:justify-between{justify-content:space-between}.md\:text-5xl{font-size:3rem;line-height:1}}</style></head>
 
 
 
@@ -87,13 +498,13 @@
   <!-- ══════════ NAV ══════════ -->
   <nav class="fixed top-0 left-0 right-0 z-50">
     <div class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
-      <a href="#" class="logo-text text-lg">Elbon <span class="logo-dot">Concepts</span></a>
+      <a href="file:///C:/Users/NOBLE/3D%20Objects/home%20page.html#" class="logo-text text-lg">Elbon <span class="logo-dot">Concepts</span></a>
 
       <div class="hidden md:flex items-center gap-8">
-        <a href="#services" class="nav-link">Services</a>
-        <a href="#why" class="nav-link">Why Us</a>
-        <a href="#process" class="nav-link">Process</a>
-        <a href="#proof" class="nav-link">Results</a>
+        <a href="file:///C:/Users/NOBLE/3D%20Objects/home%20page.html#services" class="nav-link">Services</a>
+        <a href="file:///C:/Users/NOBLE/3D%20Objects/home%20page.html#why" class="nav-link">Why Us</a>
+        <a href="file:///C:/Users/NOBLE/3D%20Objects/home%20page.html#process" class="nav-link">Process</a>
+        <a href="file:///C:/Users/NOBLE/3D%20Objects/home%20page.html#proof" class="nav-link">Results</a>
       </div>
 
       <div class="flex items-center gap-3">
@@ -101,24 +512,24 @@
           <span id="themeIcon">☀️</span>
           <span id="themeLabel">Light</span>
         </button>
-        <a href="#cta" class="btn-primary hidden md:inline-block" style="padding:.6rem 1.3rem; font-size:.82rem;">Book a
+        <a href="file:///C:/Users/NOBLE/3D%20Objects/home%20page.html#cta" class="btn-primary hidden md:inline-block" style="padding:.6rem 1.3rem; font-size:.82rem;">Book a
           Call</a>
         <button id="hamburger" class="md:hidden" style="color:var(--fg);" aria-label="Menu">
           <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
-            <line x1="3" y1="7" x2="19" y2="7" />
-            <line x1="3" y1="12" x2="19" y2="12" />
-            <line x1="3" y1="17" x2="19" y2="17" />
+            <line x1="3" y1="7" x2="19" y2="7"></line>
+            <line x1="3" y1="12" x2="19" y2="12"></line>
+            <line x1="3" y1="17" x2="19" y2="17"></line>
           </svg>
         </button>
       </div>
     </div>
     <div id="mobileMenu">
       <div class="max-w-6xl mx-auto px-5 py-4 flex flex-col gap-4">
-        <a href="#services" class="nav-link" onclick="closeMobile()">Services</a>
-        <a href="#why" class="nav-link" onclick="closeMobile()">Why Us</a>
-        <a href="#process" class="nav-link" onclick="closeMobile()">Process</a>
-        <a href="#proof" class="nav-link" onclick="closeMobile()">Results</a>
-        <a href="#cta" class="btn-primary text-center" onclick="closeMobile()">Book a Call</a>
+        <a href="file:///C:/Users/NOBLE/3D%20Objects/home%20page.html#services" class="nav-link" onclick="closeMobile()">Services</a>
+        <a href="file:///C:/Users/NOBLE/3D%20Objects/home%20page.html#why" class="nav-link" onclick="closeMobile()">Why Us</a>
+        <a href="file:///C:/Users/NOBLE/3D%20Objects/home%20page.html#process" class="nav-link" onclick="closeMobile()">Process</a>
+        <a href="file:///C:/Users/NOBLE/3D%20Objects/home%20page.html#proof" class="nav-link" onclick="closeMobile()">Results</a>
+        <a href="file:///C:/Users/NOBLE/3D%20Objects/home%20page.html#cta" class="btn-primary text-center" onclick="closeMobile()">Book a Call</a>
       </div>
     </div>
   </nav>
@@ -126,24 +537,24 @@
   <!-- ══════════ HERO ══════════ -->
   <section class="hero" id="home">
     <div class="max-w-6xl mx-auto px-5 py-20">
-      <div class="mb-6 fade-up">
+      <div class="mb-6 fade-up visible">
         <span class="hero-badge"><span></span>Available for new projects</span>
       </div>
-      <h1 class="display-headline text-[clamp(4rem,12vw,9.5rem)] mb-6 fade-up" style="transition-delay:.1s">
-        WE BUILD<br />
-        ASSETS THAT<br />
+      <h1 class="display-headline text-[clamp(4rem,12vw,9.5rem)] mb-6 fade-up visible" style="transition-delay:.1s">
+        WE BUILD<br>
+        ASSETS THAT<br>
         <span class="accent-word">CONVERT.</span>
       </h1>
-      <p class="section-body max-w-xl mb-10 fade-up" style="transition-delay:.2s; font-size:1.05rem;">
+      <p class="section-body max-w-xl mb-10 fade-up visible" style="transition-delay:.2s; font-size:1.05rem;">
         Elbon Concepts is a results-driven digital agency. We design websites, edit video ads, and write copy that turns
         attention into revenue.
       </p>
-      <div class="flex flex-wrap gap-4 fade-up" style="transition-delay:.3s">
-        <a href="#cta" class="btn-primary">Book a Free Call →</a>
-        <a href="#services" class="btn-outline">View Services</a>
+      <div class="flex flex-wrap gap-4 fade-up visible" style="transition-delay:.3s">
+        <a href="file:///C:/Users/NOBLE/3D%20Objects/home%20page.html#cta" class="btn-primary">Book a Free Call →</a>
+        <a href="file:///C:/Users/NOBLE/3D%20Objects/home%20page.html#services" class="btn-outline">View Services</a>
       </div>
       <!-- Stats row -->
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-16 fade-up" style="transition-delay:.4s">
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-16 fade-up visible" style="transition-delay:.4s">
         <div class="stat-card">
           <div class="stat-num">3+</div>
           <p class="section-body text-sm mt-1">Core Services</p>
@@ -163,67 +574,55 @@
   <!-- ══════════ MARQUEE ══════════ -->
   <div style="background:var(--accent); overflow:hidden; padding:.85rem 0;">
     <div class="marquee-track">
-      <span class="marquee-item" style="color:#000;">Web Design</span><span class="marquee-sep"
-        style="color:#000;">✦</span>
-      <span class="marquee-item" style="color:#000;">Video Ad Editing</span><span class="marquee-sep"
-        style="color:#000;">✦</span>
-      <span class="marquee-item" style="color:#000;">Copywriting</span><span class="marquee-sep"
-        style="color:#000;">✦</span>
-      <span class="marquee-item" style="color:#000;">Conversion Strategy</span><span class="marquee-sep"
-        style="color:#000;">✦</span>
-      <span class="marquee-item" style="color:#000;">Direct Response Ads</span><span class="marquee-sep"
-        style="color:#000;">✦</span>
-      <span class="marquee-item" style="color:#000;">Landing Pages</span><span class="marquee-sep"
-        style="color:#000;">✦</span>
-      <span class="marquee-item" style="color:#000;">Web Design</span><span class="marquee-sep"
-        style="color:#000;">✦</span>
-      <span class="marquee-item" style="color:#000;">Video Ad Editing</span><span class="marquee-sep"
-        style="color:#000;">✦</span>
-      <span class="marquee-item" style="color:#000;">Copywriting</span><span class="marquee-sep"
-        style="color:#000;">✦</span>
-      <span class="marquee-item" style="color:#000;">Conversion Strategy</span><span class="marquee-sep"
-        style="color:#000;">✦</span>
-      <span class="marquee-item" style="color:#000;">Direct Response Ads</span><span class="marquee-sep"
-        style="color:#000;">✦</span>
-      <span class="marquee-item" style="color:#000;">Landing Pages</span><span class="marquee-sep"
-        style="color:#000;">✦</span>
+      <span class="marquee-item" style="color:#000;">Web Design</span><span class="marquee-sep" style="color:#000;">✦</span>
+      <span class="marquee-item" style="color:#000;">Video Ad Editing</span><span class="marquee-sep" style="color:#000;">✦</span>
+      <span class="marquee-item" style="color:#000;">Copywriting</span><span class="marquee-sep" style="color:#000;">✦</span>
+      <span class="marquee-item" style="color:#000;">Conversion Strategy</span><span class="marquee-sep" style="color:#000;">✦</span>
+      <span class="marquee-item" style="color:#000;">Direct Response Ads</span><span class="marquee-sep" style="color:#000;">✦</span>
+      <span class="marquee-item" style="color:#000;">Landing Pages</span><span class="marquee-sep" style="color:#000;">✦</span>
+      <span class="marquee-item" style="color:#000;">Web Design</span><span class="marquee-sep" style="color:#000;">✦</span>
+      <span class="marquee-item" style="color:#000;">Video Ad Editing</span><span class="marquee-sep" style="color:#000;">✦</span>
+      <span class="marquee-item" style="color:#000;">Copywriting</span><span class="marquee-sep" style="color:#000;">✦</span>
+      <span class="marquee-item" style="color:#000;">Conversion Strategy</span><span class="marquee-sep" style="color:#000;">✦</span>
+      <span class="marquee-item" style="color:#000;">Direct Response Ads</span><span class="marquee-sep" style="color:#000;">✦</span>
+      <span class="marquee-item" style="color:#000;">Landing Pages</span><span class="marquee-sep" style="color:#000;">✦</span>
     </div>
   </div>
 
   <!-- ══════════ SERVICES ══════════ -->
   <section id="services" class="py-24">
     <div class="max-w-6xl mx-auto px-5">
-      <div class="mb-4 fade-up"><span class="section-label">Core Services</span></div>
+      <div class="mb-4 fade-up visible"><span class="section-label">Core Services</span></div>
       <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-14">
-        <h2 class="section-title text-4xl md:text-5xl max-w-lg fade-up">Three services. One goal: more revenue.</h2>
-        <p class="section-body max-w-xs fade-up">Every service is designed to move the needle — not just look good.</p>
+        <h2 class="section-title text-4xl md:text-5xl max-w-lg fade-up visible">Three services. One goal: more revenue.</h2>
+        <p class="section-body max-w-xs fade-up visible">Every service is designed to move the needle — not just look good.</p>
       </div>
       <div class="grid md:grid-cols-3 gap-6">
         <!-- Card 1 -->
-        <div class="service-card fade-up">
+        <div class="service-card fade-up visible">
           <div class="service-num">01</div>
           <div class="service-icon mb-4">
             <svg width="22" height="22" fill="none" stroke="#000" stroke-width="2.2" viewBox="0 0 24 24">
-              <rect x="2" y="3" width="20" height="14" rx="2" />
-              <path d="M8 21h8M12 17v4" />
+              <rect x="2" y="3" width="20" height="14" rx="2"></rect>
+              <path d="M8 21h8M12 17v4"></path>
             </svg>
           </div>
           <h3 class="font-heading font-bold text-xl mb-3" style="color:var(--fg)">Web Design</h3>
           <p class="section-body text-sm">A website that doesn't convert is a billboard no one reads. We build clean,
             fast, mobile-first sites engineered to turn visitors into buyers.</p>
           <ul class="mt-5 space-y-2">
-            <li class="text-sm" style="color:var(--muted)">✦ &nbsp;Responsive & mobile-first</li>
+            <li class="text-sm" style="color:var(--muted)">✦ &nbsp;Responsive &amp; mobile-first</li>
             <li class="text-sm" style="color:var(--muted)">✦ &nbsp;Conversion-optimised layout</li>
             <li class="text-sm" style="color:var(--muted)">✦ &nbsp;Modern SaaS-quality design</li>
           </ul>
         </div>
         <!-- Card 2 -->
-        <div class="service-card fade-up" style="transition-delay:.1s">
+        <div class="service-card fade-up visible" style="transition-delay:.1s">
           <div class="service-num">02</div>
           <div class="service-icon mb-4">
             <svg width="22" height="22" fill="none" stroke="#000" stroke-width="2.2" viewBox="0 0 24 24">
-              <polygon points="23 7 16 12 23 17 23 7" />
-              <rect x="1" y="5" width="15" height="14" rx="2" />
+              <polygon points="23 7 16 12 23 17 23 7"></polygon>
+              <rect x="1" y="5" width="15" height="14" rx="2"></rect>
             </svg>
           </div>
           <h3 class="font-heading font-bold text-xl mb-3" style="color:var(--fg)">Video Ad Editing</h3>
@@ -236,12 +635,12 @@
           </ul>
         </div>
         <!-- Card 3 -->
-        <div class="service-card fade-up" style="transition-delay:.2s">
+        <div class="service-card fade-up visible" style="transition-delay:.2s">
           <div class="service-num">03</div>
           <div class="service-icon mb-4">
             <svg width="22" height="22" fill="none" stroke="#000" stroke-width="2.2" viewBox="0 0 24 24">
-              <path d="M12 20h9" />
-              <path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z" />
+              <path d="M12 20h9"></path>
+              <path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"></path>
             </svg>
           </div>
           <h3 class="font-heading font-bold text-xl mb-3" style="color:var(--fg)">Copywriting</h3>
@@ -260,11 +659,11 @@
   <!-- ══════════ PROBLEM / SOLUTION ══════════ -->
   <section class="py-24 problem-bg" id="problem">
     <div class="max-w-6xl mx-auto px-5">
-      <div class="mb-4 fade-up"><span class="section-label">The Real Problem</span></div>
-      <h2 class="section-title text-4xl md:text-5xl max-w-2xl mb-12 fade-up">Most businesses are leaking money every day
+      <div class="mb-4 fade-up visible"><span class="section-label">The Real Problem</span></div>
+      <h2 class="section-title text-4xl md:text-5xl max-w-2xl mb-12 fade-up visible">Most businesses are leaking money every day
         online.</h2>
       <div class="grid md:grid-cols-2 gap-10">
-        <div class="space-y-6 fade-up">
+        <div class="space-y-6 fade-up visible">
           <div class="service-card">
             <span class="problem-pill mb-3 inline-block">Problem</span>
             <h3 class="font-heading font-bold text-lg mb-2" style="color:var(--fg)">Your website isn't converting</h3>
@@ -285,11 +684,10 @@
               Sales copy needs a strategy, not just nice sentences.</p>
           </div>
         </div>
-        <div class="fade-up" style="transition-delay:.15s">
+        <div class="fade-up visible" style="transition-delay:.15s">
           <div class="service-card h-full flex flex-col justify-between" style="border-color:var(--accent);">
             <div>
-              <span class="inline-block mb-4"
-                style="background:var(--accent);color:#000;font-family:'Syne',sans-serif;font-weight:700;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;padding:.35rem .8rem;border-radius:4px;">The
+              <span class="inline-block mb-4" style="background:var(--accent);color:#000;font-family:&#39;Syne&#39;,sans-serif;font-weight:700;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;padding:.35rem .8rem;border-radius:4px;">The
                 Elbon Solution</span>
               <h3 class="section-title text-3xl mb-6">We fix all three — together.</h3>
               <p class="section-body mb-6">Elbon Concepts aligns your web design, video ads, and copy into a single,
@@ -309,7 +707,7 @@
                 <p class="section-body text-sm">Copy that speaks to buyers, not just browsers</p>
               </div>
               <div class="mt-8">
-                <a href="#cta" class="btn-primary">Fix My Conversions →</a>
+                <a href="file:///C:/Users/NOBLE/3D%20Objects/home%20page.html#cta" class="btn-primary">Fix My Conversions →</a>
               </div>
             </div>
           </div>
@@ -327,7 +725,7 @@
           <h2 class="section-title text-4xl md:text-5xl mb-6">We're not a typical agency.</h2>
           <p class="section-body mb-8">We don't do retainer fluff. Every deliverable is tied to a business outcome — and
             we stay obsessed with conversion until the numbers move.</p>
-          <a href="#cta" class="btn-primary">Let's Work Together →</a>
+          <a href="file:///C:/Users/NOBLE/3D%20Objects/home%20page.html#cta" class="btn-primary">Let's Work Together →</a>
         </div>
         <div class="fade-up" style="transition-delay:.1s">
           <div class="why-item">
@@ -451,25 +849,18 @@
   <section id="cta" class="py-24" style="background:var(--accent)">
     <div class="max-w-6xl mx-auto px-5 text-center">
       <div class="mb-5 fade-up">
-        <span
-          style="background:rgba(0,0,0,.12);color:#000;font-family:'Syne',sans-serif;font-weight:700;font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;padding:.4rem .9rem;border-radius:9999px;">Free
+        <span style="background:rgba(0,0,0,.12);color:#000;font-family:&#39;Syne&#39;,sans-serif;font-weight:700;font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;padding:.4rem .9rem;border-radius:9999px;">Free
           Strategy Call</span>
       </div>
-      <h2 class="font-display text-[clamp(3rem,9vw,7rem)] leading-none text-black mb-6 fade-up">READY TO<br />CONVERT
+      <h2 class="font-display text-[clamp(3rem,9vw,7rem)] leading-none text-black mb-6 fade-up">READY TO<br>CONVERT
         MORE?</h2>
-      <p class="max-w-xl mx-auto mb-10 fade-up"
-        style="color:rgba(0,0,0,.65);font-family:'DM Sans',sans-serif;font-size:1.05rem;line-height:1.7;">
+      <p class="max-w-xl mx-auto mb-10 fade-up" style="color:rgba(0,0,0,.65);font-family:&#39;DM Sans&#39;,sans-serif;font-size:1.05rem;line-height:1.7;">
         Book a free 30-minute strategy call. We'll look at what you're currently doing, identify the biggest revenue
         leaks, and outline exactly what needs to change.
       </p>
       <div class="flex flex-wrap gap-4 justify-center fade-up">
-        <a href="mailto:elbonconcepts@gmail.com"
-          style="background:#000;color:var(--accent);font-family:'Syne',sans-serif;font-weight:700;font-size:.95rem;letter-spacing:.04em;padding:1rem 2.5rem;border-radius:4px;display:inline-block;transition:opacity .2s;"
-          onmouseenter="this.style.opacity='.85'" onmouseleave="this.style.opacity='1'">Book a Free Strategy Call →</a>
-        <a href="https://elbonconcepts.github.io/portfolio" target="_blank"
-          style="border:2px solid rgba(0,0,0,.25);color:#000;font-family:'Syne',sans-serif;font-weight:600;font-size:.95rem;letter-spacing:.04em;padding:1rem 2.5rem;border-radius:4px;display:inline-block;transition:border-color .2s;"
-          onmouseenter="this.style.borderColor='rgba(0,0,0,.7)'"
-          onmouseleave="this.style.borderColor='rgba(0,0,0,.25)'">See Our Work</a>
+        <a href="mailto:elbonconcepts@gmail.com" style="background:#000;color:var(--accent);font-family:&#39;Syne&#39;,sans-serif;font-weight:700;font-size:.95rem;letter-spacing:.04em;padding:1rem 2.5rem;border-radius:4px;display:inline-block;transition:opacity .2s;" onmouseenter="this.style.opacity=&#39;.85&#39;" onmouseleave="this.style.opacity=&#39;1&#39;">Book a Free Strategy Call →</a>
+        <a href="https://elbonconcepts.github.io/portfolio" target="_blank" style="border:2px solid rgba(0,0,0,.25);color:#000;font-family:&#39;Syne&#39;,sans-serif;font-weight:600;font-size:.95rem;letter-spacing:.04em;padding:1rem 2.5rem;border-radius:4px;display:inline-block;transition:border-color .2s;" onmouseenter="this.style.borderColor=&#39;rgba(0,0,0,.7)&#39;" onmouseleave="this.style.borderColor=&#39;rgba(0,0,0,.25)&#39;">See Our Work</a>
       </div>
     </div>
   </section>
@@ -486,9 +877,9 @@
         <div>
           <h5 class="font-heading font-bold text-sm mb-4" style="color:var(--fg)">Services</h5>
           <ul class="space-y-2">
-            <li><a href="#services" class="nav-link">Web Design</a></li>
-            <li><a href="#services" class="nav-link">Video Ad Editing</a></li>
-            <li><a href="#services" class="nav-link">Copywriting</a></li>
+            <li><a href="file:///C:/Users/NOBLE/3D%20Objects/home%20page.html#services" class="nav-link">Web Design</a></li>
+            <li><a href="file:///C:/Users/NOBLE/3D%20Objects/home%20page.html#services" class="nav-link">Video Ad Editing</a></li>
+            <li><a href="file:///C:/Users/NOBLE/3D%20Objects/home%20page.html#services" class="nav-link">Copywriting</a></li>
           </ul>
         </div>
         <div>
@@ -500,8 +891,7 @@
           </ul>
         </div>
       </div>
-      <div class="flex flex-col md:flex-row items-center justify-between pt-8"
-        style="border-top:1px solid var(--border)">
+      <div class="flex flex-col md:flex-row items-center justify-between pt-8" style="border-top:1px solid var(--border)">
         <p class="text-xs mb-3 md:mb-0" style="color:var(--muted)">© 2025 Elbon Concepts. All rights reserved.</p>
         <p class="text-xs" style="color:var(--muted)">Built to convert.</p>
       </div>
@@ -553,6 +943,7 @@
     }, { threshold: 0.12 });
     fadeEls.forEach(el => observer.observe(el));
   </script>
-</body>
 
-</html>
+
+
+</body></html>
