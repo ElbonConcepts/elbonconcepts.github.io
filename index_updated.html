@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+
+<html lang="en" class="dark">
+
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Elbon Concepts — Built to Convert</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap"
+      rel="stylesheet" />
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              display: ['Bebas Neue', 'sans-serif'],
+              heading: ['Syne', 'sans-serif'],
+              body: ['DM Sans', 'sans-serif'],
+            },
+            colors: {
+              acid: '#CAFF00',
+              ink: '#0A0A0A',
+              paper: '#F5F5F0',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: 'DM Sans', sans-serif;
+      }
+
+      .font-display {
+        font-family: 'Bebas Neue', sans-serif;
+      }
+
+      .font-heading {
+        font-family: 'Syne', sans-serif;
+      }
+
+      .font-body {
+        font-family: 'DM Sans', sans-serif;
+      }
+
+      /* ── THEME ── */
+      :root {
+        --bg: #0A0A0A;
+        --bg2: #111111;
+        --fg: #F5F5F0;
+        --muted: #888;
+        --border: rgba(255, 255, 255, 0.08);
+        --accent: #CAFF00;
+        --card: #161616;
+      }
+
+      html.light {
+        --bg: #F5F5F0;
+        --bg2: #EBEBEB;
+        --fg: #0A0A0A;
+        --muted: #666;
+        --border: rgba(0, 0, 0, 0.10);
+        --accent: #7DB800;
+        --card: #FFFFFF;
+      }
+
+      body {
+        background: var(--bg);
+        color: var(--fg);
+        transition: background .3s, color .3s;
+      }
+
+      /* ── NAV ── */
+      nav {
+        background: var(--bg);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .nav-link {
+        color: var(--muted);
+        font-size: .85rem;
+        letter-spacing: .05em;
+        text-transform: uppercase;
+        transition: color .2s;
+      }
+
+      .nav-link:hover {
+        color: var(--accent);
+      }
+
+      .logo-text {
+        font-family: 'Syne', sans-serif;
+        font-weight: 800;
+        color: var(--fg);
+      }
+
+      .logo-dot {
+        color: var(--accent);
+      }
+
+      /* ── TOGGLE ── */
+      #themeToggle {
+        background: var(--card);
+        border: 1px solid var(--border);
+        color: var(--fg);
+        border-radius: 9999px;
+        padding: .35rem .85rem;
+        font-size: .8rem;
+        font-family: 'Syne', sans-serif;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background .2s, color .2s;
+        display: flex;
+        align-items: center;
+        gap: .4rem;
+      }
+
+      #themeToggle:hover {
+        background: var(--accent);
+        color: #000;
+      }
+
+      /* ── HERO ── */
+      .hero {
+        background: var(--bg);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 5rem;
+      }
+
+      .hero-badge {
+        background: var(--card);
+        border: 1px solid var(--border);
+        color: var(--accent);
+        font-family: 'Syne', sans-serif;
+        font-weight: 600;
+        font-size: .75rem;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+        display: inline-flex;
+        align-items: center;
+        gap: .5rem;
+        padding: .4rem .9rem;
+        border-radius: 9999px;
+      }
+
+      .hero-badge span {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--accent);
+        display: block;
+        animation: pulse-dot 2s ease infinite;
+      }
+
+      @keyframes pulse-dot {
+
+        0%,
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+
+        50% {
+          opacity: .5;
+          transform: scale(1.4);
+        }
+      }
+
+      .display-headline {
+        font-family: 'Bebas Neue', sans-serif;
+        line-height: .95;
+        letter-spacing: -.01em;
+        color: var(--fg);
+      }
+
+      .accent-word {
+        color: var(--accent);
+      }
+
+      .btn-primary {
+        background: var(--accent);
+        color: #000;
+        font-family: 'Syne', sans-serif;
+        font-weight: 700;
+        font-size: .9rem;
+        letter-spacing: .04em;
+        padding: .9rem 2rem;
+        border-radius: 4px;
+        display: inline-block;
+        transition: transform .2s, box-shadow .2s;
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 32px rgba(202, 255, 0, .25);
+      }
+
+      .btn-outline {
+        border: 1px solid var(--border);
+        color: var(--fg);
+        font-family: 'Syne', sans-serif;
+        font-weight: 600;
+        font-size: .9rem;
+        letter-spacing: .04em;
+        padding: .9rem 2rem;
+        border-radius: 4px;
+        display: inline-block;
+        transition: border-color .2s, color .2s;
+      }
+
+      .btn-outline:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+
+      /* ── SECTIONS ── */
+      section {
+        border-top: 1px solid var(--border);
+      }
+
+      .section-label {
+        color: var(--accent);
+        font-family: 'Syne', sans-serif;
+        font-weight: 700;
+        font-size: .72rem;
+        letter-spacing: .18em;
+        text-transform: uppercase;
+      }
+
+      .section-title {
+        font-family: 'Syne', sans-serif;
+        font-weight: 800;
+        line-height: 1.1;
+        color: var(--fg);
+      }
+
+      .section-body {
+        color: var(--muted);
+        font-size: .975rem;
+        line-height: 1.75;
+      }
+
+      /* ── CARDS ── */
+      .service-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 2rem;
+        transition: border-color .25s, transform .25s;
+      }
+
+      .service-card:hover {
+        border-color: var(--accent);
+        transform: translateY(-4px);
+      }
+
+      .service-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 8px;
+        background: var(--accent);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .service-num {
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 4.5rem;
+        line-height: 1;
+        color: var(--border);
+      }
+
+      /* ── PROBLEM ── */
+      .problem-bg {
+        background: var(--bg2);
+      }
+
+      .problem-pill {
+        background: rgba(202, 255, 0, .08);
+        border: 1px solid rgba(202, 255, 0, .2);
+        color: var(--accent);
+        font-size: .78rem;
+        font-family: 'Syne', sans-serif;
+        font-weight: 600;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+        padding: .3rem .75rem;
+        border-radius: 9999px;
+      }
+
+      /* ── STATS ── */
+      .stat-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 1.5rem 2rem;
+      }
+
+      .stat-num {
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 3.5rem;
+        line-height: 1;
+        color: var(--accent);
+      }
+
+      /* ── PROOF ── */
+      .proof-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 1.75rem;
+        transition: border-color .2s;
+      }
+
+      .proof-card:hover {
+        border-color: rgba(202, 255, 0, .3);
+      }
+
+      .tag-placeholder {
+        font-size: .7rem;
+        background: var(--bg2);
+        color: var(--muted);
+        padding: .2rem .6rem;
+        border-radius: 4px;
+        font-family: 'Syne', sans-serif;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+      }
+
+      /* ── PROCESS ── */
+      .step-num {
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 5rem;
+        line-height: 1;
+        color: var(--border);
+      }
+
+      .step-card {
+        border-left: 2px solid var(--border);
+        padding-left: 1.5rem;
+        transition: border-color .2s;
+      }
+
+      .step-card:hover {
+        border-color: var(--accent);
+      }
+
+      /* ── WHY ── */
+      .why-item {
+        border-bottom: 1px solid var(--border);
+        padding: 1.25rem 0;
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+
+      .why-check {
+        color: var(--accent);
+        font-size: 1.1rem;
+        margin-top: .1rem;
+        flex-shrink: 0;
+      }
+
+      /* ── FOOTER ── */
+      footer {
+        background: var(--ink);
+        border-top: 1px solid rgba(255, 255, 255, .06);
+      }
+
+      /* ── ANIMATIONS ── */
+      .fade-up {
+        opacity: 0;
+        transform: translateY(28px);
+        transition: opacity .7s ease, transform .7s ease;
+      }
+
+      .fade-up.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* ── MARQUEE ── */
+      .marquee-track {
+        display: flex;
+        gap: 3rem;
+        animation: marquee 18s linear infinite;
+        width: max-content;
+      }
+
+      @keyframes marquee {
+        0% {
+          transform: translateX(0);
+        }
+
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+
+      .marquee-item {
+        font-family: 'Syne', sans-serif;
+        font-weight: 700;
+        font-size: 1.1rem;
+        color: var(--muted);
+        letter-spacing: .06em;
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+
+      .marquee-sep {
+        color: var(--accent);
+      }
+
+      /* ── MOBILE NAV ── */
+      #mobileMenu {
+        display: none;
+        background: var(--bg);
+        border-top: 1px solid var(--border);
+      }
+
+      #mobileMenu.open {
+        display: block;
+      }
+    </style>
+  </head>
+
+
+
+
+
+  <body>
+
+    <!-- ══════════ NAV ══════════ -->
+    <nav class="fixed top-0 left-0 right-0 z-50">
+      <div class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
+        <a href="#" class="logo-text text-lg">Elbon <span class="logo-dot">Concepts</span></a>
+
+        <div class="hidden md:flex items-center gap-8">
+          <a href="#services" class="nav-link">Services</a>
+          <a href="#why" class="nav-link">Why Us</a>
+          <a href="#process" class="nav-link">Process</a>
+          <a href="#proof" class="nav-link">Results</a>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <button id="themeToggle" aria-label="Toggle theme">
+            <span id="themeIcon">☀️</span>
+            <span id="themeLabel">Light</span>
+          </button>
+          <a href="#cta" class="btn-primary hidden md:inline-block" style="padding:.6rem 1.3rem; font-size:.82rem;">Book
+            a
+            Call</a>
+          <button id="hamburger" class="md:hidden" style="color:var(--fg);" aria-label="Menu">
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="3" y1="7" x2="19" y2="7" />
+              <line x1="3" y1="12" x2="19" y2="12" />
+              <line x1="3" y1="17" x2="19" y2="17" />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div id="mobileMenu">
+        <div class="max-w-6xl mx-auto px-5 py-4 flex flex-col gap-4">
+          <a href="#services" class="nav-link" onclick="closeMobile()">Services</a>
+          <a href="#why" class="nav-link" onclick="closeMobile()">Why Us</a>
+          <a href="#process" class="nav-link" onclick="closeMobile()">Process</a>
+          <a href="#proof" class="nav-link" onclick="closeMobile()">Results</a>
+          <a href="#cta" class="btn-primary text-center" onclick="closeMobile()">Book a Call</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ══════════ HERO ══════════ -->
+    <section class="hero" id="home">
+      <div class="max-w-6xl mx-auto px-5 py-20">
+        <div class="mb-6 fade-up">
+          <span class="hero-badge"><span></span>Available for new projects</span>
+        </div>
+        <h1 class="display-headline text-[clamp(4rem,12vw,9.5rem)] mb-6 fade-up" style="transition-delay:.1s">
+          WE BUILD<br />
+          ASSETS THAT<br />
+          <span class="accent-word">CONVERT.</span>
+        </h1>
+        <p class="section-body max-w-xl mb-10 fade-up" style="transition-delay:.2s; font-size:1.05rem;">
+          Elbon Concepts is a results-driven digital agency. We design websites, edit video ads, and write copy that
+          turns
+          attention into revenue.
+        </p>
+        <div class="flex flex-wrap gap-4 fade-up" style="transition-delay:.3s">
+          <a href="#cta" class="btn-primary">Book a Free Call →</a>
+          <a href="#services" class="btn-outline">View Services</a>
+        </div>
+        <!-- Stats row -->
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-16 fade-up" style="transition-delay:.4s">
+          <div class="stat-card">
+            <div class="stat-num">3+</div>
+            <p class="section-body text-sm mt-1">Core Services</p>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">100%</div>
+            <p class="section-body text-sm mt-1">Conversion Focus</p>
+          </div>
+          <div class="stat-card col-span-2 md:col-span-1">
+            <div class="stat-num">0</div>
+            <p class="section-body text-sm mt-1">Filler Work Delivered</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ MARQUEE ══════════ -->
+    <div style="background:var(--accent); overflow:hidden; padding:.85rem 0;">
+      <div class="marquee-track">
+        <span class="marquee-item" style="color:#000;">Web Design</span><span class="marquee-sep"
+          style="color:#000;">✦</span>
+        <span class="marquee-item" style="color:#000;">Video Ad Editing</span><span class="marquee-sep"
+          style="color:#000;">✦</span>
+        <span class="marquee-item" style="color:#000;">Copywriting</span><span class="marquee-sep"
+          style="color:#000;">✦</span>
+        <span class="marquee-item" style="color:#000;">Conversion Strategy</span><span class="marquee-sep"
+          style="color:#000;">✦</span>
+        <span class="marquee-item" style="color:#000;">Direct Response Ads</span><span class="marquee-sep"
+          style="color:#000;">✦</span>
+        <span class="marquee-item" style="color:#000;">Landing Pages</span><span class="marquee-sep"
+          style="color:#000;">✦</span>
+        <span class="marquee-item" style="color:#000;">Web Design</span><span class="marquee-sep"
+          style="color:#000;">✦</span>
+        <span class="marquee-item" style="color:#000;">Video Ad Editing</span><span class="marquee-sep"
+          style="color:#000;">✦</span>
+        <span class="marquee-item" style="color:#000;">Copywriting</span><span class="marquee-sep"
+          style="color:#000;">✦</span>
+        <span class="marquee-item" style="color:#000;">Conversion Strategy</span><span class="marquee-sep"
+          style="color:#000;">✦</span>
+        <span class="marquee-item" style="color:#000;">Direct Response Ads</span><span class="marquee-sep"
+          style="color:#000;">✦</span>
+        <span class="marquee-item" style="color:#000;">Landing Pages</span><span class="marquee-sep"
+          style="color:#000;">✦</span>
+      </div>
+    </div>
+
+    <!-- ══════════ SERVICES ══════════ -->
+    <section id="services" class="py-24">
+      <div class="max-w-6xl mx-auto px-5">
+        <div class="mb-4 fade-up"><span class="section-label">Core Services</span></div>
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-14">
+          <h2 class="section-title text-4xl md:text-5xl max-w-lg fade-up">Three services. One goal: more revenue.</h2>
+          <p class="section-body max-w-xs fade-up">Every service is designed to move the needle — not just look good.
+          </p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+          <!-- Card 1 -->
+          <div class="service-card fade-up">
+            <div class="service-num">01</div>
+            <div class="service-icon mb-4">
+              <svg width="22" height="22" fill="none" stroke="#000" stroke-width="2.2" viewBox="0 0 24 24">
+                <rect x="2" y="3" width="20" height="14" rx="2" />
+                <path d="M8 21h8M12 17v4" />
+              </svg>
+            </div>
+            <h3 class="font-heading font-bold text-xl mb-3" style="color:var(--fg)">Web Design</h3>
+            <p class="section-body text-sm">A website that doesn't convert is a billboard no one reads. We build clean,
+              fast, mobile-first sites engineered to turn visitors into buyers.</p>
+            <ul class="mt-5 space-y-2">
+              <li class="text-sm" style="color:var(--muted)">✦ &nbsp;Responsive & mobile-first</li>
+              <li class="text-sm" style="color:var(--muted)">✦ &nbsp;Conversion-optimised layout</li>
+              <li class="text-sm" style="color:var(--muted)">✦ &nbsp;Modern SaaS-quality design</li>
+            </ul>
+          </div>
+          <!-- Card 2 -->
+          <div class="service-card fade-up" style="transition-delay:.1s">
+            <div class="service-num">02</div>
+            <div class="service-icon mb-4">
+              <svg width="22" height="22" fill="none" stroke="#000" stroke-width="2.2" viewBox="0 0 24 24">
+                <polygon points="23 7 16 12 23 17 23 7" />
+                <rect x="1" y="5" width="15" height="14" rx="2" />
+              </svg>
+            </div>
+            <h3 class="font-heading font-bold text-xl mb-3" style="color:var(--fg)">Video Ad Editing</h3>
+            <p class="section-body text-sm">Scroll-stopping hooks. Tight pacing. Direct response structure. We edit
+              Facebook and TikTok ads that earn clicks, not just views.</p>
+            <ul class="mt-5 space-y-2">
+              <li class="text-sm" style="color:var(--muted)">✦ &nbsp;Hook-first creative structure</li>
+              <li class="text-sm" style="color:var(--muted)">✦ &nbsp;Facebook &amp; TikTok ad formats</li>
+              <li class="text-sm" style="color:var(--muted)">✦ &nbsp;CTR-optimised pacing</li>
+            </ul>
+          </div>
+          <!-- Card 3 -->
+          <div class="service-card fade-up" style="transition-delay:.2s">
+            <div class="service-num">03</div>
+            <div class="service-icon mb-4">
+              <svg width="22" height="22" fill="none" stroke="#000" stroke-width="2.2" viewBox="0 0 24 24">
+                <path d="M12 20h9" />
+                <path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z" />
+              </svg>
+            </div>
+            <h3 class="font-heading font-bold text-xl mb-3" style="color:var(--fg)">Copywriting</h3>
+            <p class="section-body text-sm">Words that sell aren't clever — they're clear. We write email sequences,
+              landing page copy, and sales scripts built around what makes people buy.</p>
+            <ul class="mt-5 space-y-2">
+              <li class="text-sm" style="color:var(--muted)">✦ &nbsp;Email &amp; sequence copy</li>
+              <li class="text-sm" style="color:var(--muted)">✦ &nbsp;Landing page &amp; sales copy</li>
+              <li class="text-sm" style="color:var(--muted)">✦ &nbsp;Direct response frameworks</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ PROBLEM / SOLUTION ══════════ -->
+    <section class="py-24 problem-bg" id="problem">
+      <div class="max-w-6xl mx-auto px-5">
+        <div class="mb-4 fade-up"><span class="section-label">The Real Problem</span></div>
+        <h2 class="section-title text-4xl md:text-5xl max-w-2xl mb-12 fade-up">Most businesses are leaking money every
+          day
+          online.</h2>
+        <div class="grid md:grid-cols-2 gap-10">
+          <div class="space-y-6 fade-up">
+            <div class="service-card">
+              <span class="problem-pill mb-3 inline-block">Problem</span>
+              <h3 class="font-heading font-bold text-lg mb-2" style="color:var(--fg)">Your website isn't converting</h3>
+              <p class="section-body text-sm">Slow load times, poor layout, unclear messaging — visitors leave before
+                they
+                act. A website that doesn't sell is just dead weight.</p>
+            </div>
+            <div class="service-card">
+              <span class="problem-pill mb-3 inline-block">Problem</span>
+              <h3 class="font-heading font-bold text-lg mb-2" style="color:var(--fg)">Your ads get views but no results
+              </h3>
+              <p class="section-body text-sm">Generic video creatives blend into the feed. Without a proper hook and
+                direct response structure, your ad spend is just noise.</p>
+            </div>
+            <div class="service-card">
+              <span class="problem-pill mb-3 inline-block">Problem</span>
+              <h3 class="font-heading font-bold text-lg mb-2" style="color:var(--fg)">Your copy doesn't close</h3>
+              <p class="section-body text-sm">Weak emails, vague headlines, and feature-first writing don't move buyers.
+                Sales copy needs a strategy, not just nice sentences.</p>
+            </div>
+          </div>
+          <div class="fade-up" style="transition-delay:.15s">
+            <div class="service-card h-full flex flex-col justify-between" style="border-color:var(--accent);">
+              <div>
+                <span class="inline-block mb-4"
+                  style="background:var(--accent);color:#000;font-family:'Syne',sans-serif;font-weight:700;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;padding:.35rem .8rem;border-radius:4px;">The
+                  Elbon Solution</span>
+                <h3 class="section-title text-3xl mb-6">We fix all three — together.</h3>
+                <p class="section-body mb-6">Elbon Concepts aligns your web design, video ads, and copy into a single,
+                  coherent conversion system. Each asset is built with one question in mind: does this help sell?</p>
+              </div>
+              <div class="space-y-4">
+                <div class="flex items-start gap-3">
+                  <span style="color:var(--accent); font-size:1.2rem; margin-top:.1rem;">→</span>
+                  <p class="section-body text-sm">Websites built to guide visitors toward action</p>
+                </div>
+                <div class="flex items-start gap-3">
+                  <span style="color:var(--accent); font-size:1.2rem; margin-top:.1rem;">→</span>
+                  <p class="section-body text-sm">Video ads engineered for click-throughs and purchases</p>
+                </div>
+                <div class="flex items-start gap-3">
+                  <span style="color:var(--accent); font-size:1.2rem; margin-top:.1rem;">→</span>
+                  <p class="section-body text-sm">Copy that speaks to buyers, not just browsers</p>
+                </div>
+                <div class="mt-8">
+                  <a href="#cta" class="btn-primary">Fix My Conversions →</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ WHY CHOOSE US ══════════ -->
+    <section id="why" class="py-24">
+      <div class="max-w-6xl mx-auto px-5">
+        <div class="grid md:grid-cols-2 gap-16 items-start">
+          <div class="fade-up">
+            <div class="mb-4"><span class="section-label">Why Choose Us</span></div>
+            <h2 class="section-title text-4xl md:text-5xl mb-6">We're not a typical agency.</h2>
+            <p class="section-body mb-8">We don't do retainer fluff. Every deliverable is tied to a business outcome —
+              and
+              we stay obsessed with conversion until the numbers move.</p>
+            <a href="#cta" class="btn-primary">Let's Work Together →</a>
+          </div>
+          <div class="fade-up" style="transition-delay:.1s">
+            <div class="why-item">
+              <span class="why-check">✦</span>
+              <div>
+                <h4 class="font-heading font-bold mb-1" style="color:var(--fg)">Conversion-First Thinking</h4>
+                <p class="section-body text-sm">Every design choice, every edit, every word — made to push visitors
+                  toward
+                  action.</p>
+              </div>
+            </div>
+            <div class="why-item">
+              <span class="why-check">✦</span>
+              <div>
+                <h4 class="font-heading font-bold mb-1" style="color:var(--fg)">Modern Design Standards</h4>
+                <p class="section-body text-sm">Clean layouts that match how top SaaS and e-commerce brands present
+                  themselves in 2025.</p>
+              </div>
+            </div>
+            <div class="why-item">
+              <span class="why-check">✦</span>
+              <div>
+                <h4 class="font-heading font-bold mb-1" style="color:var(--fg)">Ad-Ready Creatives</h4>
+                <p class="section-body text-sm">Our video edits are structured for paid social — hook, body, CTA — the
+                  way
+                  it actually performs.</p>
+              </div>
+            </div>
+            <div class="why-item">
+              <span class="why-check">✦</span>
+              <div>
+                <h4 class="font-heading font-bold mb-1" style="color:var(--fg)">Sales-Driven Copy</h4>
+                <p class="section-body text-sm">We write based on direct response principles — not buzzwords or filler
+                  that sounds good but does nothing.</p>
+              </div>
+            </div>
+            <div class="why-item" style="border-bottom:none;">
+              <span class="why-check">✦</span>
+              <div>
+                <h4 class="font-heading font-bold mb-1" style="color:var(--fg)">Clear Communication</h4>
+                <p class="section-body text-sm">You know where things stand at every stage. No ghosting, no vague
+                  updates,
+                  no surprises.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ PROOF / CASE STUDIES ══════════ -->
+    <section id="proof" class="py-24 problem-bg">
+      <div class="max-w-6xl mx-auto px-5">
+        <div class="mb-4 fade-up"><span class="section-label">Sample Results</span></div>
+        <h2 class="section-title text-4xl md:text-5xl mb-4 fade-up">The kind of numbers that matter.</h2>
+        <p class="section-body mb-12 fade-up">Below are sample case study formats — representative of the type of
+          outcomes
+          Elbon Concepts is built to deliver.</p>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="proof-card fade-up">
+            <span class="tag-placeholder">Sample · Web Design</span>
+            <div class="stat-num mt-4">+64%</div>
+            <h4 class="font-heading font-bold text-lg mt-1 mb-3" style="color:var(--fg)">Landing Page Conversion Rate
+            </h4>
+            <p class="section-body text-sm">Redesigned an e-commerce brand's product page with clearer hierarchy, faster
+              load time, and a revised CTA structure. Conversion rate improved significantly within 30 days.</p>
+            <div class="mt-5 pt-4" style="border-top:1px solid var(--border)">
+              <p class="text-xs" style="color:var(--muted)">E-commerce brand · Product landing page</p>
+            </div>
+          </div>
+          <div class="proof-card fade-up" style="transition-delay:.1s">
+            <span class="tag-placeholder">Sample · Video Ads</span>
+            <div class="stat-num mt-4">+3.2x</div>
+            <h4 class="font-heading font-bold text-lg mt-1 mb-3" style="color:var(--fg)">Ad Click-Through Rate</h4>
+            <p class="section-body text-sm">Restructured a Facebook ad video to open with a pattern-interrupt hook and
+              tighten the first 3 seconds. CTR tripled over the previous creative within the same campaign.</p>
+            <div class="mt-5 pt-4" style="border-top:1px solid var(--border)">
+              <p class="text-xs" style="color:var(--muted)">DTC brand · Facebook &amp; Instagram ads</p>
+            </div>
+          </div>
+          <div class="proof-card fade-up" style="transition-delay:.2s">
+            <span class="tag-placeholder">Sample · Copywriting</span>
+            <div class="stat-num mt-4">+41%</div>
+            <h4 class="font-heading font-bold text-lg mt-1 mb-3" style="color:var(--fg)">Email Open-to-Click Rate</h4>
+            <p class="section-body text-sm">Rewrote a 5-email welcome sequence for a B2B SaaS brand using a
+              problem-agitate-solve structure. Click-to-open rate increased substantially with no list changes.</p>
+            <div class="mt-5 pt-4" style="border-top:1px solid var(--border)">
+              <p class="text-xs" style="color:var(--muted)">B2B SaaS · Email nurture sequence</p>
+            </div>
+          </div>
+        </div>
+        <p class="text-xs mt-8 fade-up" style="color:var(--muted)">* These are illustrative sample case studies
+          representing the type of outcomes our work is designed to produce.</p>
+      </div>
+    </section>
+
+    <!-- ══════════ PROCESS ══════════ -->
+    <section id="process" class="py-24">
+      <div class="max-w-6xl mx-auto px-5">
+        <div class="mb-4 fade-up"><span class="section-label">How It Works</span></div>
+        <h2 class="section-title text-4xl md:text-5xl mb-16 fade-up max-w-xl">Simple process. No wasted time.</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="step-card fade-up">
+            <div class="step-num">01</div>
+            <h3 class="font-heading font-bold text-xl mb-3 mt-1" style="color:var(--fg)">Discovery Call</h3>
+            <p class="section-body text-sm">We get on a call to understand your business, your goals, and what's not
+              working. No templates — this is a real conversation about your specific situation.</p>
+          </div>
+          <div class="step-card fade-up" style="transition-delay:.1s">
+            <div class="step-num">02</div>
+            <h3 class="font-heading font-bold text-xl mb-3 mt-1" style="color:var(--fg)">Strategy + Execution</h3>
+            <p class="section-body text-sm">We map out a clear plan, confirm scope, and get to work. You get regular
+              updates and a review window before anything is finalised.</p>
+          </div>
+          <div class="step-card fade-up" style="transition-delay:.2s">
+            <div class="step-num">03</div>
+            <h3 class="font-heading font-bold text-xl mb-3 mt-1" style="color:var(--fg)">Delivery + Optimisation</h3>
+            <p class="section-body text-sm">We deliver clean, production-ready assets. Post-delivery, we stay available
+              for revisions and ensure everything performs as intended.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ CTA ══════════ -->
+    <section id="cta" class="py-24" style="background:var(--accent)">
+      <div class="max-w-6xl mx-auto px-5 text-center">
+        <div class="mb-5 fade-up">
+          <span
+            style="background:rgba(0,0,0,.12);color:#000;font-family:'Syne',sans-serif;font-weight:700;font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;padding:.4rem .9rem;border-radius:9999px;">Free
+            Strategy Call</span>
+        </div>
+        <h2 class="font-display text-[clamp(3rem,9vw,7rem)] leading-none text-black mb-6 fade-up">READY TO<br />CONVERT
+          MORE?</h2>
+        <p class="max-w-xl mx-auto mb-10 fade-up"
+          style="color:rgba(0,0,0,.65);font-family:'DM Sans',sans-serif;font-size:1.05rem;line-height:1.7;">
+          Book a free 30-minute strategy call. We'll look at what you're currently doing, identify the biggest revenue
+          leaks, and outline exactly what needs to change.
+        </p>
+        <div class="flex flex-wrap gap-4 justify-center fade-up">
+          <a href="mailto:elbonconcepts@gmail.com"
+            style="background:#000;color:var(--accent);font-family:'Syne',sans-serif;font-weight:700;font-size:.95rem;letter-spacing:.04em;padding:1rem 2.5rem;border-radius:4px;display:inline-block;transition:opacity .2s;"
+            onmouseenter="this.style.opacity='.85'" onmouseleave="this.style.opacity='1'">Book a Free Strategy Call
+            →</a>
+          <a href="https://elbonconcepts.github.io/portfolio" target="_blank"
+            style="border:2px solid rgba(0,0,0,.25);color:#000;font-family:'Syne',sans-serif;font-weight:600;font-size:.95rem;letter-spacing:.04em;padding:1rem 2.5rem;border-radius:4px;display:inline-block;transition:border-color .2s;"
+            onmouseenter="this.style.borderColor='rgba(0,0,0,.7)'"
+            onmouseleave="this.style.borderColor='rgba(0,0,0,.25)'">See Our Work</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ FOOTER ══════════ -->
+    <footer class="py-14">
+      <div class="max-w-6xl mx-auto px-5">
+        <div class="grid md:grid-cols-3 gap-10 mb-12">
+          <div>
+            <p class="logo-text text-xl mb-3">Elbon <span class="logo-dot">Concepts</span></p>
+            <p class="section-body text-sm max-w-xs">Web design, video ad editing, and copywriting for brands that want
+              to
+              grow — not just exist online.</p>
+          </div>
+          <div>
+            <h5 class="font-heading font-bold text-sm mb-4" style="color:var(--fg)">Services</h5>
+            <ul class="space-y-2">
+              <li><a href="#services" class="nav-link">Web Design</a></li>
+              <li><a href="#services" class="nav-link">Video Ad Editing</a></li>
+              <li><a href="#services" class="nav-link">Copywriting</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5 class="font-heading font-bold text-sm mb-4" style="color:var(--fg)">Contact</h5>
+            <ul class="space-y-2">
+              <li><a href="mailto:elbonconcepts@gmail.com" class="nav-link">elbonconcepts@gmail.com</a></li>
+              <li><a href="https://elbonconcepts.github.io/" target="_blank"
+                  class="nav-link">elbonconcepts.github.io</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="flex flex-col md:flex-row items-center justify-between pt-8"
+          style="border-top:1px solid var(--border)">
+          <p class="text-xs mb-3 md:mb-0" style="color:var(--muted)">© 2025 Elbon Concepts. All rights reserved.</p>
+          <p class="text-xs" style="color:var(--muted)">Built to convert.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // ─      eme Toggle ──
+      const html = document      umentElement;
+      const btn = document.getElementByI      hemeToggle');;;;;;;
+      const icon = document.getElementB      'themeIcon');
+      const label = document.getElementByI      hemeLabel');;;;;;;
+
+      function eme(mode) {
+        if (mo          light') {;;;;;;
+        html.classLis('dark');
+        html.classL          'light');
+        icon.te          t = '🌙';
+        label.text = 'Dark';
+        localStorage.setItem('        , 'light'           } else {
+        html.classList          'light');
+        html.class('dark');
+        icon.te          t = '☀️';
+        label.textC           'Light';
+        localStorage.setItem(',      rk'           }
+      }
+
+      btn.addEventListener        k', () => {;;;;;;
+      const isDark = html.classList.ns('dark');
+      setTheme(isDark ? '      t' : k');
+    });         // Persist
+      const saved = localStorage.tem('theme');
+      if (saved) heme(saved);
+
+      //      Mobile nav ──
+      const hamburger = document.getElementB      'hamburger');
+      const mobileMenu = document.getElementBy      mobileMenu');;;;;;;
+      hamburger.addEventListener('click', () => mobileMenu.classList      gle('open'));
+      function closeMobile() { mobileMenu.classList.r      e('open'); }
+
+      // ── Scr      animations ──
+      const fadeEls = document.querySelecto('.fade-up');
+      const observer = new IntersectionObserv        tries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) e.target.classList.ad      isible'); });;;;;;;
+        }, { th      old: 0.12 });
+        fadeEls.forEach(el => obserr.observe(el));
+    </script>
+  </body>
+
+</html>
